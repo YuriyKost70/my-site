@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Проєкти — YVK Design</title>
+
+  <meta
+    name="description"
+    content="Проєкти YVK Design: інтер’єри, екстер’єри, житлові та комерційні простори, офіси, кафе, бари та приватні будинки."
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="portfolio-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="YVK Design">
+        <img src="assets/logo/yvk-logo.svg" alt="YVK Design" />
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Відкрити меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="Головне меню">
+        <a href="index.html#home">Головна</a>
+        <a href="index.html#services">Послуги</a>
+        <a href="projects.html">Проєкти</a>
+        <a href="index.html#about">Про нас</a>
+        <a href="index.html#contact">Контакти</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="phone" href="tel:+380675404756">+38 (067) 540 47 56</a>
+        <a class="btn btn-secondary" href="index.html#contact">Замовити консультацію</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="projects-head">
+          <div class="section-kicker">Всі проєкти</div>
+
+          <h2 class="section-title">
+            Оберіть <span>напрям</span>
+          </h2>
+
+          <p class="projects-intro">
+            Фільтр допоможе швидко переглянути потрібний тип робіт:
+            інтер’єри, екстер’єри, житлові або комерційні об’єкти.
+          </p>
+
+          <div class="project-tabs" aria-label="Фільтр проєктів">
+            <button class="tab active" type="button" data-filter="all">Всі</button>
+            <button class="tab" type="button" data-filter="interior">Інтер’єри</button>
+            <button class="tab" type="button" data-filter="exterior">Екстер’єри</button>
+            <button class="tab" type="button" data-filter="residential">Житлові</button>
+            <button class="tab" type="button" data-filter="commercial">Комерційні</button>
+          </div>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card" data-tags="interior residential">
+            <a class="project-card-link" href="project-detail.html">
+              <div class="project-image">
+                <img loading="lazy" decoding="async" src="assets/images/project-01.jpg" alt="Житловий інтер’єр" />
+                <div class="project-label">Інтер’єр</div>
+              </div>
+
+              <div class="project-body">
+                <div class="project-topline">
+                  <span>Житловий простір</span>
+                  <span>Дизайн-проєкт</span>
+                </div>
+
+                <h3>Житловий інтер’єр</h3>
+
+                <p class="project-description">
+                  Продуманий простір для життя: планування, зберігання,
+                  матеріали, візуалізація та підготовка до реалізації.
+                </p>
+
+                <div class="project-tags">
+                  <span>Квартира</span>
+                  <span>Будинок</span>
+                  <span>Під ключ</span>
+                </div>
+
+                <div class="project-footer">
+                  <span>Дивитися проєкт</span>
+                  <span class="project-arrow">→</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card" data-tags="exterior residential">
+            <a class="project-card-link" href="project-detail.html">
+              <div class="project-image">
+                <img loading="lazy" decoding="async" src="assets/images/project-02.jpg" alt="Екстер’єр приватного будинку" />
+                <div class="project-label">Екстер’єр</div>
+              </div>
+
+              <div class="project-body">
+                <div class="project-topline">
+                  <span>Приватний будинок</span>
+                  <span>Фасад</span>
+                </div>
+
+                <h3>Екстер’єр будинку</h3>
+
+                <p class="project-description">
+                  Архітектурний образ приватного будинку: фасади, матеріали,
+                  кольорова концепція, вхідна зона й тераса.
+                </p>
+
+                <div class="project-tags">
+                  <span>Фасад</span>
+                  <span>Будинок</span>
+                  <span>Візуалізація</span>
+                </div>
+
+                <div class="project-footer">
+                  <span>Дивитися проєкт</span>
+                  <span class="project-arrow">→</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card" data-tags="interior commercial">
+            <a class="project-card-link" href="project-detail.html">
+              <div class="project-image">
+                <img loading="lazy" decoding="async" src="assets/images/project-03.jpg" alt="Інтер’єр кафе або бару" />
+                <div class="project-label">HoReCa</div>
+              </div>
+
+              <div class="project-body">
+                <div class="project-topline">
+                  <span>Кафе / бар</span>
+                  <span>Комерційний дизайн</span>
+                </div>
+
+                <h3>Інтер’єр кафе або бару</h3>
+
+                <p class="project-description">
+                  Атмосферний простір для бізнесу: посадкові зони, барна частина,
+                  освітлення, матеріали та стиль бренду.
+                </p>
+
+                <div class="project-tags">
+                  <span>Кафе</span>
+                  <span>Бар</span>
+                  <span>Брендинг</span>
+                </div>
+
+                <div class="project-footer">
+                  <span>Дивитися проєкт</span>
+                  <span class="project-arrow">→</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card" data-tags="interior exterior commercial">
+            <a class="project-card-link" href="project-detail.html">
+              <div class="project-image">
+                <img loading="lazy" decoding="async" src="assets/images/project-04.jpg" alt="Офісний або комерційний простір" />
+                <div class="project-label">Комерційний</div>
+              </div>
+
+              <div class="project-body">
+                <div class="project-topline">
+                  <span>Офіс / бізнес</span>
+                  <span>Інтер’єр та екстер’єр</span>
+                </div>
+
+                <h3>Офісний простір</h3>
+
+                <p class="project-description">
+                  Дизайн робочого середовища: логіка руху, функціональні зони,
+                  презентабельність і зручність для команди.
+                </p>
+
+                <div class="project-tags">
+                  <span>Офіс</span>
+                  <span>Комерція</span>
+                  <span>Реалізація</span>
+                </div>
+
+                <div class="project-footer">
+                  <span>Дивитися проєкт</span>
+                  <span class="project-arrow">→</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card" data-tags="exterior commercial">
+            <a class="project-card-link" href="project-detail.html">
+              <div class="project-image">
+                <img loading="lazy" decoding="async" src="assets/images/project-05.jpg" alt="Екстер’єр комерційної будівлі" />
+                <div class="project-label">Екстер’єр</div>
+              </div>
+
+              <div class="project-body">
+                <div class="project-topline">
+                  <span>Комерційна будівля</span>
+                  <span>Фасад</span>
+                </div>
+
+                <h3>Екстер’єр комерційної будівлі</h3>
+
+                <p class="project-description">
+                  Зовнішній образ будівлі для бізнесу: фасад, вхідна група,
+                  матеріали, освітлення та загальна презентабельність.
+                </p>
+
+                <div class="project-tags">
+                  <span>Фасад</span>
+                  <span>Бізнес</span>
+                  <span>Вхідна група</span>
+                </div>
+
+                <div class="project-footer">
+                  <span>Дивитися проєкт</span>
+                  <span class="project-arrow">→</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card" data-tags="exterior residential">
+            <a class="project-card-link" href="project-detail.html">
+              <div class="project-image">
+                <img loading="lazy" decoding="async" src="assets/images/project-06.jpg" alt="Двір, тераса та зовнішні зони приватного будинку" />
+                <div class="project-label">Екстер’єр</div>
+              </div>
+
+              <div class="project-body">
+                <div class="project-topline">
+                  <span>Двір / тераса</span>
+                  <span>Приватний будинок</span>
+                </div>
+
+                <h3>Двір і тераса</h3>
+
+                <p class="project-description">
+                  Організація зовнішніх зон: тераса, зона відпочинку, подвір’я,
+                  матеріали, освітлення та зв’язок з архітектурою будинку.
+                </p>
+
+                <div class="project-tags">
+                  <span>Тераса</span>
+                  <span>Двір</span>
+                  <span>Будинок</span>
+                </div>
+
+                <div class="project-footer">
+                  <span>Дивитися проєкт</span>
+                  <span class="project-arrow">→</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card" data-tags="interior commercial">
+            <a class="project-card-link" href="project-detail.html">
+              <div class="project-image">
+                <img loading="lazy" decoding="async" src="assets/images/project-07.jpg" alt="Шоурум або торговий простір" />
+                <div class="project-label">Комерційний</div>
+              </div>
+
+              <div class="project-body">
+                <div class="project-topline">
+                  <span>Шоурум / магазин</span>
+                  <span>Комерційний інтер’єр</span>
+                </div>
+
+                <h3>Шоурум або магазин</h3>
+
+                <p class="project-description">
+                  Простір для продажів і презентації продукту: маршрут клієнта,
+                  експозиція, освітлення, матеріали й атмосфера бренду.
+                </p>
+
+                <div class="project-tags">
+                  <span>Шоурум</span>
+                  <span>Магазин</span>
+                  <span>Бренд</span>
+                </div>
+
+                <div class="project-footer">
+                  <span>Дивитися проєкт</span>
+                  <span class="project-arrow">→</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card" data-tags="interior exterior residential">
+            <a class="project-card-link" href="project-detail.html">
+              <div class="project-image">
+                <img loading="lazy" decoding="async" src="assets/images/project-08.jpg" alt="Реконструкція або оновлення приватного будинку" />
+                <div class="project-label">Будинок</div>
+              </div>
+
+              <div class="project-body">
+                <div class="project-topline">
+                  <span>Реконструкція</span>
+                  <span>Інтер’єр та екстер’єр</span>
+                </div>
+
+                <h3>Оновлення будинку</h3>
+
+                <p class="project-description">
+                  Комплексне оновлення житлового об’єкта: нове планування,
+                  фасадні рішення, інтер’єр, матеріали й супровід реалізації.
+                </p>
+
+                <div class="project-tags">
+                  <span>Будинок</span>
+                  <span>Реконструкція</span>
+                  <span>Комплексно</span>
+                </div>
+
+                <div class="project-footer">
+                  <span>Дивитися проєкт</span>
+                  <span class="project-arrow">→</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
+
+        <div class="projects-more">
+          <a class="btn btn-secondary projects-more-btn" href="index.html#contact">
+            Обговорити проєкт
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo" aria-label="YVK Design">
+          <img src="assets/logo/yvk-logo.svg" alt="YVK Design" />
+        </a>
+
+        <p>
+          YVK Design — дизайн інтер’єрів, екстер’єрів та комерційних просторів.
+        </p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Меню в футері">
+        <a href="index.html#home">Головна</a>
+        <a href="index.html#services">Послуги</a>
+        <a href="projects.html">Проєкти</a>
+        <a href="index.html#about">Про нас</a>
+        <a href="index.html#contact">Контакти</a>
+      </nav>
+
+      <div class="footer-contacts">
+        <a href="tel:+380675404756">+38 (067) 540 47 56</a>
+        <a href="mailto:yvkdesign@gmail.com">yvkdesign@gmail.com</a>
+        <span>м. Суми, Україна</span>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>yvkdesign.com © 2004–2026</div>
+      <div>Створення та просування сайтів</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
