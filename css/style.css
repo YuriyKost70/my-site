@@ -704,7 +704,7 @@ button, input, textarea, select { font: inherit; }
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 1.1fr 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 64px;
   align-items: start;
   padding-bottom: 42px;
@@ -728,27 +728,10 @@ button, input, textarea, select { font: inherit; }
   line-height: 1.7;
 }
 
-.footer-nav {
-  display: grid;
-  gap: 14px;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.footer-nav a {
-  color: var(--text);
-  transition: 0.25s ease;
-}
-
-.footer-nav a:hover {
-  color: var(--accent);
-}
-
 .footer-contacts {
   display: grid;
   gap: 14px;
+  justify-items: start;
   color: var(--text-muted);
   font-size: 16px;
   line-height: 1.5;
@@ -861,10 +844,6 @@ button, input, textarea, select { font: inherit; }
   .footer-inner {
     grid-template-columns: 1fr 1fr;
     gap: 48px;
-  }
-
-  .footer-brand {
-    grid-column: 1 / -1;
   }
 
   .footer-bottom {
@@ -1113,8 +1092,8 @@ button, input, textarea, select { font: inherit; }
     width: 86px;
   }
 
-  .footer-nav {
-    gap: 12px;
+  .footer-contacts {
+    justify-items: start;
   }
 
   .footer-bottom {
