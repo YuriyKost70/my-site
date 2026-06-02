@@ -97,45 +97,4 @@
       });
     });
   });
-
-  const servicePreview = document.querySelector('.service-preview');
-  const servicePreviewImage = servicePreview?.querySelector('img');
-  const servicePreviewCaption = servicePreview?.querySelector('figcaption');
-  const servicePreviewClose = servicePreview?.querySelector('.service-preview-close');
-  const serviceSamples = document.querySelectorAll('.service-sample');
-
-  function closeServicePreview() {
-    if (!servicePreview) return;
-
-    servicePreview.classList.remove('is-open');
-    servicePreview.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  }
-
-  serviceSamples.forEach((sample) => {
-    sample.addEventListener('click', () => {
-      if (!servicePreview || !servicePreviewImage || !servicePreviewCaption) return;
-
-      const src = sample.dataset.previewSrc;
-      const title = sample.dataset.previewTitle || sample.textContent.trim();
-
-      if (!src) return;
-
-      servicePreviewImage.src = src;
-      servicePreviewImage.alt = title;
-      servicePreviewCaption.textContent = title;
-      servicePreview.classList.add('is-open');
-      servicePreview.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    });
-  });
-
-  servicePreviewClose?.addEventListener('click', closeServicePreview);
-  servicePreview?.addEventListener('click', (event) => {
-    if (event.target === servicePreview) closeServicePreview();
-  });
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') closeServicePreview();
-  });
 })();
