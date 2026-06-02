@@ -123,26 +123,54 @@
           </p>
         </div>
 
-        <div class="project-example-grid" aria-label="Приклади матеріалів дизайн-проєкту">
-          <button class="project-example-item is-wide" type="button" data-preview-src="assets/projects/project-interior-apartment-004/plan.jpg" data-preview-title="Планувальне рішення">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-004/plan.jpg" alt="Планувальне рішення житлової квартири" />
-            <span>Планувальне рішення</span>
-          </button>
+        <div class="project-example-slider" aria-label="Приклад готового дизайн-проєкту">
+          <div class="project-example-track">
+            <button class="project-example-slide" type="button" data-preview-src="assets/projects/project-interior-apartment-004/plan.jpg" data-preview-title="Планувальне рішення">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-004/plan.jpg" alt="Планувальне рішення житлової квартири" />
+              <span>Планувальне рішення</span>
+            </button>
 
-          <button class="project-example-item" type="button" data-preview-src="assets/projects/project-interior-apartment-004/gallery/001.jpg" data-preview-title="3D-візуалізація">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-004/gallery/001.jpg" alt="3D-візуалізація інтер’єру" />
-            <span>3D-візуалізація</span>
-          </button>
+            <button class="project-example-slide" type="button" data-preview-src="assets/projects/project-interior-apartment-002/plan.jpg" data-preview-title="План меблювання">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/plan.jpg" alt="План меблювання квартири" />
+              <span>План меблювання</span>
+            </button>
 
-          <button class="project-example-item" type="button" data-preview-src="assets/projects/project-interior-apartment-002/plan.jpg" data-preview-title="План меблювання">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/plan.jpg" alt="План меблювання квартири" />
-            <span>План меблювання</span>
-          </button>
+            <button class="project-example-slide" type="button" data-preview-src="assets/projects/project-interior-apartment-003/plan.jpg" data-preview-title="План зонування">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-003/plan.jpg" alt="План зонування квартири" />
+              <span>План зонування</span>
+            </button>
 
-          <button class="project-example-item" type="button" data-preview-src="assets/projects/project-interior-apartment-004/gallery/012.jpg" data-preview-title="Матеріали та атмосфера">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-004/gallery/012.jpg" alt="Матеріали та атмосфера інтер’єру" />
-            <span>Матеріали та атмосфера</span>
-          </button>
+            <button class="project-example-slide" type="button" data-preview-src="assets/projects/project-interior-apartment-004/gallery/001.jpg" data-preview-title="3D-візуалізація">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-004/gallery/001.jpg" alt="3D-візуалізація інтер’єру" />
+              <span>3D-візуалізація</span>
+            </button>
+
+            <button class="project-example-slide" type="button" data-preview-src="assets/projects/project-interior-apartment-004/gallery/012.jpg" data-preview-title="Матеріали та атмосфера">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-004/gallery/012.jpg" alt="Матеріали та атмосфера інтер’єру" />
+              <span>Матеріали та атмосфера</span>
+            </button>
+
+            <button class="project-example-slide" type="button" data-preview-src="assets/projects/project-interior-apartment-004/gallery/018.jpg" data-preview-title="Вузол інтер’єру">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-004/gallery/018.jpg" alt="Вузол інтер’єру" />
+              <span>Вузол інтер’єру</span>
+            </button>
+
+            <button class="project-example-slide" type="button" data-preview-src="assets/projects/project-interior-apartment-004/gallery/026.jpg" data-preview-title="Освітлення">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-004/gallery/026.jpg" alt="Освітлення в інтер’єрі" />
+              <span>Освітлення</span>
+            </button>
+
+            <button class="project-example-slide" type="button" data-preview-src="assets/projects/project-interior-apartment-004/gallery/037.jpg" data-preview-title="Фінальна концепція">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-004/gallery/037.jpg" alt="Фінальна концепція інтер’єру" />
+              <span>Фінальна концепція</span>
+            </button>
+          </div>
+
+          <div class="project-example-controls">
+            <button class="project-example-control" type="button" data-slider-prev aria-label="Попередні сторінки"></button>
+            <div class="project-example-counter" aria-live="polite">1-4 / 8</div>
+            <button class="project-example-control next" type="button" data-slider-next aria-label="Наступні сторінки"></button>
+          </div>
         </div>
       </div>
     </section>
@@ -178,10 +206,13 @@
 
   <div class="project-example-preview" aria-hidden="true">
     <button class="project-example-preview-close" type="button" aria-label="Закрити перегляд"></button>
+    <button class="project-example-preview-nav prev" type="button" data-preview-prev aria-label="Попередня сторінка"></button>
+    <button class="project-example-preview-nav next" type="button" data-preview-next aria-label="Наступна сторінка"></button>
     <figure>
       <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="" />
       <figcaption></figcaption>
     </figure>
+    <div class="project-example-preview-counter" aria-live="polite">1 / 8</div>
   </div>
 
   <footer class="footer">
