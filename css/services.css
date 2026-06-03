@@ -237,7 +237,7 @@
 
 .project-example-track {
   --slide-gap: 16px;
-  --visible-slides: 4;
+  --visible-slides: 3;
   display: flex;
   gap: var(--slide-gap);
   overflow-x: auto;
