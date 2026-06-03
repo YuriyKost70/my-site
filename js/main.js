@@ -1,6 +1,16 @@
 (() => {
+  const siteHeader = document.querySelector('.site-header');
   const menuToggle = document.querySelector('.menu-toggle');
   const mainNav = document.querySelector('.main-nav');
+
+  if (siteHeader) {
+    const updateHeaderState = () => {
+      siteHeader.classList.toggle('is-scrolled', window.scrollY > 12);
+    };
+
+    updateHeaderState();
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
+  }
 
   if (menuToggle && mainNav) {
     const closeMenu = () => {
