@@ -35,15 +35,19 @@
   padding: 84px 0 76px;
 }
 
+.services-hero .container {
+  width: min(100% - 64px, 1520px);
+}
+
 .services-hero-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 72px;
+  gap: 80px;
   align-items: center;
 }
 
 .services-hero-copy {
-  max-width: 620px;
+  max-width: 680px;
 }
 
 .services-hero-copy h1,
@@ -487,6 +491,10 @@
 }
 
 @media (max-width: 1100px) {
+  .services-hero .container {
+    width: min(100% - 64px, var(--container));
+  }
+
   .services-page .header-inner {
     grid-template-columns: 120px 1fr;
   }
