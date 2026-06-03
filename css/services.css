@@ -39,6 +39,49 @@
   display: none;
 }
 
+.services-subnav {
+  border-top: 1px solid rgba(216, 185, 130, 0);
+  border-bottom: 1px solid rgba(216, 185, 130, 0);
+  transition: border-color 0.25s ease;
+}
+
+.services-page .site-header.is-scrolled .services-subnav,
+.services-page .site-header:has(.main-nav.is-open) .services-subnav {
+  border-top-color: rgba(216, 185, 130, 0.12);
+  border-bottom-color: rgba(216, 185, 130, 0.14);
+}
+
+.services-subnav-inner {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.services-subnav a {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 10px 14px;
+  color: rgba(245, 241, 232, 0.82);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-transform: uppercase;
+  transition: color 0.25s ease, background 0.25s ease;
+}
+
+.services-subnav a:hover {
+  background: rgba(216, 185, 130, 0.1);
+  color: var(--accent);
+}
+
+.services-subnav span {
+  color: var(--accent);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+}
+
 .services-hero {
   position: relative;
   min-height: 100vh;
@@ -74,9 +117,9 @@
   z-index: 2;
   display: flex;
   min-height: 100vh;
-  padding: 148px 0 26px;
+  padding: 178px 0 72px;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   gap: 36px;
 }
 
@@ -113,44 +156,6 @@
   margin-top: 24px;
 }
 
-.services-hero-nav {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  border: 1px solid rgba(216, 185, 130, 0.3);
-  background: rgba(12, 13, 12, 0.74);
-  backdrop-filter: blur(10px);
-}
-
-.services-hero-nav a {
-  display: flex;
-  min-height: 64px;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 20px;
-  border-right: 1px solid rgba(216, 185, 130, 0.22);
-  color: var(--text);
-  font-size: 14px;
-  font-weight: 800;
-  line-height: 1.25;
-  text-transform: uppercase;
-  transition: 0.25s ease;
-}
-
-.services-hero-nav a:last-child {
-  border-right: none;
-}
-
-.services-hero-nav a:hover {
-  background: rgba(216, 185, 130, 0.12);
-  color: var(--accent);
-}
-
-.services-hero-nav span {
-  color: var(--accent);
-  font-size: 12px;
-  letter-spacing: 0.14em;
-}
-
 .service-directions,
 .service-kit,
 .service-price,
@@ -166,7 +171,7 @@
 .service-price,
 .project-example,
 .service-process {
-  scroll-margin-top: 110px;
+  scroll-margin-top: 150px;
 }
 
 .service-section-head {
@@ -691,19 +696,6 @@
     max-width: min(100%, 620px);
   }
 
-  .services-hero-nav {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .services-hero-nav a {
-    border-bottom: 1px solid rgba(216, 185, 130, 0.22);
-  }
-
-  .services-hero-nav a:nth-child(3n),
-  .services-hero-nav a:last-child {
-    border-right: none;
-  }
-
   .service-direction-grid,
   .service-process-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -724,6 +716,29 @@
     display: flex;
   }
 
+  .services-subnav {
+    overflow: hidden;
+  }
+
+  .services-subnav-inner {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .services-subnav-inner::-webkit-scrollbar {
+    display: none;
+  }
+
+  .services-subnav a {
+    flex: 0 0 auto;
+    min-height: 42px;
+    padding: 10px 14px;
+    scroll-snap-align: start;
+    white-space: nowrap;
+  }
+
   .services-hero {
     min-height: 100vh;
   }
@@ -736,7 +751,7 @@
 
   .services-hero-inner {
     min-height: 100vh;
-    padding: 136px 0 24px;
+    padding: 168px 0 44px;
     gap: 46px;
   }
 
@@ -755,30 +770,6 @@
 
   .services-hero-actions {
     display: grid;
-  }
-
-  .services-hero-nav {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-  }
-
-  .services-hero-nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  .services-hero-nav a {
-    flex: 0 0 170px;
-    min-height: 54px;
-    padding: 14px 16px;
-    border-right: 1px solid rgba(216, 185, 130, 0.22);
-    border-bottom: none;
-    scroll-snap-align: start;
-  }
-
-  .services-hero-nav a:last-child {
-    border-right: none;
   }
 
   .service-directions,
