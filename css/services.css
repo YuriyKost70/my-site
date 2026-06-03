@@ -55,13 +55,6 @@
   justify-content: flex-end;
   gap: 16px;
   padding-top: 7px;
-  border-top: 1px solid rgba(216, 185, 130, 0);
-  transition: border-color 0.25s ease;
-}
-
-.services-page .site-header.is-scrolled .services-subnav,
-.services-page .site-header:has(.main-nav.is-open) .services-subnav {
-  border-top-color: rgba(216, 185, 130, 0.12);
 }
 
 .services-subnav a {
@@ -97,7 +90,7 @@
 
 .services-hero {
   position: relative;
-  min-height: 100vh;
+  min-height: clamp(620px, 82vh, 760px);
   overflow: hidden;
   border-bottom: 1px solid rgba(216, 185, 130, 0.2);
 }
@@ -129,8 +122,8 @@
   position: relative;
   z-index: 2;
   display: flex;
-  min-height: 100vh;
-  padding: 138px 0 72px;
+  min-height: clamp(620px, 82vh, 760px);
+  padding: 124px 0 54px;
   flex-direction: column;
   justify-content: center;
   gap: 36px;
@@ -779,7 +772,7 @@
   }
 
   .services-hero {
-    min-height: 100vh;
+    min-height: 720px;
   }
 
   .services-hero::before {
@@ -789,8 +782,8 @@
   }
 
   .services-hero-inner {
-    min-height: 100vh;
-    padding: 126px 0 44px;
+    min-height: 720px;
+    padding: 118px 0 38px;
     gap: 46px;
   }
 
