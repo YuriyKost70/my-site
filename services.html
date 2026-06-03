@@ -50,7 +50,16 @@
         </div>
 
         <div class="services-hero-media">
-          <img src="assets/images/services-hero-scenario.jpg" alt="Сценарій реалізації дизайн-проєкту" />
+          <img
+            src="assets/images/services-hero-scenario.jpg"
+            srcset="
+              assets/images/services-hero-scenario-960.jpg 960w,
+              assets/images/services-hero-scenario.jpg 1536w,
+              assets/images/services-hero-scenario-2400.jpg 2400w
+            "
+            sizes="(min-width: 1101px) 1536px, (min-width: 761px) 960px, calc(100vw - 64px)"
+            alt="Сценарій реалізації дизайн-проєкту"
+          />
         </div>
       </div>
     </section>
