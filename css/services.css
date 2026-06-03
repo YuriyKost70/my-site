@@ -100,9 +100,8 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background:
-    linear-gradient(90deg, rgba(10, 11, 10, 0.66) 0%, rgba(10, 11, 10, 0.5) 42%, rgba(10, 11, 10, 0.28) 72%, rgba(10, 11, 10, 0.42) 100%),
-    linear-gradient(180deg, rgba(10, 11, 10, 0.14) 0%, rgba(10, 11, 10, 0.05) 46%, rgba(10, 11, 10, 0.52) 100%);
+  background: none;
+  pointer-events: none;
 }
 
 .services-hero-media {
@@ -777,9 +776,7 @@
   }
 
   .services-hero::before {
-    background:
-      linear-gradient(90deg, rgba(10, 11, 10, 0.92) 0%, rgba(10, 11, 10, 0.74) 100%),
-      linear-gradient(180deg, rgba(10, 11, 10, 0.08) 0%, rgba(10, 11, 10, 0.78) 100%);
+    background: none;
   }
 
   .services-hero-inner {
