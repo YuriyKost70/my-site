@@ -2,6 +2,7 @@
   const siteHeader = document.querySelector('.site-header');
   const menuToggle = document.querySelector('.menu-toggle');
   const mainNav = document.querySelector('.main-nav');
+  const servicesSubnav = document.querySelector('.services-subnav');
 
   if (siteHeader) {
     const updateHeaderState = () => {
@@ -24,6 +25,10 @@
     });
 
     mainNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    servicesSubnav?.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', closeMenu);
     });
 
