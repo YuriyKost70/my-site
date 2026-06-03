@@ -90,7 +90,7 @@
 
 .services-hero {
   position: relative;
-  min-height: clamp(620px, 82vh, 760px);
+  min-height: clamp(560px, 68vh, 640px);
   overflow: hidden;
   border-bottom: 1px solid rgba(216, 185, 130, 0.2);
 }
@@ -122,8 +122,8 @@
   position: relative;
   z-index: 2;
   display: flex;
-  min-height: clamp(620px, 82vh, 760px);
-  padding: 124px 0 54px;
+  min-height: clamp(560px, 68vh, 640px);
+  padding: 116px 0 42px;
   flex-direction: column;
   justify-content: center;
   gap: 36px;
@@ -772,7 +772,7 @@
   }
 
   .services-hero {
-    min-height: 720px;
+    min-height: 640px;
   }
 
   .services-hero::before {
@@ -782,8 +782,8 @@
   }
 
   .services-hero-inner {
-    min-height: 720px;
-    padding: 118px 0 38px;
+    min-height: 640px;
+    padding: 112px 0 34px;
     gap: 46px;
   }
 
