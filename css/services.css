@@ -104,21 +104,12 @@
 
 @media (max-width: 1400px) {
   .services-hero-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 48px;
-    align-items: center;
-  }
-
-  .services-hero-copy {
-    display: block;
-    max-width: 620px;
+    grid-template-columns: minmax(0, 520px) minmax(0, 1fr);
+    column-gap: 32px;
   }
 
   .services-hero-media {
-    grid-column: auto;
-    grid-row: auto;
-    aspect-ratio: 3 / 2;
-    height: auto;
+    height: 100%;
   }
 }
 
