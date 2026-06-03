@@ -36,7 +36,20 @@
 
   <main>
     <section class="services-hero">
-      <div class="container services-hero-grid">
+      <div class="services-hero-media" aria-hidden="true">
+        <img
+          src="assets/images/services-hero-scenario-1200.jpg"
+          srcset="
+            assets/images/services-hero-scenario-800.jpg 800w,
+            assets/images/services-hero-scenario-1200.jpg 1200w,
+            assets/images/services-hero-scenario-1600.jpg 1600w
+          "
+          sizes="100vw"
+          alt=""
+        />
+      </div>
+
+      <div class="container services-hero-inner">
         <div class="services-hero-copy">
           <div class="section-kicker">Послуги</div>
           <h1>Дизайн-проєкт як зрозумілий сценарій реалізації</h1>
@@ -49,22 +62,17 @@
           </div>
         </div>
 
-        <div class="services-hero-media">
-          <img
-            src="assets/images/services-hero-scenario-1200.jpg"
-            srcset="
-              assets/images/services-hero-scenario-800.jpg 800w,
-              assets/images/services-hero-scenario-1200.jpg 1200w,
-              assets/images/services-hero-scenario-1600.jpg 1600w
-            "
-            sizes="(min-width: 1401px) 792px, (min-width: 1101px) calc(100vw - 631px), (min-width: 761px) calc((100vw - 112px) / 2), calc(100vw - 64px)"
-            alt="Сценарій реалізації дизайн-проєкту"
-          />
-        </div>
+        <nav class="services-hero-nav" aria-label="Навігація по сторінці послуг">
+          <a href="#service-directions"><span>01</span>Що ми робимо</a>
+          <a href="#service-kit"><span>02</span>Склад проєкту</a>
+          <a href="#service-price"><span>03</span>Вартість</a>
+          <a href="#project-example"><span>04</span>Приклад</a>
+          <a href="#service-process"><span>05</span>Процес</a>
+        </nav>
       </div>
     </section>
 
-    <section class="service-directions" aria-label="Основні напрями роботи">
+    <section class="service-directions" id="service-directions" aria-label="Основні напрями роботи">
       <div class="container">
         <div class="service-section-head">
           <div class="section-kicker">Напрями</div>
@@ -103,7 +111,7 @@
       </div>
     </section>
 
-    <section class="service-kit" aria-label="Що входить у дизайн-проєкт">
+    <section class="service-kit" id="service-kit" aria-label="Що входить у дизайн-проєкт">
       <div class="container service-kit-grid">
         <div class="service-section-head">
           <div class="section-kicker">Склад проєкту</div>
@@ -124,7 +132,7 @@
       </div>
     </section>
 
-    <section class="service-price" aria-label="Вартість дизайн-проєкту">
+    <section class="service-price" id="service-price" aria-label="Вартість дизайн-проєкту">
       <div class="container">
         <div class="service-price-head">
           <div>
@@ -240,7 +248,7 @@
       </div>
     </section>
 
-    <section class="service-process" aria-label="Як ми працюємо">
+    <section class="service-process" id="service-process" aria-label="Як ми працюємо">
       <div class="container">
         <div class="service-section-head">
           <div class="section-kicker">Процес</div>
