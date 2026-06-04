@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Контакти — YVK Design</title>
+  <meta name="description" content="Контакти YVK Design: консультація щодо дизайн-проєкту інтер’єру, екстер’єру або комерційного простору. Телефон, email, форма заявки та місто роботи." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+</head>
+<body class="contact-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="YVK Design">
+        <img src="assets/logo/yvk-logo.svg" alt="YVK Design" />
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Відкрити меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="Головне меню">
+        <a href="index.html#home">Головна</a>
+        <a href="services.html">Послуги</a>
+        <a href="projects.html">Проєкти</a>
+        <a href="contact.html" aria-current="page">Контакти</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="phone" href="tel:+380675404756">+38 (067) 540 47 56</a>
+        <a class="btn btn-secondary" href="contact.html#request">Замовити консультацію</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-hero">
+      <div class="container contact-hero-grid">
+        <div class="contact-hero-copy">
+          <div class="section-kicker">Контакти</div>
+          <h1>Обговоримо ваш простір</h1>
+          <p>
+            Напишіть або зателефонуйте, якщо плануєте ремонт, купівлю об’єкта, перепланування або хочете зрозуміти, який формат дизайн-проєкту підійде саме вам.
+          </p>
+        </div>
+
+        <div class="contact-direct">
+          <a href="tel:+380675404756">
+            <span>Телефон</span>
+            <strong>+38 (067) 540 47 56</strong>
+          </a>
+          <a href="mailto:info@yvkdesign.com">
+            <span>Email</span>
+            <strong>info@yvkdesign.com</strong>
+          </a>
+          <div>
+            <span>Місто</span>
+            <strong>Суми, Україна</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-main" id="request">
+      <div class="container contact-main-grid">
+        <div class="contact-aside">
+          <div class="contact-aside-block">
+            <div class="section-kicker">Старт</div>
+            <h2>Що написати у заявці</h2>
+            <ul>
+              <li>тип об’єкта і приблизну площу;</li>
+              <li>місто або формат роботи онлайн;</li>
+              <li>на якому етапі ви зараз: купівля, планування, ремонт;</li>
+              <li>що потрібно: консультація, планування або повний проєкт.</li>
+            </ul>
+          </div>
+
+          <div class="contact-social">
+            <span>Зручний канал зв’язку</span>
+            <div>
+              <a href="tel:+380675404756">Телефон</a>
+              <a href="mailto:info@yvkdesign.com">Email</a>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form contact-page-form" action="#" method="post">
+          <input type="text" name="name" placeholder="Ім’я" required />
+          <input type="tel" name="phone" placeholder="Телефон" required />
+          <input class="full" type="email" name="email" placeholder="Email" />
+
+          <select class="full" name="project-type">
+            <option value="">Тип об’єкта</option>
+            <option>Квартира</option>
+            <option>Будинок</option>
+            <option>Комерційний простір</option>
+            <option>Екстер’єр</option>
+          </select>
+
+          <textarea class="full" name="message" placeholder="Коротко опишіть задачу"></textarea>
+          <button class="btn btn-primary" type="submit">Надіслати заявку</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo" aria-label="YVK Design">
+          <img src="assets/logo/yvk-logo.svg" alt="YVK Design" />
+        </a>
+
+        <p>
+          YVK Design — дизайн інтер’єрів, екстер’єрів та комерційних просторів.
+        </p>
+      </div>
+
+      <div class="footer-contacts">
+        <a href="tel:+380675404756">+38 (067) 540 47 56</a>
+        <a href="mailto:info@yvkdesign.com">info@yvkdesign.com</a>
+        <span>м. Суми, Україна</span>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>yvkdesign.com © 2004–2026</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
