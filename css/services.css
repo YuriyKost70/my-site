@@ -24,6 +24,7 @@
 
 .services-page .header-inner {
   grid-template-columns: 120px 1fr;
+  min-height: 92px;
   align-items: center;
 }
 
@@ -42,7 +43,8 @@
 
 .services-page .main-nav {
   justify-content: flex-end;
-  gap: 34px;
+  gap: 42px;
+  font-size: 13px;
 }
 
 .services-page .header-actions {
@@ -726,7 +728,8 @@
   }
 
   .services-page .main-nav {
-    gap: 22px;
+    gap: 24px;
+    font-size: 12px;
   }
 
   .services-subnav {

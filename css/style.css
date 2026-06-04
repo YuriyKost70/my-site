@@ -65,6 +65,9 @@ button, input, textarea, select { font: inherit; }
   display: flex; justify-content: center; gap: 42px;
   font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
 }
+.main-nav a {
+  transition: color 0.25s ease;
+}
 .main-nav a:hover { color: var(--accent); }
 .header-actions { display: flex; align-items: center; gap: 22px; }
 .phone { font-size: 20px; font-weight: 700; white-space: nowrap; }
