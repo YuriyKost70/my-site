@@ -184,90 +184,6 @@ button, input, textarea, select { font: inherit; }
 .hero-text { max-width: 440px; margin-bottom: 42px; color: var(--text); font-size: 18px; }
 .hero-buttons { display: flex; gap: 18px; flex-wrap: wrap; }
 
-/* About */
-.about {
-  padding: 92px 0 86px;
-  background: var(--bg);
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 72px;
-  align-items: center;
-}
-
-.about-content {
-  max-width: 620px;
-}
-
-.about-title {
-  max-width: 540px;
-  font-size: clamp(28px, 2.3vw, 42px);
-  line-height: 1.2;
-}
-
-.about-text {
-  margin-top: 30px;
-  display: grid;
-  gap: 20px;
-  max-width: 590px;
-  color: var(--text-muted);
-  font-size: 17px;
-  line-height: 1.72;
-}
-
-.about-facts {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 46px;
-}
-
-.about-fact {
-  padding-top: 20px;
-  border-top: 1px solid rgba(216, 185, 130, 0.32);
-}
-
-.about-fact strong {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--accent);
-  font-size: 22px;
-  line-height: 1.2;
-  font-weight: 700;
-}
-
-.about-fact span {
-  display: block;
-  max-width: 180px;
-  color: var(--text-muted);
-  font-size: 14px;
-  line-height: 1.45;
-}
-
-/* Правая moodboard-карточка */
-.about-visual {
-  position: relative;
-}
-
-.about-visual-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-  transform: translateY(-28px);
-}
-
-.about-visual-card img {
-  width: 100%;
-  max-width: 760px;
-  height: auto;
-  display: block;
-  border: 1px solid rgba(216, 185, 130, 0.35);
-  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
-}
-
 /* Services */
 .services {
   padding: 0 0 104px;
@@ -839,24 +755,6 @@ button, input, textarea, select { font: inherit; }
     font-size: clamp(48px, 7vw, 76px);
   }
 
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 56px;
-  }
-
-  .about-content {
-    max-width: 760px;
-  }
-
-  .about-visual-card {
-    transform: none;
-    justify-content: flex-start;
-  }
-
-  .about-visual-card img {
-    max-width: 760px;
-  }
-
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1023,45 +921,10 @@ button, input, textarea, select { font: inherit; }
     bottom: 28px;
   }
 
-  .about,
   .projects,
   .advantages,
   .contact {
     padding: 64px 0;
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 42px;
-  }
-
-  .about-title {
-    max-width: 100%;
-    font-size: clamp(28px, 8vw, 38px);
-  }
-
-  .about-text {
-    font-size: 16px;
-    line-height: 1.7;
-  }
-
-  .about-facts {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    margin-top: 38px;
-  }
-
-  .about-fact span {
-    max-width: 100%;
-  }
-
-  .about-visual-card {
-    transform: none;
-    justify-content: center;
-  }
-
-  .about-visual-card img {
-    max-width: 100%;
   }
 
   .services {
