@@ -220,14 +220,14 @@
 
 .service-direction-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
 }
 
 .service-direction {
   position: relative;
   display: flex;
-  min-height: 236px;
+  min-height: 248px;
   padding: 24px 22px 20px;
   flex-direction: column;
   border: 1px solid rgba(216, 185, 130, 0.28);
