@@ -788,11 +788,19 @@
 
   .services-page .header-inner {
     display: flex;
+    justify-content: flex-start;
+  }
+
+  .services-page .main-nav {
+    gap: 24px;
+    font-size: 15px;
+    justify-content: flex-start;
   }
 
   .services-nav-stack {
     display: block;
     min-height: 0;
+    width: 0;
   }
 
   .services-subnav {

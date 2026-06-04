@@ -905,6 +905,7 @@ button, input, textarea, select { font: inherit; }
 
   .site-header {
     padding: 16px 0;
+    z-index: 1000;
   }
 
   .home-page .site-header {
@@ -914,7 +915,8 @@ button, input, textarea, select { font: inherit; }
   .header-inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 0;
   }
 
   .logo img {
@@ -932,24 +934,44 @@ button, input, textarea, select { font: inherit; }
   .menu-toggle {
     display: block;
     position: relative;
-    z-index: 50;
+    z-index: 60;
+    margin-left: auto;
+    flex: 0 0 42px;
   }
 
   .main-nav {
-    display: none;
+    display: flex;
     position: fixed;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
     z-index: 40;
-    background: rgba(17, 19, 18, 0.98);
+    width: min(300px, calc(100vw - 32px));
+    padding: 118px 30px 40px;
+    background: rgba(17, 19, 18, 0.8);
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 26px;
-    font-size: 18px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 24px;
+    border-left: 1px solid rgba(216, 185, 130, 0.18);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    font-size: 15px;
+  }
+
+  .main-nav a {
+    width: 100%;
+    padding: 8px 0;
   }
 
   .main-nav.is-open {
-    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
   }
 
   .hero {

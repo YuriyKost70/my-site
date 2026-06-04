@@ -410,11 +410,17 @@
   .project-detail-page .header-inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 
   .project-detail-page .logo img {
     width: 92px;
+  }
+
+  .project-detail-page .main-nav {
+    gap: 24px;
+    font-size: 15px;
+    justify-content: flex-start;
   }
 
   .detail-hero {

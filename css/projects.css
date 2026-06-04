@@ -91,4 +91,10 @@
   .portfolio-page .header-inner {
     display: flex;
   }
+
+  .portfolio-page .main-nav {
+    gap: 24px;
+    font-size: 15px;
+    justify-content: flex-start;
+  }
 }
