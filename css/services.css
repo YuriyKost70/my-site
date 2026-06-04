@@ -168,8 +168,23 @@
 .project-example,
 .service-process,
 .service-cta {
+  position: relative;
   padding: 76px 0;
-  border-top: 1px solid rgba(216, 185, 130, 0.2);
+}
+
+.service-directions::before,
+.service-kit::before,
+.project-example::before,
+.service-price::before,
+.service-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(100% - 64px, var(--container));
+  height: 1px;
+  background: rgba(216, 185, 130, 0.2);
+  transform: translateX(-50%);
 }
 
 .service-directions,
@@ -694,6 +709,14 @@
 }
 
 @media (max-width: 1100px) {
+  .service-directions::before,
+  .service-kit::before,
+  .project-example::before,
+  .service-price::before,
+  .service-cta::before {
+    width: min(100% - 48px, var(--container));
+  }
+
   .services-hero .container {
     width: min(100% - 64px, var(--container));
   }
@@ -747,6 +770,14 @@
 }
 
 @media (max-width: 760px) {
+  .service-directions::before,
+  .service-kit::before,
+  .project-example::before,
+  .service-price::before,
+  .service-cta::before {
+    width: min(100% - 32px, var(--container));
+  }
+
   .services-page .site-header {
     position: fixed;
     padding: 10px 0;
