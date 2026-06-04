@@ -937,41 +937,48 @@ button, input, textarea, select { font: inherit; }
     z-index: 60;
     margin-left: auto;
     flex: 0 0 42px;
+    transition: opacity 0.2s ease;
   }
 
   .main-nav {
     display: flex;
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: auto;
+    inset: 0;
     z-index: 40;
-    width: min(300px, calc(100vw - 32px));
-    padding: 118px 30px 40px;
-    background: rgba(17, 19, 18, 0.8);
+    width: 100vw;
+    min-height: 100vh;
+    padding: 96px 32px;
+    background: rgba(17, 19, 18, 0.85);
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 24px;
-    border-left: 1px solid rgba(216, 185, 130, 0.18);
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border-left: 0;
     backdrop-filter: blur(10px);
     opacity: 0;
     pointer-events: none;
-    transform: translateX(100%);
-    transition: opacity 0.25s ease, transform 0.25s ease;
-    font-size: 15px;
+    transform: none;
+    transition: opacity 0.25s ease;
+    font-size: 18px;
   }
 
   .main-nav a {
-    width: 100%;
+    width: auto;
     padding: 8px 0;
   }
 
   .main-nav.is-open {
     opacity: 1;
     pointer-events: auto;
-    transform: translateX(0);
+  }
+
+  body.mobile-menu-open {
+    overflow: hidden;
+  }
+
+  body.mobile-menu-open .menu-toggle {
+    opacity: 0;
+    pointer-events: none;
   }
 
   .hero {

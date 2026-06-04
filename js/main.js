@@ -16,12 +16,18 @@
   if (menuToggle && mainNav) {
     const closeMenu = () => {
       mainNav.classList.remove('is-open');
+      document.body.classList.remove('mobile-menu-open');
       menuToggle.setAttribute('aria-expanded', 'false');
     };
 
     menuToggle.addEventListener('click', () => {
       const isOpen = mainNav.classList.toggle('is-open');
+      document.body.classList.toggle('mobile-menu-open', isOpen);
       menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    mainNav.addEventListener('click', (event) => {
+      if (event.target === mainNav) closeMenu();
     });
 
     mainNav.querySelectorAll('a').forEach((link) => {
