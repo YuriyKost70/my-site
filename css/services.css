@@ -229,7 +229,7 @@
   padding: 24px 22px 20px;
   flex-direction: column;
   border: 1px solid rgba(216, 185, 130, 0.28);
-  background: rgba(255, 255, 255, 0.028);
+  background: rgba(255, 255, 255, 0.024);
 }
 
 .service-direction::before {
@@ -292,7 +292,7 @@
   margin: 0;
   padding: 34px;
   border: 1px solid rgba(216, 185, 130, 0.24);
-  background: rgba(255, 255, 255, 0.035);
+  background: rgba(255, 255, 255, 0.024);
   list-style: none;
 }
 
@@ -552,7 +552,7 @@
   padding: 22px;
   flex-direction: column;
   border: 1px solid rgba(216, 185, 130, 0.2);
-  background: rgba(255, 255, 255, 0.028);
+  background: rgba(255, 255, 255, 0.024);
 }
 
 .service-process-list span {
