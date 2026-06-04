@@ -72,6 +72,31 @@ button, input, textarea, select { font: inherit; }
 .menu-toggle { display: none; background: none; border: 0; width: 42px; height: 42px; cursor: pointer; }
 .menu-toggle span { display: block; height: 2px; margin: 7px 0; background: var(--text); }
 
+.home-page .site-header {
+  position: fixed;
+  z-index: 1000;
+  padding: 8px 0;
+  background: rgba(17, 19, 18, 0);
+  border-bottom: 1px solid rgba(216, 185, 130, 0);
+  transition: background 0.25s ease, border-color 0.25s ease, backdrop-filter 0.25s ease;
+}
+
+.home-page .site-header.is-scrolled,
+.home-page .site-header:has(.main-nav.is-open) {
+  background: rgba(17, 19, 18, 0.94);
+  border-bottom-color: rgba(216, 185, 130, 0.18);
+  backdrop-filter: blur(10px);
+}
+
+.home-page .header-inner {
+  grid-template-columns: 120px 1fr auto;
+  min-height: 92px;
+}
+
+.home-page .logo img {
+  width: 92px;
+}
+
 /* Hero */
 .hero {
   min-height: 760px;
@@ -777,8 +802,16 @@ button, input, textarea, select { font: inherit; }
     gap: 28px;
   }
 
+  .home-page .header-inner {
+    grid-template-columns: 120px 1fr;
+  }
+
   .logo img {
     width: 96px;
+  }
+
+  .home-page .logo img {
+    width: 92px;
   }
 
   .header-actions {
@@ -871,6 +904,10 @@ button, input, textarea, select { font: inherit; }
     padding: 16px 0;
   }
 
+  .home-page .site-header {
+    padding: 10px 0;
+  }
+
   .header-inner {
     display: flex;
     align-items: center;
@@ -879,6 +916,10 @@ button, input, textarea, select { font: inherit; }
 
   .logo img {
     width: 86px;
+  }
+
+  .home-page .logo img {
+    width: 92px;
   }
 
   .header-actions {
