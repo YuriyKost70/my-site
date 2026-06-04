@@ -171,15 +171,30 @@
 }
 
 .contact-social a {
-  min-width: 104px;
-  padding: 10px 14px;
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid rgba(216, 185, 130, 0.32);
   color: var(--text);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-align: center;
-  text-transform: uppercase;
+  transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.contact-social a:hover {
+  border-color: var(--accent);
+  background: rgba(216, 185, 130, 0.1);
+  color: var(--accent);
+}
+
+.contact-social svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .contact-page-form {
