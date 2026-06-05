@@ -1,0 +1,99 @@
+{
+  "schema": "yvk-project-v2",
+  "status": "published",
+  "slug": "project-interior-apartment-001",
+  "language": "uk",
+  "type": "interior",
+  "segment": "private",
+  "object": "apartment",
+  "categories": ["interior", "private", "apartment"],
+  "title": "Сучасна квартира",
+  "subtitle": "Консультація до купівлі та просторове планування",
+  "card": {
+    "label": "Інтер’єр",
+    "topline_left": "Житлова квартира",
+    "topline_right": "Дизайн-проєкт",
+    "title": "Сучасна квартира",
+    "description": "Консультація до купівлі, аналіз двох квартир для об’єднання та просторове планування майбутнього житла.",
+    "tags": ["Квартира", "Планування", "Візуалізація"]
+  },
+  "detail": {
+    "hero_title_left": "СУЧАСНА КВАРТИРА",
+    "hero_title_right": "КОНСУЛЬТАЦІЯ ДО КУПІВЛІ ТА ПРОСТОРОВЕ ПЛАНУВАННЯ",
+    "kicker": "Про проєкт",
+    "heading": "Квартира для молодої сім’ї",
+    "text": [
+      "Цей проєкт — сучасна квартира для молодої сім’ї з однією дитиною, що включає консультацію на етапі вибору об’єкта та просторове планування.",
+      "Я був залучений на ранній стадії, аналізуючи та відбираючи дві окремі однокімнатні квартири з точки зору їхнього потенціалу для об’єднання в єдиний житловий простір.",
+      "До купівлі планування були проаналізовані з позицій просторової логіки, можливостей зонування та подальшої експлуатації. Після придбання план квартири було повністю перероблено, щоб чітко розділити приватні та спільні зони, оптимізувати рух і підвищити загальну функціональність.",
+      "У результаті сформовано цілісну, добре структуровану концепцію квартири з раціональним планувальним рішенням — від первинного аналізу до проєкту, готового до реалізації."
+    ]
+  },
+  "meta": {
+    "location": "Україна",
+    "object_type_label": "Квартира",
+    "area": "93,18 м²",
+    "year": "2026",
+    "design_visualization": "Юрій Костюченко",
+    "work_type": "Комерційний проєкт"
+  },
+  "media": {
+    "cover": "cover.jpg",
+    "planning_dir": "planning",
+    "plan": "planning/plan-after.jpg",
+    "plan_before": "planning/plan-before.jpg",
+    "plan_after": "planning/plan-after.jpg",
+    "gallery_dir": "gallery"
+  },
+  "gallery": {
+    "title_source": "folder_name",
+    "blocks": [
+      {
+        "folder": "01-entrance-area",
+        "title": "ENTRANCE AREA",
+        "layout": "mosaic-a",
+        "legacy_range": ["001.jpg", "010.jpg"]
+      },
+      {
+        "folder": "02-living-dining",
+        "title": "LIVING & DINING",
+        "layout": "mosaic-a",
+        "legacy_range": ["011.jpg", "020.jpg"]
+      },
+      {
+        "folder": "03-kitchen-area",
+        "title": "KITCHEN AREA",
+        "layout": "mosaic-b",
+        "legacy_range": ["021.jpg", "030.jpg"]
+      },
+      {
+        "folder": "04-bedroom",
+        "title": "BEDROOM",
+        "layout": "symmetric",
+        "legacy_range": ["031.jpg", "040.jpg"]
+      },
+      {
+        "folder": "05-childrens-room",
+        "title": "CHILDREN'S ROOM",
+        "layout": "symmetric",
+        "legacy_range": ["041.jpg", "050.jpg"]
+      },
+      {
+        "folder": "06-bathroom-1",
+        "title": "BATHROOM #1",
+        "layout": "mosaic-b",
+        "legacy_range": ["051.jpg", "060.jpg"]
+      },
+      {
+        "folder": "07-bathroom-2",
+        "title": "BATHROOM #2",
+        "layout": "wide-first",
+        "legacy_range": ["061.jpg", "069.jpg"]
+      }
+    ]
+  },
+  "seo": {
+    "title": "Сучасна квартира — YVK Design",
+    "description": "Проєкт сучасної квартири: консультація до купівлі, просторове планування, дизайн та візуалізація інтер’єру."
+  }
+}

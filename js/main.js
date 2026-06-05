@@ -43,6 +43,27 @@
     });
   }
 
+  const scrollTopButton = document.createElement('button');
+  scrollTopButton.className = 'scroll-top-button';
+  scrollTopButton.type = 'button';
+  scrollTopButton.setAttribute('aria-label', 'Повернутися нагору');
+  scrollTopButton.textContent = '↑';
+  document.body.append(scrollTopButton);
+
+  const updateScrollTopButton = () => {
+    scrollTopButton.classList.toggle('is-visible', window.scrollY > 420);
+  };
+
+  scrollTopButton.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  updateScrollTopButton();
+  window.addEventListener('scroll', updateScrollTopButton, { passive: true });
+
   const heroSlides = document.querySelectorAll('.hero-slide');
   const heroDots = document.querySelectorAll('.hero-dot');
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

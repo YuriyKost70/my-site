@@ -6,12 +6,28 @@
   const lightboxClose = lightbox?.querySelector('.lightbox-close');
   const lightboxPrev = lightbox?.querySelector('.lightbox-prev');
   const lightboxNext = lightbox?.querySelector('.lightbox-next');
+  const planCompare = document.querySelector('[data-plan-compare]');
+  const planCompareRange = planCompare?.querySelector('.detail-plan-range');
+
+  function updatePlanCompare(value) {
+    if (!planCompare) return;
+
+    const position = Math.min(100, Math.max(0, Number(value) || 0));
+    const positionNumber = Math.max(position / 100, 0.01);
+    planCompare.style.setProperty('--compare-position', `${position}%`);
+    planCompare.style.setProperty('--compare-position-number', positionNumber);
+  }
+
+  if (planCompareRange) {
+    updatePlanCompare(planCompareRange.value);
+    planCompareRange.addEventListener('input', (event) => updatePlanCompare(event.target.value));
+  }
 
   const galleryImages = galleryButtons.map((button) => {
     const img = button.querySelector('img');
 
     return {
-      src: img?.getAttribute('src') || '',
+      src: img?.dataset.fullSrc || img?.getAttribute('src') || '',
       alt: img?.getAttribute('alt') || 'Візуалізація проєкту'
     };
   });
@@ -51,6 +67,13 @@
   }
 
   galleryButtons.forEach((button, index) => {
+    const img = button.querySelector('img');
+
+    img?.addEventListener('error', () => {
+      if (!img.dataset.fullSrc || img.src.endsWith(img.dataset.fullSrc)) return;
+      img.src = img.dataset.fullSrc;
+    }, { once: true });
+
     button.addEventListener('click', () => openLightbox(index));
   });
 

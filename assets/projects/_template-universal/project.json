@@ -1,0 +1,71 @@
+{
+  "schema": "yvk-project-v2",
+  "status": "draft",
+  "slug": "project-interior-private-apartment-001",
+  "language": "uk",
+  "type": "interior",
+  "segment": "private",
+  "object": "apartment",
+  "categories": ["interior", "private", "apartment"],
+  "title": "Назва проєкту",
+  "subtitle": "Короткий підзаголовок проєкту",
+  "card": {
+    "label": "Інтер’єр",
+    "topline_left": "Житловий простір",
+    "topline_right": "Дизайн-проєкт",
+    "title": "Назва для карточки",
+    "description": "Короткий опис для сторінки проєктів.",
+    "tags": ["Квартира", "Планування", "Візуалізація"]
+  },
+  "detail": {
+    "hero_title_left": "НАЗВА ПРОЄКТУ",
+    "hero_title_right": "КОРОТКИЙ ОПИС У HERO",
+    "kicker": "Про проєкт",
+    "heading": "Заголовок текстового блоку",
+    "text": [
+      "Перший абзац опису проєкту.",
+      "Другий абзац опису проєкту.",
+      "Третій абзац опису проєкту."
+    ]
+  },
+  "meta": {
+    "location": "Україна",
+    "object_type_label": "Квартира",
+    "area": "00,00 м²",
+    "year": "2026",
+    "design_visualization": "Юрій Костюченко",
+    "work_type": "Комерційний проєкт"
+  },
+  "media": {
+    "cover": "cover.jpg",
+    "planning_dir": "planning",
+    "plan": "planning/plan-after.jpg",
+    "plan_before": "planning/plan-before.jpg",
+    "plan_after": "planning/plan-after.jpg",
+    "gallery_dir": "gallery"
+  },
+  "gallery": {
+    "title_source": "folder_name",
+    "blocks": [
+      {
+        "folder": "01-block-name",
+        "title": "",
+        "layout": "auto"
+      },
+      {
+        "folder": "02-block-name",
+        "title": "",
+        "layout": "auto"
+      },
+      {
+        "folder": "03-block-name",
+        "title": "",
+        "layout": "auto"
+      }
+    ]
+  },
+  "seo": {
+    "title": "Назва проєкту — YVK Design",
+    "description": "Короткий SEO-опис проєкту."
+  }
+}
