@@ -1,102 +1,26 @@
-# Project Folder Template
+# Шаблон автоматичної картки проєкту
 
-Скопируй папку `_template`, переименуй ее по правилу:
+1. Скопіюйте цю папку в `assets/projects/` і перейменуйте її, наприклад `project-interior-apartment-005`.
+2. Заповніть `project.auto.json`.
+3. Покладіть головне зображення в `cover.jpg`.
+4. Покладіть планування в `planning/plan-before.jpg` та `planning/plan-after.jpg`.
+5. Створіть блоки галереї в папці `gallery`.
 
-```text
-project-[direction]-[object_type]-[id]
-```
-
-Примеры:
-
-```text
-project-interior-apartment-001
-project-interior-office-002
-project-interior-public-003
-project-exterior-house-004
-project-exterior-commercial-005
-```
-
-## Обязательные Файлы
+Формат назви папки галереї:
 
 ```text
-project.txt
-cover.jpg
-gallery/01.jpg
+01-студія__Studio
+02-спальня__Bedroom
+03-дитяча кімната__Children's room
 ```
 
-## Дополнительные Файлы
+До `__` пишеться українська назва, після `__` англійська. Якщо англійська назва поки порожня, українська версія працює без змін.
+
+Всередині кожної папки галереї:
 
 ```text
-plan.jpg
-gallery/02.jpg
-gallery/03.jpg
-gallery/04.jpg
+preview/  маленькі зображення для сторінки
+full/     повні зображення для відкриття у великому перегляді
 ```
 
-Фото в `gallery/` сортируются по номеру файла: `01.jpg`, `02.jpg`, `03.jpg`.
-
-## Допустимые Значения
-
-`direction`:
-
-```text
-interior
-exterior
-```
-
-`object_type`:
-
-```text
-apartment
-house
-office
-public
-commercial
-horeca
-showroom
-```
-
-`categories` можно указывать через запятую:
-
-```text
-interior,residential
-exterior,commercial
-interior,commercial
-```
-
-Основные категории фильтра:
-
-```text
-interior
-exterior
-residential
-commercial
-```
-
-## Статус
-
-`status: draft` - проект не должен публиковаться.
-
-`status: published` - проект можно показывать на сайте.
-
-## Медиа
-
-`cover.jpg` используется как обложка карточки и главное фото страницы проекта.
-
-`plan.jpg` используется для блока планировки. Если файла нет, блок можно не показывать.
-
-`gallery/` используется для галереи на детальной странице проекта.
-
-## Структура project.txt
-
-`[project]` - общие данные проекта, slug, направление, тип объекта и категории.
-
-`[card]` - короткий текст и теги для карточки на странице `projects.html`.
-
-`[detail]` - заголовки и основной текст для детальной страницы проекта.
-
-`[meta]` - параметры проекта: локация, площадь, год, автор, тип работы и инструменты.
-
-`[media]` - имена файлов обложки, плана и папки галереи.
-
-`[seo]` - title и description для будущей генерации страниц.
+Файли в `preview` і `full` зіставляються за останнім номером у назві файлу.

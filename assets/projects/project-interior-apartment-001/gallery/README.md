@@ -1,26 +1,31 @@
-# Current Gallery Structure
+# Gallery Blocks
 
-This project currently uses a legacy flat gallery:
+Each folder inside `gallery/` is one visual block on the project page.
 
-```text
-gallery/001.jpg
-gallery/002.jpg
-...
-gallery/069.jpg
-```
+The folder number controls order.
 
-The future universal structure is described in `../project.json`.
+The folder name controls the default visual block title.
 
-When we migrate the images, the structure should become:
+Examples:
 
 ```text
-gallery/
-  01-entrance-area/
-    preview/
-    full/
-  02-living-dining/
-    preview/
-    full/
+01-entrance-area
+02-living-dining
+03-bedroom
 ```
 
-For now, do not move the existing numbered images because the current HTML page still uses them.
+or for another project type:
+
+```text
+01-main-facade
+02-night-view
+03-materials
+04-terrace
+```
+
+Inside each block:
+
+```text
+preview/  smaller images without logo
+full/     full-size images with logo
+```

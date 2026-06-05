@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Сучасна квартира — YVK Design</title>
   <meta name="description" content="Проєкт сучасної квартири для сім’ї з дитиною: консультація до купівлі, просторове планування, дизайн та візуалізація інтер’єру." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/project-detail.css" />
 </head>
@@ -24,6 +27,10 @@
         <a href="services.html">Послуги</a>
         <a href="projects.html">Проєкти</a>
         <a href="contact.html">Контакти</a>
+        <div class="language-switch" aria-label="Версія сайту">
+          <button class="is-active" type="button" aria-pressed="true">UA</button>
+          <button type="button" aria-pressed="false">EN</button>
+        </div>
       </nav>
 
       <div class="header-actions">
@@ -38,16 +45,16 @@
       <div class="detail-hero-overlay"></div>
       <div class="container detail-hero-content">
         <h1 class="detail-hero-title-line">
-          <span>СУЧАСНА КВАРТИРА</span>
+          <span>СУЧАСНА<br>КВАРТИРА</span>
           <span class="title-divider"></span>
-          <span>КОНСУЛЬТАЦІЯ ДО КУПІВЛІ ТА ПРОСТОРОВЕ ПЛАНУВАННЯ</span>
+          <span>КОНСУЛЬТАЦІЯ ДО КУПІВЛІ<br>ТА ПРОСТОРОВЕ ПЛАНУВАННЯ</span>
         </h1>
       </div>
     </section>
 
-    <section class="detail-overview">
-      <div class="container detail-overview-grid">
-        <div class="detail-text">
+        <section class="ref-project-info ref-project-info-light">
+      <div class="container ref-project-info-grid">
+        <div class="ref-project-description">
           <div class="section-kicker">Про проєкт</div>
               <h2>Квартира для сім’ї з дитиною</h2>
               <p>
@@ -69,249 +76,301 @@
               <p>
                 У результаті сформовано цілісну та добре структуровану житлову концепцію, адаптовану до потреб сімейного життя та готову до реалізації.
               </p>
-            </div>
+        </div>
 
-        <aside class="detail-meta" aria-label="Параметри проєкту">
-          <div class="detail-meta-item">
-            <span>Локація</span>
-            <strong>Україна, Київ</strong>
+        <dl class="ref-project-meta" aria-label="Параметри проєкту">
+          <div>
+            <dt>Локація</dt>
+            <dd>Україна, Київ</dd>
           </div>
-          <div class="detail-meta-item">
-            <span>Тип об’єкта</span>
-            <strong>Квартира</strong>
+          <div>
+            <dt>Тип об’єкта</dt>
+            <dd>Квартира</dd>
           </div>
-          <div class="detail-meta-item">
-            <span>Площа</span>
-            <strong>87,29 м²</strong>
+          <div>
+            <dt>Площа</dt>
+            <dd>87,29 м²</dd>
           </div>
-          <div class="detail-meta-item">
-            <span>Дизайн та візуалізація</span>
-            <strong>Юрій Костюченко</strong>
+          <div>
+            <dt>Дизайн та візуалізація</dt>
+            <dd>Юрій Костюченко</dd>
           </div>
-          <div class="detail-meta-item">
-            <span>Тип робіт</span>
-            <strong>Комерційний проєкт</strong>
+          <div>
+            <dt>Тип робіт</dt>
+            <dd>Комерційний проєкт</dd>
           </div>
-        </aside>
+        </dl>
       </div>
     </section>
-
     <section class="detail-plan">
       <div class="container">
-        <div class="detail-plan-image">
-          <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/plan.jpg" alt="Планувальне рішення сучасної квартири" draggable="false" />
+        <div class="detail-plan-compare" data-plan-compare style="--compare-position: 50%;">
+          <div class="detail-plan-compare-stage">
+            <img class="detail-plan-before" loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/planning/plan-before.jpg" alt="Планування до зміни сучасної квартири" draggable="false" />
+            <div class="detail-plan-after-wrap">
+              <img class="detail-plan-after" loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/planning/plan-after.jpg" alt="Планування після зміни сучасної квартири" draggable="false" />
+            </div>
+            <div class="detail-plan-label detail-plan-label-before">До зміни</div>
+            <div class="detail-plan-label detail-plan-label-after">Після зміни</div>
+            <div class="detail-plan-divider" aria-hidden="true"></div>
+            <input class="detail-plan-range" type="range" min="0" max="100" value="50" aria-label="Порівняти планування до та після зміни" />
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="detail-gallery" id="visualizations">
+        <section class="detail-gallery" id="visualizations">
       <div class="container">
-        <div class="detail-gallery-grid" aria-label="Слоти для візуалізацій проєкту">
-          
-          
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 001">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/001.jpg" alt="Візуалізація сучасної квартири 001" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 002">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/002.jpg" alt="Візуалізація сучасної квартири 002" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 003">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/003.jpg" alt="Візуалізація сучасної квартири 003" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 004">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/004.jpg" alt="Візуалізація сучасної квартири 004" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 005">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/005.jpg" alt="Візуалізація сучасної квартири 005" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 006">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/006.jpg" alt="Візуалізація сучасної квартири 006" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 007">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/007.jpg" alt="Візуалізація сучасної квартири 007" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 008">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/008.jpg" alt="Візуалізація сучасної квартири 008" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 009">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/009.jpg" alt="Візуалізація сучасної квартири 009" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 010">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/010.jpg" alt="Візуалізація сучасної квартири 010" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 011">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/011.jpg" alt="Візуалізація сучасної квартири 011" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 012">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/012.jpg" alt="Візуалізація сучасної квартири 012" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 013">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/013.jpg" alt="Візуалізація сучасної квартири 013" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 014">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/014.jpg" alt="Візуалізація сучасної квартири 014" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 015">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/015.jpg" alt="Візуалізація сучасної квартири 015" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 016">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/016.jpg" alt="Візуалізація сучасної квартири 016" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 017">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/017.jpg" alt="Візуалізація сучасної квартири 017" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 018">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/018.jpg" alt="Візуалізація сучасної квартири 018" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 019">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/019.jpg" alt="Візуалізація сучасної квартири 019" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 020">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/020.jpg" alt="Візуалізація сучасної квартири 020" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 021">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/021.jpg" alt="Візуалізація сучасної квартири 021" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 022">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/022.jpg" alt="Візуалізація сучасної квартири 022" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 023">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/023.jpg" alt="Візуалізація сучасної квартири 023" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 024">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/024.jpg" alt="Візуалізація сучасної квартири 024" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 025">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/025.jpg" alt="Візуалізація сучасної квартири 025" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 026">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/026.jpg" alt="Візуалізація сучасної квартири 026" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 027">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/027.jpg" alt="Візуалізація сучасної квартири 027" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 028">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/028.jpg" alt="Візуалізація сучасної квартири 028" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 029">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/029.jpg" alt="Візуалізація сучасної квартири 029" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 030">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/030.jpg" alt="Візуалізація сучасної квартири 030" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 031">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/031.jpg" alt="Візуалізація сучасної квартири 031" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 032">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/032.jpg" alt="Візуалізація сучасної квартири 032" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 033">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/033.jpg" alt="Візуалізація сучасної квартири 033" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 034">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/034.jpg" alt="Візуалізація сучасної квартири 034" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 035">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/035.jpg" alt="Візуалізація сучасної квартири 035" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 036">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/036.jpg" alt="Візуалізація сучасної квартири 036" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 037">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/037.jpg" alt="Візуалізація сучасної квартири 037" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 038">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/038.jpg" alt="Візуалізація сучасної квартири 038" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 039">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/039.jpg" alt="Візуалізація сучасної квартири 039" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 040">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/040.jpg" alt="Візуалізація сучасної квартири 040" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 041">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/041.jpg" alt="Візуалізація сучасної квартири 041" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 042">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/042.jpg" alt="Візуалізація сучасної квартири 042" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 043">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/043.jpg" alt="Візуалізація сучасної квартири 043" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 044">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/044.jpg" alt="Візуалізація сучасної квартири 044" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 045">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/045.jpg" alt="Візуалізація сучасної квартири 045" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 046">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/046.jpg" alt="Візуалізація сучасної квартири 046" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 047">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/047.jpg" alt="Візуалізація сучасної квартири 047" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 048">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/048.jpg" alt="Візуалізація сучасної квартири 048" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 049">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/049.jpg" alt="Візуалізація сучасної квартири 049" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 050">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/050.jpg" alt="Візуалізація сучасної квартири 050" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 051">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/051.jpg" alt="Візуалізація сучасної квартири 051" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 052">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/052.jpg" alt="Візуалізація сучасної квартири 052" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 053">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/053.jpg" alt="Візуалізація сучасної квартири 053" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 054">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/054.jpg" alt="Візуалізація сучасної квартири 054" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 055">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/055.jpg" alt="Візуалізація сучасної квартири 055" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 056">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/056.jpg" alt="Візуалізація сучасної квартири 056" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 057">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/057.jpg" alt="Візуалізація сучасної квартири 057" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 058">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/058.jpg" alt="Візуалізація сучасної квартири 058" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 059">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/059.jpg" alt="Візуалізація сучасної квартири 059" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 060">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/060.jpg" alt="Візуалізація сучасної квартири 060" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 061">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/061.jpg" alt="Візуалізація сучасної квартири 061" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 062">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/062.jpg" alt="Візуалізація сучасної квартири 062" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 063">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/063.jpg" alt="Візуалізація сучасної квартири 063" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 064">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/064.jpg" alt="Візуалізація сучасної квартири 064" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 065">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/065.jpg" alt="Візуалізація сучасної квартири 065" draggable="false" />
-          </button>
-          <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 066">
-            <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/066.jpg" alt="Візуалізація сучасної квартири 066" draggable="false" />
-          </button>
-        </div>
+        <section class="detail-gallery-zone" id="gallery-entrance-area">
+          <div class="detail-gallery-zone-head">
+            <h2>ENTRANCE AREA</h2>
+          </div>
+          <div class="detail-gallery-grid gallery-layout-auto" aria-label="ENTRANCE AREA">
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 001">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/001.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/001.jpg" alt="Візуалізація сучасної квартири 001" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 002">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/002.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/002.jpg" alt="Візуалізація сучасної квартири 002" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 003">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/003.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/003.jpg" alt="Візуалізація сучасної квартири 003" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 004">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/004.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/004.jpg" alt="Візуалізація сучасної квартири 004" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 005">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/005.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/005.jpg" alt="Візуалізація сучасної квартири 005" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 006">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/006.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/006.jpg" alt="Візуалізація сучасної квартири 006" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 007">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/007.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/007.jpg" alt="Візуалізація сучасної квартири 007" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 008">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/008.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/008.jpg" alt="Візуалізація сучасної квартири 008" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 009">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/009.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/009.jpg" alt="Візуалізація сучасної квартири 009" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 010">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/010.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/010.jpg" alt="Візуалізація сучасної квартири 010" draggable="false" />
+            </button>
+          </div>
+        </section>
+        <section class="detail-gallery-zone" id="gallery-living-dining">
+          <div class="detail-gallery-zone-head">
+            <h2>LIVING &amp; DINING</h2>
+          </div>
+          <div class="detail-gallery-grid gallery-layout-auto" aria-label="LIVING &amp; DINING">
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 011">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/011.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/011.jpg" alt="Візуалізація сучасної квартири 011" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 012">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/012.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/012.jpg" alt="Візуалізація сучасної квартири 012" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 013">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/013.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/013.jpg" alt="Візуалізація сучасної квартири 013" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 014">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/014.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/014.jpg" alt="Візуалізація сучасної квартири 014" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 015">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/015.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/015.jpg" alt="Візуалізація сучасної квартири 015" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 016">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/016.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/016.jpg" alt="Візуалізація сучасної квартири 016" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 017">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/017.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/017.jpg" alt="Візуалізація сучасної квартири 017" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 018">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/018.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/018.jpg" alt="Візуалізація сучасної квартири 018" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 019">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/019.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/019.jpg" alt="Візуалізація сучасної квартири 019" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 020">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/020.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/020.jpg" alt="Візуалізація сучасної квартири 020" draggable="false" />
+            </button>
+          </div>
+        </section>
+        <section class="detail-gallery-zone" id="gallery-kitchen-area">
+          <div class="detail-gallery-zone-head">
+            <h2>KITCHEN AREA</h2>
+          </div>
+          <div class="detail-gallery-grid gallery-layout-auto" aria-label="KITCHEN AREA">
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 021">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/021.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/021.jpg" alt="Візуалізація сучасної квартири 021" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 022">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/022.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/022.jpg" alt="Візуалізація сучасної квартири 022" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 023">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/023.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/023.jpg" alt="Візуалізація сучасної квартири 023" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 024">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/024.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/024.jpg" alt="Візуалізація сучасної квартири 024" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 025">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/025.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/025.jpg" alt="Візуалізація сучасної квартири 025" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 026">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/026.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/026.jpg" alt="Візуалізація сучасної квартири 026" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 027">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/027.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/027.jpg" alt="Візуалізація сучасної квартири 027" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 028">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/028.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/028.jpg" alt="Візуалізація сучасної квартири 028" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 029">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/029.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/029.jpg" alt="Візуалізація сучасної квартири 029" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 030">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/030.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/030.jpg" alt="Візуалізація сучасної квартири 030" draggable="false" />
+            </button>
+          </div>
+        </section>
+        <section class="detail-gallery-zone" id="gallery-bedroom">
+          <div class="detail-gallery-zone-head">
+            <h2>BEDROOM</h2>
+          </div>
+          <div class="detail-gallery-grid gallery-layout-auto" aria-label="BEDROOM">
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 031">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/031.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/031.jpg" alt="Візуалізація сучасної квартири 031" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 032">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/032.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/032.jpg" alt="Візуалізація сучасної квартири 032" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 033">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/033.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/033.jpg" alt="Візуалізація сучасної квартири 033" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 034">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/034.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/034.jpg" alt="Візуалізація сучасної квартири 034" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 035">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/035.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/035.jpg" alt="Візуалізація сучасної квартири 035" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 036">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/036.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/036.jpg" alt="Візуалізація сучасної квартири 036" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 037">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/037.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/037.jpg" alt="Візуалізація сучасної квартири 037" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 038">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/038.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/038.jpg" alt="Візуалізація сучасної квартири 038" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 039">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/039.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/039.jpg" alt="Візуалізація сучасної квартири 039" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 040">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/040.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/040.jpg" alt="Візуалізація сучасної квартири 040" draggable="false" />
+            </button>
+          </div>
+        </section>
+        <section class="detail-gallery-zone" id="gallery-childrens-room">
+          <div class="detail-gallery-zone-head">
+            <h2>CHILDREN'S ROOM</h2>
+          </div>
+          <div class="detail-gallery-grid gallery-layout-auto" aria-label="CHILDREN'S ROOM">
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 041">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/041.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/041.jpg" alt="Візуалізація сучасної квартири 041" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 042">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/042.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/042.jpg" alt="Візуалізація сучасної квартири 042" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 043">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/043.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/043.jpg" alt="Візуалізація сучасної квартири 043" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 044">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/044.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/044.jpg" alt="Візуалізація сучасної квартири 044" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 045">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/045.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/045.jpg" alt="Візуалізація сучасної квартири 045" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 046">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/046.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/046.jpg" alt="Візуалізація сучасної квартири 046" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 047">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/047.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/047.jpg" alt="Візуалізація сучасної квартири 047" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 048">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/048.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/048.jpg" alt="Візуалізація сучасної квартири 048" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 049">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/049.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/049.jpg" alt="Візуалізація сучасної квартири 049" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 050">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/050.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/050.jpg" alt="Візуалізація сучасної квартири 050" draggable="false" />
+            </button>
+          </div>
+        </section>
+        <section class="detail-gallery-zone" id="gallery-bathroom-1">
+          <div class="detail-gallery-zone-head">
+            <h2>BATHROOM #1</h2>
+          </div>
+          <div class="detail-gallery-grid gallery-layout-auto" aria-label="BATHROOM #1">
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 051">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/051.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/051.jpg" alt="Візуалізація сучасної квартири 051" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 052">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/052.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/052.jpg" alt="Візуалізація сучасної квартири 052" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 053">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/053.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/053.jpg" alt="Візуалізація сучасної квартири 053" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 054">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/054.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/054.jpg" alt="Візуалізація сучасної квартири 054" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 055">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/055.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/055.jpg" alt="Візуалізація сучасної квартири 055" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 056">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/056.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/056.jpg" alt="Візуалізація сучасної квартири 056" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 057">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/057.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/057.jpg" alt="Візуалізація сучасної квартири 057" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 058">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/058.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/058.jpg" alt="Візуалізація сучасної квартири 058" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 059">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/059.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/059.jpg" alt="Візуалізація сучасної квартири 059" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 060">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/060.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/060.jpg" alt="Візуалізація сучасної квартири 060" draggable="false" />
+            </button>
+          </div>
+        </section>
+        <section class="detail-gallery-zone" id="gallery-bathroom-2">
+          <div class="detail-gallery-zone-head">
+            <h2>BATHROOM #2</h2>
+          </div>
+          <div class="detail-gallery-grid gallery-layout-auto" aria-label="BATHROOM #2">
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 061">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/061.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/061.jpg" alt="Візуалізація сучасної квартири 061" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 062">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/062.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/062.jpg" alt="Візуалізація сучасної квартири 062" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 063">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/063.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/063.jpg" alt="Візуалізація сучасної квартири 063" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 064">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/064.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/064.jpg" alt="Візуалізація сучасної квартири 064" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 065">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/065.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/065.jpg" alt="Візуалізація сучасної квартири 065" draggable="false" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Візуалізація сучасної квартири 066">
+              <img loading="lazy" decoding="async" src="assets/projects/project-interior-apartment-002/gallery/066.jpg" data-full-src="assets/projects/project-interior-apartment-002/gallery/066.jpg" alt="Візуалізація сучасної квартири 066" draggable="false" />
+            </button>
+          </div>
+        </section>
       </div>
     </section>
-
-    <section class="contact" id="contact">
+<section class="contact" id="contact">
       <div class="container contact-grid">
         <div class="contact-info">
           <div class="section-kicker">Контакти</div>

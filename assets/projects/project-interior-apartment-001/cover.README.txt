@@ -1,0 +1,3 @@
+Put the project cover image here and name it:
+
+cover.jpg

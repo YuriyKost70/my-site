@@ -125,10 +125,12 @@
 }
 
 .detail-hero-title-line {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.72fr) 1px minmax(0, 1.5fr);
   align-items: center;
-  justify-content: center;
-  gap: 18px;
+  justify-content: stretch;
+  gap: 58px;
+  width: min(86vw, 1120px);
   max-width: min(86vw, 1120px);
   margin: 0 auto;
   padding: 0 18px;
@@ -143,6 +145,8 @@
 
 .detail-hero-title-line span {
   display: inline-block;
+  min-height: 2.64em;
+  text-align: center;
 }
 
 .detail-hero-title-line .title-divider {
@@ -650,10 +654,18 @@
   }
 
   .detail-hero-title-line {
+    display: flex;
+    width: auto;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 12px;
     white-space: normal;
     font-size: clamp(20px, 6vw, 28px);
+  }
+
+  .detail-hero-title-line span {
+    min-height: 0;
+    text-align: center;
   }
 
   .detail-hero-title-line .title-divider {
@@ -1243,6 +1255,31 @@
   grid-column: span 2;
 }
 
+.gallery-layout-auto {
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 170px;
+  gap: 3px;
+}
+
+.gallery-layout-auto .gallery-item {
+  height: auto;
+}
+
+.gallery-layout-auto .gallery-item:nth-child(1),
+.gallery-layout-auto .gallery-item:nth-child(8) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery-layout-auto .gallery-item:nth-child(2),
+.gallery-layout-auto .gallery-item:nth-child(5) {
+  grid-column: span 2;
+}
+
+.gallery-layout-auto .gallery-item:nth-child(6) {
+  grid-row: span 2;
+}
+
 .gallery-item {
   display: block;
   width: 100%;
@@ -1275,7 +1312,8 @@
   #gallery-bedroom .detail-gallery-grid,
   #gallery-childrens-room .detail-gallery-grid,
   #gallery-bathroom-1 .detail-gallery-grid,
-  #gallery-bathroom-2 .detail-gallery-grid {
+  #gallery-bathroom-2 .detail-gallery-grid,
+  .gallery-layout-auto {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 220px;
   }
@@ -1285,7 +1323,8 @@
   #gallery-bedroom .gallery-item:nth-child(n),
   #gallery-childrens-room .gallery-item:nth-child(n),
   #gallery-bathroom-1 .gallery-item:nth-child(n),
-  #gallery-bathroom-2 .gallery-item:nth-child(n) {
+  #gallery-bathroom-2 .gallery-item:nth-child(n),
+  .gallery-layout-auto .gallery-item:nth-child(n) {
     grid-column: auto;
     grid-row: auto;
   }
@@ -1295,7 +1334,8 @@
   #gallery-bedroom .gallery-item:nth-child(1),
   #gallery-childrens-room .gallery-item:nth-child(1),
   #gallery-bathroom-1 .gallery-item:nth-child(1),
-  #gallery-bathroom-2 .gallery-item:nth-child(1) {
+  #gallery-bathroom-2 .gallery-item:nth-child(1),
+  .gallery-layout-auto .gallery-item:nth-child(1) {
     grid-column: span 2;
     grid-row: span 2;
   }
@@ -1338,7 +1378,8 @@
   #gallery-bedroom .detail-gallery-grid,
   #gallery-childrens-room .detail-gallery-grid,
   #gallery-bathroom-1 .detail-gallery-grid,
-  #gallery-bathroom-2 .detail-gallery-grid {
+  #gallery-bathroom-2 .detail-gallery-grid,
+  .gallery-layout-auto {
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
     gap: 3px;
@@ -1362,7 +1403,9 @@
   #gallery-bathroom-1 .gallery-item,
   #gallery-bathroom-1 .gallery-item:nth-child(n),
   #gallery-bathroom-2 .gallery-item,
-  #gallery-bathroom-2 .gallery-item:nth-child(n) {
+  #gallery-bathroom-2 .gallery-item:nth-child(n),
+  .gallery-layout-auto .gallery-item,
+  .gallery-layout-auto .gallery-item:nth-child(n) {
     grid-column: auto;
     grid-row: auto;
     height: 240px;

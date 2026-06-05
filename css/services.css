@@ -40,8 +40,8 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-start;
-  gap: 8px;
-  padding-top: 36px;
+  gap: 7px;
+  padding-top: 32px;
 }
 
 .services-page .main-nav {
@@ -136,6 +136,7 @@
 
 .services-hero-copy {
   max-width: 680px;
+  min-height: clamp(330px, 27vw, 390px);
   padding-top: 16px;
 }
 
