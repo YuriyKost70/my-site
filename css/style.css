@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
 :root {
   --bg: #111312;
   --bg-soft: #191b1a;
@@ -8,7 +10,7 @@
   --line: rgba(216, 185, 130, 0.32);
   --page: #f4f2ed;
   --card: #ffffff;
-  --font-main: Arial, Helvetica, sans-serif;
+  --font-main: "Montserrat", Arial, Helvetica, sans-serif;
   --container: 1240px;
 }
 
@@ -47,7 +49,8 @@ button, input, textarea, select { font: inherit; }
   font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
 }
 .section-title {
-  font-size: clamp(30px, 3vw, 48px); line-height: 1.12;
+  font-size: clamp(26px, 2.55vw, 41px); line-height: 1.12;
+  font-weight: 500;
   text-transform: uppercase; letter-spacing: 0.04em;
 }
 .section-title span { color: var(--accent); }
@@ -174,6 +177,7 @@ button, input, textarea, select { font: inherit; }
   margin-bottom: 20px;
   font-size: clamp(58px, 5vw, 92px);
   line-height: 0.95;
+  font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -202,7 +206,7 @@ button, input, textarea, select { font: inherit; }
 }
 
 .services-head .section-title {
-  font-size: clamp(34px, 3vw, 54px);
+  font-size: clamp(29px, 2.55vw, 46px);
   line-height: 1.12;
 }
 
@@ -385,6 +389,7 @@ button, input, textarea, select { font: inherit; }
   color: #171717;
   font-size: 22px;
   line-height: 1.25;
+  font-weight: 500;
 }
 
 .project-description {
@@ -940,7 +945,7 @@ button, input, textarea, select { font: inherit; }
   }
 
   .services-head .section-title {
-    font-size: clamp(30px, 8vw, 40px);
+    font-size: clamp(26px, 6.8vw, 34px);
   }
 
   .services-head p {
