@@ -6,6 +6,10 @@
     "uk": "project-auto-test.html",
     "en": "project-auto-test-en.html"
   },
+  "languageLinks": {
+    "uk": "project-detail.html",
+    "en": "project-auto-test-en.html"
+  },
   "paths": {
     "cover": "cover.jpg",
     "planningBefore": "planning/plan-before.jpg",

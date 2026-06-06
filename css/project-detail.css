@@ -1258,6 +1258,7 @@
 .gallery-layout-auto {
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 170px;
+  grid-auto-flow: dense;
   gap: 3px;
 }
 
@@ -1265,19 +1266,88 @@
   height: auto;
 }
 
-.gallery-layout-auto .gallery-item:nth-child(1),
-.gallery-layout-auto .gallery-item:nth-child(8) {
+/* Generated galleries cycle through three layouts, independent of zone names. */
+.gallery-layout-auto .gallery-item:nth-child(n) {
+  grid-column: auto;
+  grid-row: auto;
+}
+
+.gallery-layout-single .gallery-item {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+.gallery-layout-pair .gallery-item {
   grid-column: span 2;
   grid-row: span 2;
 }
 
-.gallery-layout-auto .gallery-item:nth-child(2),
-.gallery-layout-auto .gallery-item:nth-child(5) {
+.gallery-pattern-a .gallery-item:nth-child(6n + 1) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery-pattern-a .gallery-item:nth-child(6n + 2),
+.gallery-pattern-a .gallery-item:nth-child(6n + 5),
+.gallery-pattern-a .gallery-item:nth-child(6n + 6) {
   grid-column: span 2;
 }
 
-.gallery-layout-auto .gallery-item:nth-child(6) {
+.gallery-pattern-b .gallery-item:nth-child(6n + 2) {
+  grid-column: span 2;
   grid-row: span 2;
+}
+
+.gallery-pattern-b .gallery-item:nth-child(6n + 1),
+.gallery-pattern-b .gallery-item:nth-child(6n + 5),
+.gallery-pattern-b .gallery-item:nth-child(6n + 6) {
+  grid-column: span 2;
+}
+
+.gallery-pattern-c .gallery-item:nth-child(6n + 5) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery-pattern-c .gallery-item:nth-child(6n + 3),
+.gallery-pattern-c .gallery-item:nth-child(6n + 6) {
+  grid-column: span 2;
+}
+
+.gallery-pattern-c .gallery-item:nth-child(6n + 1) {
+  grid-row: span 2;
+}
+
+/* Complete the final mosaic row for any image count. */
+.gallery-tail-1 .gallery-item:last-child {
+  grid-column: span 4;
+  grid-row: auto;
+}
+
+.gallery-tail-2 .gallery-item:nth-last-child(-n + 2) {
+  grid-column: span 2;
+  grid-row: auto;
+}
+
+.gallery-tail-3 .gallery-item:nth-last-child(3) {
+  grid-column: span 2;
+  grid-row: auto;
+}
+
+.gallery-tail-3 .gallery-item:nth-last-child(-n + 2),
+.gallery-tail-4 .gallery-item:nth-last-child(-n + 4) {
+  grid-column: auto;
+  grid-row: auto;
+}
+
+.gallery-tail-5 .gallery-item:nth-last-child(5) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery-tail-5 .gallery-item:nth-last-child(-n + 4) {
+  grid-column: auto;
+  grid-row: auto;
 }
 
 .gallery-item {

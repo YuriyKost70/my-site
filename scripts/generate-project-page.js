@@ -110,6 +110,77 @@ function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
 
+function assertText(value, field) {
+  if (typeof value !== 'string' || !value.trim()) {
+    throw new Error(`Required text is missing: ${field}`);
+  }
+}
+
+function heroLines(value, lang) {
+  const resolved = localized(value, lang);
+  const lines = (Array.isArray(resolved) ? resolved : String(resolved).split(/\r?\n/))
+    .map((line) => String(line).trim())
+    .filter(Boolean);
+
+  if (lines.length > 2) {
+    throw new Error(`Hero field must contain no more than two lines: hero (${lang})`);
+  }
+
+  return lines;
+}
+
+function validateConfig(config, projectDir) {
+  if (config.schema !== 'yvk-project-auto-v1') {
+    throw new Error('Unsupported or missing project schema: expected yvk-project-auto-v1');
+  }
+
+  if (typeof config.output === 'string') {
+    assertText(config.output, 'output');
+  } else {
+    assertText(config.output?.uk, 'output.uk');
+  }
+  assertText(config.paths?.cover, 'paths.cover');
+  assertText(config.paths?.planningBefore, 'paths.planningBefore');
+  assertText(config.paths?.planningAfter, 'paths.planningAfter');
+  assertText(config.paths?.galleryDir, 'paths.galleryDir');
+  assertText(config.hero?.left?.uk, 'hero.left.uk');
+  assertText(config.hero?.right?.uk, 'hero.right.uk');
+  assertText(config.hero?.imageAlt?.uk, 'hero.imageAlt.uk');
+  assertText(config.info?.kicker?.uk, 'info.kicker.uk');
+  assertText(config.info?.heading?.uk, 'info.heading.uk');
+
+  heroLines(config.hero.left, 'uk');
+  heroLines(config.hero.right, 'uk');
+
+  if (!Array.isArray(config.info?.paragraphs?.uk) || !config.info.paragraphs.uk.length) {
+    throw new Error('At least one Ukrainian project description paragraph is required: info.paragraphs.uk');
+  }
+
+  config.info.paragraphs.uk.forEach((paragraph, index) => {
+    assertText(paragraph, `info.paragraphs.uk[${index}]`);
+  });
+
+  if (!Array.isArray(config.info?.meta) || !config.info.meta.length) {
+    throw new Error('At least one project fact is required: info.meta');
+  }
+
+  config.info.meta.forEach((item, index) => {
+    assertText(item?.label?.uk, `info.meta[${index}].label.uk`);
+    assertText(item?.value?.uk, `info.meta[${index}].value.uk`);
+  });
+
+  [
+    config.paths.cover,
+    config.paths.planningBefore,
+    config.paths.planningAfter,
+    config.paths.galleryDir
+  ].forEach((relativePath) => {
+    if (!fs.existsSync(path.join(projectDir, relativePath))) {
+      throw new Error(`Project path does not exist: ${relativePath}`);
+    }
+  });
+}
+
 function localized(value, lang) {
   if (value == null) return '';
   if (typeof value === 'string') return value;
@@ -151,13 +222,23 @@ function splitFolderTitle(folderName) {
   };
 }
 
-function sortedImageFiles(dir) {
-  if (!fs.existsSync(dir)) return [];
+function imageFilesByNumber(dir) {
+  if (!fs.existsSync(dir)) return new Map();
 
-  return fs.readdirSync(dir)
+  const files = fs.readdirSync(dir)
     .filter((name) => imageExt.test(name))
     .sort((a, b) => lastNumber(a) - lastNumber(b) || a.localeCompare(b))
-    .map((name) => path.join(dir, name));
+    .map((name) => [lastNumber(name), path.join(dir, name)]);
+
+  const result = new Map();
+  for (const [number, filePath] of files) {
+    if (result.has(number)) {
+      throw new Error(`Duplicate image number ${number} in ${path.relative(root, dir)}`);
+    }
+    result.set(number, filePath);
+  }
+
+  return result;
 }
 
 function outputFor(config, lang) {
@@ -166,9 +247,13 @@ function outputFor(config, lang) {
 }
 
 function buildLanguageSwitch(config, lang) {
+  const languageLinks = config.languageLinks || {};
+  const ukHref = languageLinks.uk || outputFor(config, 'uk');
+  const enHref = languageLinks.en || outputFor(config, 'en');
+
   return `<div class="language-switch" aria-label="${escapeHtml(dictionary[lang].languageVersion)}">
-          <a class="${lang === 'uk' ? 'is-active' : ''}" href="${escapeHtml(outputFor(config, 'uk'))}" ${lang === 'uk' ? 'aria-current="page"' : ''}>UA</a>
-          <a class="${lang === 'en' ? 'is-active' : ''}" href="${escapeHtml(outputFor(config, 'en'))}" ${lang === 'en' ? 'aria-current="page"' : ''}>EN</a>
+          <a class="${lang === 'uk' ? 'is-active' : ''}" href="${escapeHtml(ukHref)}" ${lang === 'uk' ? 'aria-current="page"' : ''}>UA</a>
+          <a class="${lang === 'en' ? 'is-active' : ''}" href="${escapeHtml(enHref)}" ${lang === 'en' ? 'aria-current="page"' : ''}>EN</a>
         </div>`;
 }
 
@@ -178,23 +263,45 @@ function buildGallery(projectDir, galleryDirName, lang) {
 
   let imageCount = 0;
   let firstImage = '';
+  let renderedZoneIndex = 0;
 
   const zones = fs.readdirSync(galleryRoot, { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
     .sort((a, b) => leadingNumber(a.name) - leadingNumber(b.name) || a.name.localeCompare(b.name, 'uk'))
-    .map((entry, zoneIndex) => {
+    .map((entry) => {
       const zonePath = path.join(galleryRoot, entry.name);
-      const preview = sortedImageFiles(path.join(zonePath, 'preview'));
-      const full = sortedImageFiles(path.join(zonePath, 'full'));
-      const itemCount = Math.max(preview.length, full.length);
+      const preview = imageFilesByNumber(path.join(zonePath, 'preview'));
+      const full = imageFilesByNumber(path.join(zonePath, 'full'));
+      const previewNumbers = [...preview.keys()].sort((a, b) => a - b);
+      const fullNumbers = [...full.keys()].sort((a, b) => a - b);
+      const onlyPreview = previewNumbers.filter((number) => !full.has(number));
+      const onlyFull = fullNumbers.filter((number) => !preview.has(number));
+
+      if (onlyPreview.length || onlyFull.length) {
+        throw new Error(
+          `Preview/full mismatch in ${entry.name}: ` +
+          `preview only [${onlyPreview.join(', ')}], full only [${onlyFull.join(', ')}]`
+        );
+      }
+
+      if (!previewNumbers.length) return '';
+
+      const zoneIndex = renderedZoneIndex;
+      renderedZoneIndex += 1;
       const title = splitFolderTitle(entry.name);
       const displayTitle = (lang === 'en' && title.en) ? title.en : title.uk;
       const id = `gallery-zone-${String(zoneIndex + 1).padStart(2, '0')}`;
+      const layoutPattern = previewNumbers.length === 1
+        ? 'gallery-layout-single'
+        : previewNumbers.length === 2
+          ? 'gallery-layout-pair'
+          : ['gallery-pattern-a', 'gallery-pattern-b', 'gallery-pattern-c'][zoneIndex % 3];
+      const tailSize = previewNumbers.length % 6;
+      const tailClass = previewNumbers.length > 2 && tailSize ? ` gallery-tail-${tailSize}` : '';
 
-      const buttons = Array.from({ length: itemCount }, (_, index) => {
-        const previewPath = preview[index] || full[index];
-        const fullPath = full[index] || preview[index];
-        if (!previewPath || !fullPath) return '';
+      const buttons = previewNumbers.map((number) => {
+        const previewPath = preview.get(number);
+        const fullPath = full.get(number);
 
         imageCount += 1;
         if (!firstImage) firstImage = fullPath;
@@ -209,11 +316,12 @@ function buildGallery(projectDir, galleryDirName, lang) {
           <div class="detail-gallery-zone-head">
             <h2>${escapeHtml(displayTitle)}</h2>
           </div>
-          <div class="detail-gallery-grid gallery-layout-auto" aria-label="${escapeHtml(displayTitle)}">
+          <div class="detail-gallery-grid gallery-layout-auto ${layoutPattern}${tailClass}" data-image-count="${previewNumbers.length}" aria-label="${escapeHtml(displayTitle)}">
 ${buttons}
           </div>
         </section>`;
-    });
+    })
+    .filter(Boolean);
 
   return {
     html: zones.join('\n\n'),
@@ -222,8 +330,8 @@ ${buttons}
   };
 }
 
-function withBreaks(value) {
-  return escapeHtml(value).replace(/\n/g, '<br>');
+function withBreaks(value, lang) {
+  return heroLines(value, lang).map(escapeHtml).join('<br>');
 }
 
 function renderPage(config, projectDir, lang) {
@@ -278,9 +386,9 @@ function renderPage(config, projectDir, lang) {
       <div class="detail-hero-overlay"></div>
       <div class="container detail-hero-content">
         <h1 class="detail-hero-title-line">
-          <span>${withBreaks(localized(config.hero.left, lang))}</span>
+          <span>${withBreaks(config.hero.left, lang)}</span>
           <span class="title-divider"></span>
-          <span>${withBreaks(localized(config.hero.right, lang))}</span>
+          <span>${withBreaks(config.hero.right, lang)}</span>
         </h1>
       </div>
     </section>
@@ -456,6 +564,7 @@ function generate() {
   const projectDir = path.join(projectsRoot, projectArg);
   const configPath = path.join(projectDir, 'project.auto.json');
   const config = readJson(configPath);
+  validateConfig(config, projectDir);
   const languages = config.languages?.length ? config.languages : ['uk'];
 
   for (const lang of languages) {

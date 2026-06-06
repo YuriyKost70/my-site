@@ -6,6 +6,10 @@
     "uk": "project-slug.html",
     "en": "project-slug-en.html"
   },
+  "languageLinks": {
+    "uk": "project-slug.html",
+    "en": "project-slug-en.html"
+  },
   "paths": {
     "cover": "cover.jpg",
     "planningBefore": "planning/plan-before.jpg",
