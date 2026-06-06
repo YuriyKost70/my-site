@@ -110,6 +110,177 @@ function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
 
+const contentFields = new Set([
+  'HERO_LEFT',
+  'HERO_RIGHT',
+  'ABOUT_LABEL',
+  'ABOUT_TITLE',
+  'ABOUT_TEXT',
+  'META'
+]);
+
+function parseProjectContent(filePath) {
+  if (!fs.existsSync(filePath)) return null;
+
+  const result = { uk: {}, en: {} };
+  const lines = fs.readFileSync(filePath, 'utf8').replace(/^\uFEFF/, '').split(/\r?\n/);
+  let language = '';
+  let field = '';
+
+  for (let index = 0; index < lines.length; index += 1) {
+    const rawLine = lines[index];
+    const trimmed = rawLine.trim();
+    const languageMatch = trimmed.match(/^\[(UA|UK|EN)\]$/i);
+    const fieldMatch = trimmed.match(/^([A-Z_]+):(?:\s*(.*))?$/i);
+
+    if (languageMatch) {
+      language = languageMatch[1].toLowerCase() === 'en' ? 'en' : 'uk';
+      field = '';
+      continue;
+    }
+
+    if (fieldMatch) {
+      if (!language) {
+        throw new Error(`Content field before language section at line ${index + 1}: ${fieldMatch[1]}`);
+      }
+
+      field = fieldMatch[1].toUpperCase();
+      if (!contentFields.has(field)) {
+        throw new Error(`Unknown content field at line ${index + 1}: ${field}`);
+      }
+      if (result[language][field]) {
+        throw new Error(`Duplicate content field at line ${index + 1}: ${field}`);
+      }
+
+      result[language][field] = [];
+      if (fieldMatch[2]) result[language][field].push(fieldMatch[2]);
+      continue;
+    }
+
+    if (!language || !field) {
+      if (trimmed && !trimmed.startsWith('#')) {
+        throw new Error(`Text outside a content field at line ${index + 1}`);
+      }
+      continue;
+    }
+
+    result[language][field].push(rawLine);
+  }
+
+  return result;
+}
+
+function trimEmptyLines(lines = []) {
+  const result = [...lines];
+  while (result.length && !result[0].trim()) result.shift();
+  while (result.length && !result[result.length - 1].trim()) result.pop();
+  return result;
+}
+
+function contentText(fields, name, multiline = false) {
+  const lines = trimEmptyLines(fields[name]);
+  if (!lines.length) return '';
+  return multiline
+    ? lines.map((line) => line.trim()).filter(Boolean).join('\n')
+    : lines.map((line) => line.trim()).filter(Boolean).join(' ');
+}
+
+function contentParagraphs(fields) {
+  const lines = trimEmptyLines(fields.ABOUT_TEXT);
+  const paragraphs = [];
+  let current = [];
+
+  for (const line of lines) {
+    if (!line.trim()) {
+      if (current.length) paragraphs.push(current.join(' '));
+      current = [];
+    } else {
+      current.push(line.trim());
+    }
+  }
+
+  if (current.length) paragraphs.push(current.join(' '));
+  return paragraphs;
+}
+
+function contentMeta(fields, language) {
+  return trimEmptyLines(fields.META).filter((line) => line.trim()).map((line, index) => {
+    const separator = line.indexOf('|');
+    if (separator < 1 || separator === line.length - 1) {
+      throw new Error(`Invalid META entry ${index + 1} in [${language.toUpperCase()}]: use Label | Value`);
+    }
+
+    return {
+      label: line.slice(0, separator).trim(),
+      value: line.slice(separator + 1).trim()
+    };
+  });
+}
+
+function applyProjectContent(config, projectDir) {
+  const contentPath = path.join(projectDir, 'project-content.txt');
+  const content = parseProjectContent(contentPath);
+  if (!content) return config;
+
+  config.hero ||= {};
+  config.info ||= {};
+  config.info.paragraphs ||= {};
+
+  for (const language of ['uk', 'en']) {
+    const fields = content[language];
+    const heroLeft = contentText(fields, 'HERO_LEFT', true);
+    const heroRight = contentText(fields, 'HERO_RIGHT', true);
+    const aboutLabel = contentText(fields, 'ABOUT_LABEL');
+    const aboutTitle = contentText(fields, 'ABOUT_TITLE');
+    const paragraphs = contentParagraphs(fields);
+
+    if (heroLeft) {
+      config.hero.left ||= {};
+      config.hero.left[language] = heroLeft;
+    }
+    if (heroRight) {
+      config.hero.right ||= {};
+      config.hero.right[language] = heroRight;
+    }
+    if (aboutLabel) {
+      config.info.kicker ||= {};
+      config.info.kicker[language] = aboutLabel;
+    }
+    if (aboutTitle) {
+      config.info.heading ||= {};
+      config.info.heading[language] = aboutTitle;
+    }
+    if (paragraphs.length) config.info.paragraphs[language] = paragraphs;
+  }
+
+  const metaByLanguage = {
+    uk: contentMeta(content.uk, 'UA'),
+    en: contentMeta(content.en, 'EN')
+  };
+  const metaCount = Math.max(metaByLanguage.uk.length, metaByLanguage.en.length);
+
+  if (metaCount) {
+    config.info.meta = Array.from({ length: metaCount }, (_, index) => {
+      const existing = config.info.meta?.[index] || {};
+      const uk = metaByLanguage.uk[index];
+      const en = metaByLanguage.en[index];
+
+      return {
+        label: {
+          uk: uk?.label || existing.label?.uk || '',
+          en: en?.label || existing.label?.en || ''
+        },
+        value: {
+          uk: uk?.value || existing.value?.uk || '',
+          en: en?.value || existing.value?.en || ''
+        }
+      };
+    });
+  }
+
+  return config;
+}
+
 function assertText(value, field) {
   if (typeof value !== 'string' || !value.trim()) {
     throw new Error(`Required text is missing: ${field}`);
@@ -563,7 +734,7 @@ function updateProjectsPage(config, projectDir) {
 function generate() {
   const projectDir = path.join(projectsRoot, projectArg);
   const configPath = path.join(projectDir, 'project.auto.json');
-  const config = readJson(configPath);
+  const config = applyProjectContent(readJson(configPath), projectDir);
   validateConfig(config, projectDir);
   const languages = config.languages?.length ? config.languages : ['uk'];
 
