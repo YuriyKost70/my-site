@@ -1,3 +1,15 @@
+[PROJECT]
+
+ID:
+project-interior-private-apartment-000
+
+DIRECTION:
+interior
+
+SEGMENT:
+residential
+
+
 [UA]
 
 HERO_LEFT:
@@ -26,6 +38,26 @@ META:
 Дизайн та візуалізація | Юрій Костюченко
 Тип робіт | Комерційний проєкт
 
+CARD_LABEL:
+Інтер’єр
+
+CARD_TOPLINE_LEFT:
+Квартира
+
+CARD_TOPLINE_RIGHT:
+Дизайн-проєкт
+
+CARD_TITLE:
+Назва картки
+
+CARD_DESCRIPTION:
+Короткий опис для сторінки «Проєкти».
+
+CARD_BADGES:
+Квартира
+Планування
+Візуалізація
+
 
 [EN]
 
@@ -40,3 +72,15 @@ ABOUT_TITLE:
 ABOUT_TEXT:
 
 META:
+
+CARD_LABEL:
+
+CARD_TOPLINE_LEFT:
+
+CARD_TOPLINE_RIGHT:
+
+CARD_TITLE:
+
+CARD_DESCRIPTION:
+
+CARD_BADGES:

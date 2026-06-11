@@ -116,55 +116,66 @@ const contentFields = new Set([
   'ABOUT_LABEL',
   'ABOUT_TITLE',
   'ABOUT_TEXT',
-  'META'
+  'META',
+  'CARD_LABEL',
+  'CARD_TOPLINE_LEFT',
+  'CARD_TOPLINE_RIGHT',
+  'CARD_TITLE',
+  'CARD_DESCRIPTION',
+  'CARD_BADGES'
 ]);
+const projectFields = new Set(['ID', 'DIRECTION', 'SEGMENT']);
+const projectDirections = new Set(['interior', 'exterior']);
+const projectSegments = new Set(['residential', 'commercial']);
 
 function parseProjectContent(filePath) {
   if (!fs.existsSync(filePath)) return null;
 
-  const result = { uk: {}, en: {} };
+  const result = { project: {}, uk: {}, en: {} };
   const lines = fs.readFileSync(filePath, 'utf8').replace(/^\uFEFF/, '').split(/\r?\n/);
-  let language = '';
+  let section = '';
   let field = '';
 
   for (let index = 0; index < lines.length; index += 1) {
     const rawLine = lines[index];
     const trimmed = rawLine.trim();
-    const languageMatch = trimmed.match(/^\[(UA|UK|EN)\]$/i);
+    const sectionMatch = trimmed.match(/^\[(PROJECT|UA|UK|EN)\]$/i);
     const fieldMatch = trimmed.match(/^([A-Z_]+):(?:\s*(.*))?$/i);
 
-    if (languageMatch) {
-      language = languageMatch[1].toLowerCase() === 'en' ? 'en' : 'uk';
+    if (sectionMatch) {
+      const sectionName = sectionMatch[1].toLowerCase();
+      section = sectionName === 'project' ? 'project' : sectionName === 'en' ? 'en' : 'uk';
       field = '';
       continue;
     }
 
     if (fieldMatch) {
-      if (!language) {
-        throw new Error(`Content field before language section at line ${index + 1}: ${fieldMatch[1]}`);
+      if (!section) {
+        throw new Error(`Content field before section at line ${index + 1}: ${fieldMatch[1]}`);
       }
 
       field = fieldMatch[1].toUpperCase();
-      if (!contentFields.has(field)) {
-        throw new Error(`Unknown content field at line ${index + 1}: ${field}`);
+      const allowedFields = section === 'project' ? projectFields : contentFields;
+      if (!allowedFields.has(field)) {
+        throw new Error(`Unknown field in [${section.toUpperCase()}] at line ${index + 1}: ${field}`);
       }
-      if (result[language][field]) {
+      if (result[section][field]) {
         throw new Error(`Duplicate content field at line ${index + 1}: ${field}`);
       }
 
-      result[language][field] = [];
-      if (fieldMatch[2]) result[language][field].push(fieldMatch[2]);
+      result[section][field] = [];
+      if (fieldMatch[2]) result[section][field].push(fieldMatch[2]);
       continue;
     }
 
-    if (!language || !field) {
+    if (!section || !field) {
       if (trimmed && !trimmed.startsWith('#')) {
         throw new Error(`Text outside a content field at line ${index + 1}`);
       }
       continue;
     }
 
-    result[language][field].push(rawLine);
+    result[section][field].push(rawLine);
   }
 
   return result;
@@ -217,6 +228,10 @@ function contentMeta(fields, language) {
   });
 }
 
+function contentLines(fields, name) {
+  return trimEmptyLines(fields[name]).map((line) => line.trim()).filter(Boolean);
+}
+
 function applyProjectContent(config, projectDir) {
   const contentPath = path.join(projectDir, 'project-content.txt');
   const content = parseProjectContent(contentPath);
@@ -225,6 +240,16 @@ function applyProjectContent(config, projectDir) {
   config.hero ||= {};
   config.info ||= {};
   config.info.paragraphs ||= {};
+  config.card ||= {};
+
+  const projectId = contentText(content.project, 'ID');
+  const direction = contentText(content.project, 'DIRECTION').toLowerCase();
+  const segment = contentText(content.project, 'SEGMENT').toLowerCase();
+
+  if (projectId) config.projectId = projectId;
+  if (direction) config.projectDirection = direction;
+  if (segment) config.projectSegment = segment;
+  if (direction && segment) config.card.tags = `${direction} ${segment} auto`;
 
   for (const language of ['uk', 'en']) {
     const fields = content[language];
@@ -233,6 +258,12 @@ function applyProjectContent(config, projectDir) {
     const aboutLabel = contentText(fields, 'ABOUT_LABEL');
     const aboutTitle = contentText(fields, 'ABOUT_TITLE');
     const paragraphs = contentParagraphs(fields);
+    const cardLabel = contentText(fields, 'CARD_LABEL');
+    const cardToplineLeft = contentText(fields, 'CARD_TOPLINE_LEFT');
+    const cardToplineRight = contentText(fields, 'CARD_TOPLINE_RIGHT');
+    const cardTitle = contentText(fields, 'CARD_TITLE');
+    const cardDescription = contentText(fields, 'CARD_DESCRIPTION');
+    const cardBadges = contentLines(fields, 'CARD_BADGES');
 
     if (heroLeft) {
       config.hero.left ||= {};
@@ -251,6 +282,30 @@ function applyProjectContent(config, projectDir) {
       config.info.heading[language] = aboutTitle;
     }
     if (paragraphs.length) config.info.paragraphs[language] = paragraphs;
+    if (cardLabel) {
+      config.card.label ||= {};
+      config.card.label[language] = cardLabel;
+    }
+    if (cardToplineLeft) {
+      config.card.toplineLeft ||= {};
+      config.card.toplineLeft[language] = cardToplineLeft;
+    }
+    if (cardToplineRight) {
+      config.card.toplineRight ||= {};
+      config.card.toplineRight[language] = cardToplineRight;
+    }
+    if (cardTitle) {
+      config.card.title ||= {};
+      config.card.title[language] = cardTitle;
+    }
+    if (cardDescription) {
+      config.card.description ||= {};
+      config.card.description[language] = cardDescription;
+    }
+    if (cardBadges.length) {
+      config.card.badges ||= {};
+      config.card.badges[language] = cardBadges;
+    }
   }
 
   const metaByLanguage = {
@@ -319,6 +374,27 @@ function validateConfig(config, projectDir) {
   assertText(config.hero?.imageAlt?.uk, 'hero.imageAlt.uk');
   assertText(config.info?.kicker?.uk, 'info.kicker.uk');
   assertText(config.info?.heading?.uk, 'info.heading.uk');
+  assertText(config.projectId, 'project.ID');
+  assertText(config.projectDirection, 'project.DIRECTION');
+  assertText(config.projectSegment, 'project.SEGMENT');
+  assertText(config.card?.label?.uk, 'card.label.uk');
+  assertText(config.card?.toplineLeft?.uk, 'card.toplineLeft.uk');
+  assertText(config.card?.toplineRight?.uk, 'card.toplineRight.uk');
+  assertText(config.card?.title?.uk, 'card.title.uk');
+  assertText(config.card?.description?.uk, 'card.description.uk');
+
+  if (config.projectId !== path.basename(projectDir)) {
+    throw new Error(`Project ID must match the project folder name: expected ${path.basename(projectDir)}`);
+  }
+  if (!projectDirections.has(config.projectDirection)) {
+    throw new Error(`Invalid project DIRECTION: use ${[...projectDirections].join(' or ')}`);
+  }
+  if (!projectSegments.has(config.projectSegment)) {
+    throw new Error(`Invalid project SEGMENT: use ${[...projectSegments].join(' or ')}`);
+  }
+  if (!Array.isArray(config.card?.badges?.uk) || !config.card.badges.uk.length) {
+    throw new Error('At least one Ukrainian card badge is required: CARD_BADGES');
+  }
 
   heroLines(config.hero.left, 'uk');
   heroLines(config.hero.right, 'uk');
@@ -526,7 +602,7 @@ function renderPage(config, projectDir, lang) {
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/project-detail.css" />
 </head>
-<body class="project-detail-page">
+<body class="project-detail-page" data-project-id="${escapeHtml(config.projectId)}" data-project-direction="${escapeHtml(config.projectDirection)}" data-project-segment="${escapeHtml(config.projectSegment)}">
   <header class="site-header project-detail-header">
     <div class="container header-inner">
       <a href="index.html" class="logo" aria-label="YVK Design">
@@ -670,7 +746,7 @@ function renderProjectCard(config, projectDir, lang) {
   const card = config.card;
   const badges = localizedArray(card.badges, lang);
 
-  return `          <article class="project-card" data-tags="${escapeHtml(card.tags)}">
+  return `          <article class="project-card" data-project-id="${escapeHtml(config.projectId)}" data-project-direction="${escapeHtml(config.projectDirection)}" data-project-segment="${escapeHtml(config.projectSegment)}" data-tags="${escapeHtml(card.tags)}">
             <a class="project-card-link" href="${escapeHtml(output)}">
               <div class="project-image">
                 <img loading="lazy" decoding="async" src="${cover}" alt="${escapeHtml(localized(card.title, lang))}" />
@@ -706,8 +782,8 @@ function updateProjectsPage(config, projectDir) {
   const file = path.join(root, 'projects.html');
   if (!fs.existsSync(file)) return;
 
-  const markerStart = `          <!-- AUTO_PROJECT_CARD:${projectArg}:START -->`;
-  const markerEnd = `          <!-- AUTO_PROJECT_CARD:${projectArg}:END -->`;
+  const markerStart = `          <!-- AUTO_PROJECT_CARD:${config.projectId}:START -->`;
+  const markerEnd = `          <!-- AUTO_PROJECT_CARD:${config.projectId}:END -->`;
   const block = `${markerStart}\n${renderProjectCard(config, projectDir, 'uk')}\n${markerEnd}`;
   let html = fs.readFileSync(file, 'utf8');
 
