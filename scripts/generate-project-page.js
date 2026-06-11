@@ -124,7 +124,7 @@ const contentFields = new Set([
   'CARD_DESCRIPTION',
   'CARD_BADGES'
 ]);
-const projectFields = new Set(['ID', 'DIRECTION', 'SEGMENT']);
+const projectFields = new Set(['ID', 'DIRECTION', 'SEGMENT', 'FEATURED', 'FEATURED_ORDER']);
 const projectDirections = new Set(['interior', 'exterior']);
 const projectSegments = new Set(['residential', 'commercial']);
 
@@ -245,10 +245,14 @@ function applyProjectContent(config, projectDir) {
   const projectId = contentText(content.project, 'ID');
   const direction = contentText(content.project, 'DIRECTION').toLowerCase();
   const segment = contentText(content.project, 'SEGMENT').toLowerCase();
+  const featured = contentText(content.project, 'FEATURED').toLowerCase();
+  const featuredOrder = contentText(content.project, 'FEATURED_ORDER');
 
   if (projectId) config.projectId = projectId;
   if (direction) config.projectDirection = direction;
   if (segment) config.projectSegment = segment;
+  if (featured) config.featured = featured;
+  if (featuredOrder) config.featuredOrder = Number(featuredOrder);
   if (direction && segment) config.card.tags = `${direction} ${segment} auto`;
 
   for (const language of ['uk', 'en']) {
@@ -391,6 +395,12 @@ function validateConfig(config, projectDir) {
   }
   if (!projectSegments.has(config.projectSegment)) {
     throw new Error(`Invalid project SEGMENT: use ${[...projectSegments].join(' or ')}`);
+  }
+  if (!['yes', 'no'].includes(config.featured)) {
+    throw new Error('Invalid project FEATURED: use yes or no');
+  }
+  if (!Number.isInteger(config.featuredOrder) || config.featuredOrder < 1) {
+    throw new Error('Invalid project FEATURED_ORDER: use a positive whole number');
   }
   if (!Array.isArray(config.card?.badges?.uk) || !config.card.badges.uk.length) {
     throw new Error('At least one Ukrainian card badge is required: CARD_BADGES');
@@ -746,7 +756,7 @@ function renderProjectCard(config, projectDir, lang) {
   const card = config.card;
   const badges = localizedArray(card.badges, lang);
 
-  return `          <article class="project-card" data-project-id="${escapeHtml(config.projectId)}" data-project-direction="${escapeHtml(config.projectDirection)}" data-project-segment="${escapeHtml(config.projectSegment)}" data-tags="${escapeHtml(card.tags)}">
+  return `          <article class="project-card" data-project-id="${escapeHtml(config.projectId)}" data-project-direction="${escapeHtml(config.projectDirection)}" data-project-segment="${escapeHtml(config.projectSegment)}" data-featured-order="${escapeHtml(config.featuredOrder)}" data-tags="${escapeHtml(card.tags)}">
             <a class="project-card-link" href="${escapeHtml(output)}">
               <div class="project-image">
                 <img loading="lazy" decoding="async" src="${cover}" alt="${escapeHtml(localized(card.title, lang))}" />
@@ -778,33 +788,87 @@ ${badges.map((badge) => `                  <span>${escapeHtml(badge)}</span>`).j
           </article>`;
 }
 
-function updateProjectsPage(config, projectDir) {
-  const file = path.join(root, 'projects.html');
+function updateCardInPage({ config, projectDir, fileName, lang, markerPrefix, featuredOnly = false }) {
+  const file = path.join(root, fileName);
   if (!fs.existsSync(file)) return;
 
-  const markerStart = `          <!-- AUTO_PROJECT_CARD:${config.projectId}:START -->`;
-  const markerEnd = `          <!-- AUTO_PROJECT_CARD:${config.projectId}:END -->`;
-  const block = `${markerStart}\n${renderProjectCard(config, projectDir, 'uk')}\n${markerEnd}`;
+  const markerStart = `          <!-- ${markerPrefix}:${config.projectId}:START -->`;
+  const markerEnd = `          <!-- ${markerPrefix}:${config.projectId}:END -->`;
   let html = fs.readFileSync(file, 'utf8');
 
+  if (featuredOnly && config.featured !== 'yes') {
+    if (html.includes(markerStart) && html.includes(markerEnd)) {
+      const start = html.indexOf(markerStart);
+      const end = html.indexOf(markerEnd, start) + markerEnd.length;
+      html = html.slice(0, start) + html.slice(end);
+      fs.writeFileSync(file, html, 'utf8');
+    }
+    return;
+  }
+
+  const localizedBlock = `${markerStart}\n${renderProjectCard(config, projectDir, lang)}\n${markerEnd}`;
   if (html.includes(markerStart) && html.includes(markerEnd)) {
     const start = html.indexOf(markerStart);
     const end = html.indexOf(markerEnd, start) + markerEnd.length;
-    html = html.slice(0, start) + block + html.slice(end);
+    html = html.slice(0, start) + localizedBlock + html.slice(end);
   } else {
-    const oldAutoCard = /          <article class="project-card" data-tags="[^"]*auto[^"]*"[\s\S]*?          <\/article>/;
-    if (oldAutoCard.test(html)) {
-      html = html.replace(oldAutoCard, block);
-    } else {
+    const gridStart = html.indexOf('<div class="project-grid">');
+    if (gridStart < 0) throw new Error(`Cannot find project grid in ${fileName}`);
+    const insertAt = html.indexOf('\n', gridStart) + 1;
+    html = html.slice(0, insertAt) + `${localizedBlock}\n` + html.slice(insertAt);
+  }
+
+  if (featuredOnly) {
+    const escapedPrefix = markerPrefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const blockPattern = new RegExp(
+      `\\s*<!-- ${escapedPrefix}:[^:]+:START -->[\\s\\S]*?<!-- ${escapedPrefix}:[^:]+:END -->`,
+      'g'
+    );
+    const blocks = html.match(blockPattern) || [];
+
+    if (blocks.length > 1) {
+      blocks.sort((a, b) => {
+        const orderA = Number(a.match(/data-featured-order="(\d+)"/)?.[1] || Number.MAX_SAFE_INTEGER);
+        const orderB = Number(b.match(/data-featured-order="(\d+)"/)?.[1] || Number.MAX_SAFE_INTEGER);
+        return orderA - orderB;
+      });
+
+      html = html.replace(blockPattern, '');
       const gridStart = html.indexOf('<div class="project-grid">');
-      const firstArticleEnd = html.indexOf('          </article>', gridStart);
-      if (gridStart < 0 || firstArticleEnd < 0) throw new Error('Cannot find project grid insertion point');
-      const insertAt = firstArticleEnd + '          </article>'.length;
-      html = html.slice(0, insertAt) + `\n${block}` + html.slice(insertAt);
+      const insertAt = html.indexOf('\n', gridStart) + 1;
+      html = html.slice(0, insertAt) + blocks.map((item) => item.trimStart()).join('\n') + '\n' + html.slice(insertAt);
     }
   }
 
   fs.writeFileSync(file, html, 'utf8');
+}
+
+function updateProjectCards(config, projectDir) {
+  updateCardInPage({
+    config,
+    projectDir,
+    fileName: 'projects.html',
+    lang: 'uk',
+    markerPrefix: 'AUTO_PROJECT_CARD'
+  });
+
+  updateCardInPage({
+    config,
+    projectDir,
+    fileName: 'index.html',
+    lang: 'uk',
+    markerPrefix: 'AUTO_HOME_PROJECT_CARD',
+    featuredOnly: true
+  });
+
+  updateCardInPage({
+    config,
+    projectDir,
+    fileName: 'index-en.html',
+    lang: 'en',
+    markerPrefix: 'AUTO_HOME_PROJECT_CARD',
+    featuredOnly: true
+  });
 }
 
 function generate() {
@@ -821,8 +885,8 @@ function generate() {
   }
 
   if (updateProjects) {
-    updateProjectsPage(config, projectDir);
-    console.log('Updated projects.html auto card');
+    updateProjectCards(config, projectDir);
+    console.log('Updated generated project cards');
   }
 }
 

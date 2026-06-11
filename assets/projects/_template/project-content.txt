@@ -9,6 +9,12 @@ interior
 SEGMENT:
 residential
 
+FEATURED:
+yes
+
+FEATURED_ORDER:
+1
+
 
 [UA]
 
