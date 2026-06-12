@@ -9,6 +9,7 @@ const args = process.argv.slice(2);
 const projectArg = readArg('--project') || 'project-interior-apartment-001';
 const watchMode = args.includes('--watch');
 const updateProjects = !args.includes('--no-projects');
+const cardsOnly = args.includes('--cards-only');
 
 const dictionary = {
   uk: {
@@ -759,8 +760,10 @@ function renderProjectCard(config, projectDir, lang) {
   const output = outputFor(config, lang);
   const card = config.card;
   const badges = localizedArray(card.badges, lang);
+  const sourceFolder = path.basename(projectDir);
+  const sourceOrder = lastNumber(sourceFolder);
 
-  return `          <article class="project-card" data-project-id="${escapeHtml(config.projectId)}" data-project-direction="${escapeHtml(config.projectDirection)}" data-project-segment="${escapeHtml(config.projectSegment)}" data-featured-order="${escapeHtml(config.featuredOrder)}" data-tags="${escapeHtml(card.tags)}">
+  return `          <article class="project-card project-card--footer-pinned" data-project-id="${escapeHtml(config.projectId)}" data-project-source="${escapeHtml(sourceFolder)}" data-project-order="${escapeHtml(sourceOrder)}" data-project-direction="${escapeHtml(config.projectDirection)}" data-project-segment="${escapeHtml(config.projectSegment)}" data-featured-order="${escapeHtml(config.featuredOrder)}" data-tags="${escapeHtml(card.tags)}">
             <a class="project-card-link" href="${escapeHtml(output)}">
               <div class="project-image">
                 <img loading="lazy" decoding="async" src="${cover}" alt="${escapeHtml(localized(card.title, lang))}" />
@@ -792,56 +795,79 @@ ${badges.map((badge) => `                  <span>${escapeHtml(badge)}</span>`).j
           </article>`;
 }
 
+function projectGridInsertAt(html, fileName) {
+  const gridMatch = /<div class="project-grid"[^>]*>/.exec(html);
+  if (!gridMatch) throw new Error(`Cannot find project grid in ${fileName}`);
+
+  const lineEnd = html.indexOf('\n', gridMatch.index + gridMatch[0].length);
+  return lineEnd >= 0 ? lineEnd + 1 : gridMatch.index + gridMatch[0].length;
+}
+
 function updateCardInPage({ config, projectDir, fileName, lang, markerPrefix, featuredOnly = false }) {
   const file = path.join(root, fileName);
   if (!fs.existsSync(file)) return;
 
-  const markerStart = `          <!-- ${markerPrefix}:${config.projectId}:START -->`;
-  const markerEnd = `          <!-- ${markerPrefix}:${config.projectId}:END -->`;
+  const markerStart = `<!-- ${markerPrefix}:${config.projectId}:START -->`;
+  const markerEnd = `<!-- ${markerPrefix}:${config.projectId}:END -->`;
+  const escapedPrefix = markerPrefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const escapedProjectId = config.projectId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const projectBlockPattern = new RegExp(
+    `\\s*<!--\\s*${escapedPrefix}:${escapedProjectId}:START\\s*-->[\\s\\S]*?<!--\\s*${escapedPrefix}:${escapedProjectId}:END\\s*-->`,
+    'g'
+  );
   let html = fs.readFileSync(file, 'utf8');
 
+  if (featuredOnly) {
+    html = html.replace(/<div class="project-grid"[^>]*>/, (gridTag) => (
+      gridTag.includes('data-visible-limit=')
+        ? gridTag
+        : gridTag.replace('>', ' data-visible-limit="4">')
+    ));
+  }
+
   if (featuredOnly && config.featured !== 'yes') {
-    if (html.includes(markerStart) && html.includes(markerEnd)) {
-      const start = html.indexOf(markerStart);
-      const end = html.indexOf(markerEnd, start) + markerEnd.length;
-      html = html.slice(0, start) + html.slice(end);
-      fs.writeFileSync(file, html, 'utf8');
-    }
+    html = html.replace(projectBlockPattern, '');
+    fs.writeFileSync(file, html, 'utf8');
     return;
   }
 
-  const localizedBlock = `${markerStart}\n${renderProjectCard(config, projectDir, lang)}\n${markerEnd}`;
-  if (html.includes(markerStart) && html.includes(markerEnd)) {
-    const start = html.indexOf(markerStart);
-    const end = html.indexOf(markerEnd, start) + markerEnd.length;
-    html = html.slice(0, start) + localizedBlock + html.slice(end);
-  } else {
-    const gridStart = html.indexOf('<div class="project-grid">');
-    if (gridStart < 0) throw new Error(`Cannot find project grid in ${fileName}`);
-    const insertAt = html.indexOf('\n', gridStart) + 1;
-    html = html.slice(0, insertAt) + `${localizedBlock}\n` + html.slice(insertAt);
+  const localizedBlock = `          ${markerStart}\n${renderProjectCard(config, projectDir, lang)}\n          ${markerEnd}`;
+  html = html.replace(projectBlockPattern, '');
+  const insertAt = projectGridInsertAt(html, fileName);
+  html = html.slice(0, insertAt) + `${localizedBlock}\n` + html.slice(insertAt);
+
+  const blockPattern = new RegExp(
+    `\\s*<!--\\s*${escapedPrefix}:[^:]+:START\\s*-->[\\s\\S]*?<!--\\s*${escapedPrefix}:[^:]+:END\\s*-->`,
+    'g'
+  );
+  const markerPattern = new RegExp(`<!--\\s*${escapedPrefix}:([^:]+):START\\s*-->`);
+  const uniqueBlocks = new Map();
+
+  for (const block of html.match(blockPattern) || []) {
+    const projectId = block.match(markerPattern)?.[1];
+    if (projectId && !uniqueBlocks.has(projectId)) {
+      uniqueBlocks.set(projectId, block);
+    }
   }
 
-  if (featuredOnly) {
-    const escapedPrefix = markerPrefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const blockPattern = new RegExp(
-      `\\s*<!-- ${escapedPrefix}:[^:]+:START -->[\\s\\S]*?<!-- ${escapedPrefix}:[^:]+:END -->`,
-      'g'
-    );
-    const blocks = html.match(blockPattern) || [];
+  const blocks = [...uniqueBlocks.values()];
 
-    if (blocks.length > 1) {
-      blocks.sort((a, b) => {
+  if (blocks.length > 1) {
+    blocks.sort((a, b) => {
+      if (featuredOnly) {
         const orderA = Number(a.match(/data-featured-order="(\d+)"/)?.[1] || Number.MAX_SAFE_INTEGER);
         const orderB = Number(b.match(/data-featured-order="(\d+)"/)?.[1] || Number.MAX_SAFE_INTEGER);
         return orderA - orderB;
-      });
+      }
 
-      html = html.replace(blockPattern, '');
-      const gridStart = html.indexOf('<div class="project-grid">');
-      const insertAt = html.indexOf('\n', gridStart) + 1;
-      html = html.slice(0, insertAt) + blocks.map((item) => item.trimStart()).join('\n') + '\n' + html.slice(insertAt);
-    }
+      const orderA = Number(a.match(/data-project-order="(\d+)"/)?.[1] || Number.MAX_SAFE_INTEGER);
+      const orderB = Number(b.match(/data-project-order="(\d+)"/)?.[1] || Number.MAX_SAFE_INTEGER);
+      return orderA - orderB;
+    });
+
+    html = html.replace(blockPattern, '');
+    const insertAt = projectGridInsertAt(html, fileName);
+    html = html.slice(0, insertAt) + blocks.map((item) => item.trimStart()).join('\n') + '\n' + html.slice(insertAt);
   }
 
   fs.writeFileSync(file, html, 'utf8');
@@ -890,10 +916,12 @@ function generate() {
   validateConfig(config, projectDir);
   const languages = config.languages?.length ? config.languages : ['uk'];
 
-  for (const lang of languages) {
-    const outputPath = path.join(root, outputFor(config, lang));
-    fs.writeFileSync(outputPath, renderPage(config, projectDir, lang), 'utf8');
-    console.log(`Generated ${path.relative(root, outputPath)} (${lang})`);
+  if (!cardsOnly) {
+    for (const lang of languages) {
+      const outputPath = path.join(root, outputFor(config, lang));
+      fs.writeFileSync(outputPath, renderPage(config, projectDir, lang), 'utf8');
+      console.log(`Generated ${path.relative(root, outputPath)} (${lang})`);
+    }
   }
 
   if (updateProjects) {

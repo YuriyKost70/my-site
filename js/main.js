@@ -117,29 +117,47 @@
   showHeroSlide(0);
   startHeroSlider();
 
-  const tabs = document.querySelectorAll('.tab');
-  const cards = document.querySelectorAll('.project-card');
+  document.querySelectorAll('.project-tabs').forEach((tabsContainer) => {
+    const projectsSection = tabsContainer.closest('.projects');
+    const grid = projectsSection?.querySelector('.project-grid');
+    if (!grid) return;
 
-  tabs.forEach((tab) => {
-    tab.setAttribute('aria-pressed', String(tab.classList.contains('active')));
+    const tabs = [...tabsContainer.querySelectorAll('.tab')];
+    const cards = [...grid.querySelectorAll('.project-card')];
+    const configuredLimit = Number.parseInt(grid.dataset.visibleLimit || '', 10);
+    const visibleLimit = Number.isFinite(configuredLimit) ? configuredLimit : Number.POSITIVE_INFINITY;
 
-    tab.addEventListener('click', () => {
-      const filter = tab.dataset.filter || 'all';
-
-      tabs.forEach((item) => {
-        item.classList.remove('active');
-        item.setAttribute('aria-pressed', 'false');
-      });
-
-      tab.classList.add('active');
-      tab.setAttribute('aria-pressed', 'true');
+    const applyProjectFilter = (filter) => {
+      let visibleCount = 0;
 
       cards.forEach((card) => {
-        const tags = card.dataset.tags || '';
-        const visible = filter === 'all' || tags.split(/\s+/).includes(filter);
+        const tags = (card.dataset.tags || '').split(/\s+/);
+        const matchesFilter = filter === 'all' || tags.includes(filter);
+        const visible = matchesFilter && visibleCount < visibleLimit;
 
         card.classList.toggle('is-hidden', !visible);
+        if (visible) visibleCount += 1;
+      });
+    };
+
+    tabs.forEach((tab) => {
+      tab.setAttribute('aria-pressed', String(tab.classList.contains('active')));
+
+      tab.addEventListener('click', () => {
+        const filter = tab.dataset.filter || 'all';
+
+        tabs.forEach((item) => {
+          item.classList.remove('active');
+          item.setAttribute('aria-pressed', 'false');
+        });
+
+        tab.classList.add('active');
+        tab.setAttribute('aria-pressed', 'true');
+        applyProjectFilter(filter);
       });
     });
+
+    const initialFilter = tabs.find((tab) => tab.classList.contains('active'))?.dataset.filter || 'all';
+    applyProjectFilter(initialFilter);
   });
 })();

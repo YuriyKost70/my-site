@@ -3,12 +3,12 @@
   "enabled": true,
   "languages": ["uk", "en"],
   "output": {
-    "uk": "project-auto-test.html",
-    "en": "project-auto-test-en.html"
+    "uk": "project-interior-apartment-001.html",
+    "en": "project-interior-apartment-001-en.html"
   },
   "languageLinks": {
-    "uk": "project-detail.html",
-    "en": "project-auto-test-en.html"
+    "uk": "project-interior-apartment-001.html",
+    "en": "project-interior-apartment-001-en.html"
   },
   "paths": {
     "cover": "cover.jpg",
@@ -18,8 +18,8 @@
   },
   "seo": {
     "uk": {
-      "title": "Автоматична картка проєкту — YVK Design",
-      "description": "Тестова автоматично згенерована картка проєкту YVK Design."
+      "title": "Сучасна квартира — YVK Design",
+      "description": "Консультація до купівлі та просторове планування сучасної квартири для молодої сім’ї."
     },
     "en": {
       "title": "Modern Apartment — YVK Design",

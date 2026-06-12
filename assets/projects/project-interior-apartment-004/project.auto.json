@@ -1,0 +1,83 @@
+{
+  "schema": "yvk-project-auto-v1",
+  "enabled": true,
+  "languages": ["uk", "en"],
+  "output": {
+    "uk": "project-interior-apartment-004.html",
+    "en": "project-interior-apartment-004-en.html"
+  },
+  "languageLinks": {
+    "uk": "project-interior-apartment-004.html",
+    "en": "project-interior-apartment-004-en.html"
+  },
+  "paths": {
+    "cover": "cover.jpg",
+    "planningBefore": "planning/plan-before.jpg",
+    "planningAfter": "planning/plan-after.jpg",
+    "galleryDir": "gallery"
+  },
+  "seo": {
+    "uk": {
+      "title": "Житлова квартира — YVK Design",
+      "description": "Функціональне оновлення планування житлової квартири у Києві."
+    },
+    "en": {
+      "title": "Residential Apartment — YVK Design",
+      "description": "A functional layout update for a residential apartment in Kyiv."
+    }
+  },
+  "hero": {
+    "left": {
+      "uk": "ЖИТЛОВА\nКВАРТИРА",
+      "en": "RESIDENTIAL\nAPARTMENT"
+    },
+    "right": {
+      "uk": "ФУНКЦІОНАЛЬНЕ ОНОВЛЕННЯ\nПЛАНУВАННЯ",
+      "en": "FUNCTIONAL LAYOUT\nUPDATE"
+    },
+    "imageAlt": {
+      "uk": "Житлова квартира — головна візуалізація",
+      "en": "Residential apartment — main visualisation"
+    }
+  },
+  "info": {
+    "kicker": {
+      "uk": "Про проєкт",
+      "en": "About the project"
+    },
+    "heading": {
+      "uk": "Житлова квартира",
+      "en": "Residential apartment"
+    },
+    "paragraphs": {
+      "uk": [
+        "Цей проєкт — сучасна квартира для сімейного проживання з акцентом на просторове планування та функціональну реорганізацію."
+      ],
+      "en": [
+        "This project is a modern apartment designed for family living with a focus on space planning and functional reorganisation."
+      ]
+    },
+    "meta": [
+      {
+        "label": { "uk": "Локація", "en": "Location" },
+        "value": { "uk": "Київ, Україна", "en": "Kyiv, Ukraine" }
+      },
+      {
+        "label": { "uk": "Тип об’єкта", "en": "Property type" },
+        "value": { "uk": "Квартира", "en": "Apartment" }
+      },
+      {
+        "label": { "uk": "Площа", "en": "Area" },
+        "value": { "uk": "150,4 м²", "en": "150.4 m²" }
+      },
+      {
+        "label": { "uk": "Дизайн та візуалізація", "en": "Design and visualisation" },
+        "value": { "uk": "Юрій Костюченко", "en": "Yuriy Kostyuchenko" }
+      },
+      {
+        "label": { "uk": "Тип робіт", "en": "Project type" },
+        "value": { "uk": "Комерційний проєкт", "en": "Commercial project" }
+      }
+    ]
+  }
+}

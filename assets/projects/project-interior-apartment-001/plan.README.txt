@@ -1,6 +1,0 @@
-Planning folder:
-
-planning/plan-before.jpg
-planning/plan-after.jpg
-
-If the project has no planning images, the planning folder can be omitted.

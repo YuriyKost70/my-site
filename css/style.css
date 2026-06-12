@@ -29,7 +29,6 @@ button, input, textarea, select { font: inherit; }
 }
 
 .container { width: min(100% - 64px, var(--container)); margin: 0 auto; }
-.center { text-align: center; }
 
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
@@ -109,7 +108,6 @@ button, input, textarea, select { font: inherit; }
   color: #171717;
 }
 .header-actions { display: flex; align-items: center; gap: 22px; }
-.phone { font-size: 20px; font-weight: 500; white-space: nowrap; }
 .header-actions .btn { min-height: 42px; padding: 0 22px; font-size: 12px; }
 .menu-toggle { display: none; background: none; border: 0; width: 42px; height: 42px; cursor: pointer; }
 .menu-toggle span { display: block; height: 2px; margin: 7px 0; background: var(--text); }
@@ -398,6 +396,25 @@ button, input, textarea, select { font: inherit; }
   height: 100%;
   color: inherit;
   text-decoration: none;
+}
+
+.project-card--footer-pinned .project-card-link {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card--footer-pinned .project-image {
+  flex-shrink: 0;
+}
+
+.project-card--footer-pinned .project-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.project-card--footer-pinned .project-footer {
+  margin-top: auto;
 }
 
 .project-image {
@@ -775,10 +792,6 @@ button, input, textarea, select { font: inherit; }
 
 .footer-contacts a:hover {
   color: var(--accent);
-}
-
-.footer-bottom {
-  display: none;
 }
 
 .scroll-top-button {

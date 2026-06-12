@@ -74,25 +74,53 @@ CARD_BADGES:
 [EN]
 
 HERO_LEFT:
+MODERN
+APARTMENT
 
 HERO_RIGHT:
+PRE-PURCHASE CONSULTATION
+AND SPACE PLANNING
 
 ABOUT_LABEL:
+About the project
 
 ABOUT_TITLE:
+An apartment for a family with a child
 
 ABOUT_TEXT:
+This project presents a modern apartment designed for a family with one child, developed with pre-purchase consulting and space planning support.
+
+At the initial stage, the property's layout potential was carefully analysed in terms of functionality, zoning possibilities and adaptability to the family's lifestyle.
+
+After acquisition, a comprehensive layout redesign was carried out to establish a clear separation between private and shared areas. Particular attention was given to creating a comfortable children's space, integrating storage solutions and optimising circulation between key functional zones.
+
+The interior is based on principles of restrained contemporary aesthetics, efficient use of space and long-term practical comfort. The planning decisions ensure a balanced relationship between open communal areas and private rooms.
+
+The result is a cohesive and well-structured residential concept tailored to family living and ready for implementation.
 
 META:
+Location | Kyiv, Ukraine
+Property type | Apartment
+Area | 87.29 m²
+Design and visualisation | Yuriy Kostyuchenko
+Project type | Commercial project
 
 CARD_LABEL:
+Interior
 
 CARD_TOPLINE_LEFT:
+Apartment
 
 CARD_TOPLINE_RIGHT:
+Commercial project
 
 CARD_TITLE:
+Modern apartment
 
 CARD_DESCRIPTION:
+Space planning for a family apartment with a comfortable children's room, integrated storage and clear connections between functional zones.
 
 CARD_BADGES:
+Apartment
+Family home
+Space planning

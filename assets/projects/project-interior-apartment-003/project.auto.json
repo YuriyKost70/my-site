@@ -1,0 +1,83 @@
+{
+  "schema": "yvk-project-auto-v1",
+  "enabled": true,
+  "languages": ["uk", "en"],
+  "output": {
+    "uk": "project-interior-apartment-003.html",
+    "en": "project-interior-apartment-003-en.html"
+  },
+  "languageLinks": {
+    "uk": "project-interior-apartment-003.html",
+    "en": "project-interior-apartment-003-en.html"
+  },
+  "paths": {
+    "cover": "cover.jpg",
+    "planningBefore": "planning/plan-before.jpg",
+    "planningAfter": "planning/plan-after.jpg",
+    "galleryDir": "gallery"
+  },
+  "seo": {
+    "uk": {
+      "title": "Студійна квартира — YVK Design",
+      "description": "Просторове планування та дизайн інтер’єру студійної квартири у Києві."
+    },
+    "en": {
+      "title": "Studio Apartment — YVK Design",
+      "description": "Space planning and interior design for a studio apartment in Kyiv."
+    }
+  },
+  "hero": {
+    "left": {
+      "uk": "СТУДІЙНА\nКВАРТИРА",
+      "en": "STUDIO\nAPARTMENT"
+    },
+    "right": {
+      "uk": "ПРОСТОРОВЕ ПЛАНУВАННЯ\nТА ДИЗАЙН ІНТЕР’ЄРУ",
+      "en": "SPACE PLANNING\nAND INTERIOR DESIGN"
+    },
+    "imageAlt": {
+      "uk": "Студійна квартира — головна візуалізація",
+      "en": "Studio apartment — main visualisation"
+    }
+  },
+  "info": {
+    "kicker": {
+      "uk": "Про проєкт",
+      "en": "About the project"
+    },
+    "heading": {
+      "uk": "Студійна квартира",
+      "en": "Studio apartment"
+    },
+    "paragraphs": {
+      "uk": [
+        "Цей проєкт — однокімнатна квартира для молодої жінки з акцентом на просторове планування та функціональне зонування."
+      ],
+      "en": [
+        "This project is a one-bedroom apartment designed for a young woman with a focus on space planning and functional zoning."
+      ]
+    },
+    "meta": [
+      {
+        "label": { "uk": "Локація", "en": "Location" },
+        "value": { "uk": "Київ, Україна", "en": "Kyiv, Ukraine" }
+      },
+      {
+        "label": { "uk": "Тип об’єкта", "en": "Property type" },
+        "value": { "uk": "Квартира", "en": "Apartment" }
+      },
+      {
+        "label": { "uk": "Площа", "en": "Area" },
+        "value": { "uk": "48,85 м²", "en": "48.85 m²" }
+      },
+      {
+        "label": { "uk": "Дизайн та візуалізація", "en": "Design and visualisation" },
+        "value": { "uk": "Юрій Костюченко", "en": "Yuriy Kostyuchenko" }
+      },
+      {
+        "label": { "uk": "Тип робіт", "en": "Project type" },
+        "value": { "uk": "Комерційний проєкт", "en": "Commercial project" }
+      }
+    ]
+  }
+}

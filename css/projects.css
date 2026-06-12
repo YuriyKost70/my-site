@@ -85,7 +85,7 @@
   display: block;
   object-fit: cover;
   object-position: center;
-  filter: none;
+  filter: brightness(0.95);
 }
 
 .projects-hero-content {

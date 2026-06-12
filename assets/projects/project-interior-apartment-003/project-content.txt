@@ -1,0 +1,122 @@
+[PROJECT]
+
+ID:
+project-interior-apartment-003
+
+DIRECTION:
+interior
+
+SEGMENT:
+residential
+
+FEATURED:
+yes
+
+FEATURED_ORDER:
+3
+
+
+[UA]
+
+HERO_LEFT:
+СТУДІЙНА
+КВАРТИРА
+
+HERO_RIGHT:
+ПРОСТОРОВЕ ПЛАНУВАННЯ
+ТА ДИЗАЙН ІНТЕР’ЄРУ
+
+ABOUT_LABEL:
+Про проєкт
+
+ABOUT_TITLE:
+Студійна квартира
+
+ABOUT_TEXT:
+Цей проєкт — однокімнатна квартира для молодої жінки з акцентом на просторове планування та функціональне зонування.
+
+Планування було перероблено для покращення розподілу житлових зон і адаптації простору до щоденного комфорту та стилю життя.
+
+Проєкт зосереджений на ефективному використанні площі, чіткому розмежуванні функціональних зон і створенні сучасної, збалансованої інтер’єрної концепції. Особливу увагу приділено ергономіці, системам зберігання та відчуттю візуальної легкості.
+
+У результаті сформовано добре організовану квартиру з продуманою просторовою структурою, готову до практичної реалізації.
+
+META:
+Локація | Київ, Україна
+Тип об’єкта | Квартира
+Площа | 48,85 м²
+Дизайн та візуалізація | Юрій Костюченко
+Тип робіт | Комерційний проєкт
+
+CARD_LABEL:
+Інтер’єр
+
+CARD_TOPLINE_LEFT:
+Квартира
+
+CARD_TOPLINE_RIGHT:
+Комерційний проєкт
+
+CARD_TITLE:
+Студійна квартира
+
+CARD_DESCRIPTION:
+Функціональне зонування, продумане зберігання та легка сучасна концепція однокімнатної квартири.
+
+CARD_BADGES:
+Квартира
+Планування
+Візуалізація
+
+
+[EN]
+
+HERO_LEFT:
+STUDIO
+APARTMENT
+
+HERO_RIGHT:
+SPACE PLANNING
+AND INTERIOR DESIGN
+
+ABOUT_LABEL:
+About the project
+
+ABOUT_TITLE:
+Studio apartment
+
+ABOUT_TEXT:
+This project is a one-bedroom apartment designed for a young woman with a focus on space planning and functional zoning.
+
+The layout was redesigned to improve the distribution of living areas and adapt the apartment to everyday comfort and lifestyle needs.
+
+The project emphasises efficient use of space, clear zoning between functional areas and a modern, balanced interior concept. Special attention was given to ergonomics, storage solutions and visual lightness.
+
+The result is a well-organised apartment with a thoughtful spatial structure, ready for practical implementation.
+
+META:
+Location | Kyiv, Ukraine
+Property type | Apartment
+Area | 48.85 m²
+Design and visualisation | Yuriy Kostyuchenko
+Project type | Commercial project
+
+CARD_LABEL:
+Interior
+
+CARD_TOPLINE_LEFT:
+Apartment
+
+CARD_TOPLINE_RIGHT:
+Commercial project
+
+CARD_TITLE:
+Studio apartment
+
+CARD_DESCRIPTION:
+Functional zoning, considered storage and a light contemporary concept for a one-bedroom apartment.
+
+CARD_BADGES:
+Apartment
+Space planning
+Visualisation
