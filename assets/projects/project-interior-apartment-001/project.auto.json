@@ -22,8 +22,8 @@
       "description": "Тестова автоматично згенерована картка проєкту YVK Design."
     },
     "en": {
-      "title": "",
-      "description": ""
+      "title": "Modern Apartment — YVK Design",
+      "description": "A modern apartment for a young family: pre-purchase consultation, space planning and a complete interior design concept."
     }
   },
   "hero": {
@@ -37,7 +37,7 @@
     },
     "imageAlt": {
       "uk": "Сучасна квартира — головна візуалізація",
-      "en": ""
+      "en": "Modern apartment — main visualisation"
     }
   },
   "info": {

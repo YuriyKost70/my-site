@@ -1,0 +1,82 @@
+{
+  "schema": "yvk-project-auto-v1",
+  "enabled": true,
+  "languages": ["uk", "en"],
+  "output": {
+    "uk": "project-interior-apartment-002.html",
+    "en": "project-interior-apartment-002-en.html"
+  },
+  "languageLinks": {
+    "uk": "project-interior-apartment-002.html",
+    "en": "project-interior-apartment-002-en.html"
+  },
+  "paths": {
+    "cover": "cover.jpg",
+    "planningBefore": "planning/plan-before.jpg",
+    "planningAfter": "planning/plan-after.jpg",
+    "galleryDir": "gallery"
+  },
+  "seo": {
+    "uk": {
+      "title": "Сучасна квартира для сім’ї з дитиною — YVK Design",
+      "description": "Просторове планування та дизайн сучасної квартири для сім’ї з дитиною у Києві."
+    },
+    "en": {
+      "title": "",
+      "description": ""
+    }
+  },
+  "hero": {
+    "left": {
+      "uk": "НАЗВА\nПРОЄКТУ",
+      "en": ""
+    },
+    "right": {
+      "uk": "КОРОТКИЙ ОПИС\nУ ДВА РЯДКИ",
+      "en": ""
+    },
+    "imageAlt": {
+      "uk": "Сучасна квартира для сім’ї з дитиною — головна візуалізація",
+      "en": ""
+    }
+  },
+  "info": {
+    "kicker": {
+      "uk": "Про проєкт",
+      "en": ""
+    },
+    "heading": {
+      "uk": "Заголовок опису проєкту",
+      "en": ""
+    },
+    "paragraphs": {
+      "uk": [
+        "Перший абзац опису проєкту.",
+        "Другий абзац опису проєкту."
+      ],
+      "en": []
+    },
+    "meta": [
+      {
+        "label": { "uk": "Локація", "en": "" },
+        "value": { "uk": "Україна", "en": "" }
+      },
+      {
+        "label": { "uk": "Тип об’єкта", "en": "" },
+        "value": { "uk": "Квартира", "en": "" }
+      },
+      {
+        "label": { "uk": "Площа", "en": "" },
+        "value": { "uk": "00,00 м²", "en": "" }
+      },
+      {
+        "label": { "uk": "Дизайн та візуалізація", "en": "" },
+        "value": { "uk": "Юрій Костюченко", "en": "" }
+      },
+      {
+        "label": { "uk": "Тип робіт", "en": "" },
+        "value": { "uk": "Комерційний проєкт", "en": "" }
+      }
+    ]
+  }
+}

@@ -72,25 +72,51 @@ CARD_BADGES:
 [EN]
 
 HERO_LEFT:
+MODERN
+APARTMENT
 
 HERO_RIGHT:
+PRE-PURCHASE CONSULTATION
+AND SPACE PLANNING
 
 ABOUT_LABEL:
+About the project
 
 ABOUT_TITLE:
+An apartment for a young family
 
 ABOUT_TEXT:
+This project is a modern apartment for a young family with one child. The scope included consultation during the property selection stage and comprehensive space planning.
+
+I became involved at an early stage, assessing and comparing two separate one-bedroom apartments to determine their potential for being combined into a single living space.
+
+Before the purchase, the layouts were analysed in terms of spatial logic, zoning opportunities and long-term usability. After the property was acquired, the apartment was completely replanned to clearly separate private and shared areas, improve circulation and enhance overall functionality.
+
+The result is a cohesive, well-structured apartment concept with an efficient planning solution, developed from the initial assessment through to a design ready for implementation.
 
 META:
+Location | Ukraine
+Property type | Apartment
+Area | 93.18 m²
+Design and visualisation | Yuriy Kostyuchenko
+Project type | Commercial project
 
 CARD_LABEL:
+Interior
 
 CARD_TOPLINE_LEFT:
+Apartment
 
 CARD_TOPLINE_RIGHT:
+Commercial project
 
 CARD_TITLE:
+Modern apartment
 
 CARD_DESCRIPTION:
+Pre-purchase consultation and space planning for a young family: property assessment, the combination of two apartments and a functional planning concept.
 
 CARD_BADGES:
+Apartment
+Space planning
+Visualisation

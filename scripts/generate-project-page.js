@@ -593,6 +593,10 @@ function withBreaks(value, lang) {
 
 function renderPage(config, projectDir, lang) {
   const t = dictionary[lang] || dictionary.uk;
+  const homeHref = lang === 'en' ? 'index-en.html' : 'index.html';
+  const servicesHref = lang === 'en' ? 'services-en.html' : 'services.html';
+  const projectsHref = lang === 'en' ? 'projects-en.html' : 'projects.html';
+  const contactHref = lang === 'en' ? 'contact-en.html' : 'contact.html';
   const cover = relUrl(path.join(projectDir, config.paths.cover));
   const planBefore = relUrl(path.join(projectDir, config.paths.planningBefore));
   const planAfter = relUrl(path.join(projectDir, config.paths.planningAfter));
@@ -615,7 +619,7 @@ function renderPage(config, projectDir, lang) {
 <body class="project-detail-page" data-project-id="${escapeHtml(config.projectId)}" data-project-direction="${escapeHtml(config.projectDirection)}" data-project-segment="${escapeHtml(config.projectSegment)}">
   <header class="site-header project-detail-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo" aria-label="YVK Design">
+      <a href="${homeHref}" class="logo" aria-label="YVK Design">
         <img src="assets/logo/yvk-logo.svg" alt="YVK Design" />
       </a>
 
@@ -624,15 +628,15 @@ function renderPage(config, projectDir, lang) {
       </button>
 
       <nav class="main-nav" aria-label="${escapeHtml(t.navLabel)}">
-        <a href="index.html#home">${escapeHtml(t.home)}</a>
-        <a href="services.html">${escapeHtml(t.services)}</a>
-        <a href="projects.html">${escapeHtml(t.projects)}</a>
-        <a href="contact.html">${escapeHtml(t.contacts)}</a>
+        <a href="${homeHref}#home">${escapeHtml(t.home)}</a>
+        <a href="${servicesHref}">${escapeHtml(t.services)}</a>
+        <a href="${projectsHref}">${escapeHtml(t.projects)}</a>
+        <a href="${contactHref}">${escapeHtml(t.contacts)}</a>
         ${buildLanguageSwitch(config, lang)}
       </nav>
 
       <div class="header-actions">
-        <a class="btn btn-secondary" href="contact.html">${escapeHtml(t.consultation)}</a>
+        <a class="btn btn-secondary" href="${contactHref}">${escapeHtml(t.consultation)}</a>
       </div>
     </div>
   </header>
@@ -719,7 +723,7 @@ ${gallery.html}
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <a href="index.html" class="footer-logo" aria-label="YVK Design">
+        <a href="${homeHref}" class="footer-logo" aria-label="YVK Design">
           <img src="assets/logo/yvk-logo.svg" alt="YVK Design" />
         </a>
         <p>${escapeHtml(t.footerText)}</p>
@@ -849,6 +853,14 @@ function updateProjectCards(config, projectDir) {
     projectDir,
     fileName: 'projects.html',
     lang: 'uk',
+    markerPrefix: 'AUTO_PROJECT_CARD'
+  });
+
+  updateCardInPage({
+    config,
+    projectDir,
+    fileName: 'projects-en.html',
+    lang: 'en',
     markerPrefix: 'AUTO_PROJECT_CARD'
   });
 

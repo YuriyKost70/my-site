@@ -36,13 +36,31 @@
 }
 
 .portfolio-page .main-nav {
-  justify-content: flex-end;
-  gap: 42px;
+  display: grid;
+  grid-template-columns: repeat(4, 86px) 78px;
+  justify-content: end;
+  align-items: center;
+  gap: 32px;
   font-size: 13px;
+}
+
+.portfolio-page .main-nav > a {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .portfolio-page .header-actions {
   display: flex;
+  width: 212px;
+}
+
+.portfolio-page .header-actions .btn {
+  width: 100%;
+  white-space: nowrap;
 }
 
 .portfolio-page .projects {
@@ -98,7 +116,8 @@
   }
 
   .portfolio-page .main-nav {
-    gap: 24px;
+    grid-template-columns: repeat(4, 80px) 78px;
+    gap: 16px;
     font-size: 12px;
   }
 }
@@ -115,9 +134,14 @@
   }
 
   .portfolio-page .main-nav {
+    display: flex;
     gap: 30px;
     font-size: 18px;
     justify-content: center;
+  }
+
+  .portfolio-page .main-nav > a {
+    min-height: 0;
   }
 
   .portfolio-page .projects {

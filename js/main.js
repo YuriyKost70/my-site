@@ -46,7 +46,10 @@
   const scrollTopButton = document.createElement('button');
   scrollTopButton.className = 'scroll-top-button';
   scrollTopButton.type = 'button';
-  scrollTopButton.setAttribute('aria-label', 'Повернутися нагору');
+  scrollTopButton.setAttribute(
+    'aria-label',
+    document.documentElement.lang === 'en' ? 'Back to top' : 'Повернутися нагору'
+  );
   scrollTopButton.textContent = '↑';
   document.body.append(scrollTopButton);
 

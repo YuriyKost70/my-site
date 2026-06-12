@@ -45,29 +45,50 @@
 }
 
 .services-page .main-nav {
-  justify-content: flex-end;
-  gap: 42px;
+  display: grid;
+  grid-template-columns: repeat(4, 86px) 78px;
+  justify-content: end;
+  align-items: center;
+  gap: 32px;
   font-size: 13px;
+}
+
+.services-page .main-nav > a {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .services-page .header-actions {
   display: flex;
+  width: 212px;
+}
+
+.services-page .header-actions .btn {
+  width: 100%;
+  white-space: nowrap;
 }
 
 .services-subnav {
-  display: flex;
-  width: min(100%, 780px);
-  justify-content: flex-end;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(5, max-content);
+  width: 435px;
+  margin-right: 110px;
+  align-items: center;
+  justify-content: space-between;
   padding-top: 7px;
 }
 
 .services-subnav a {
-  display: flex;
+  display: inline-flex;
   position: relative;
+  width: max-content;
   min-height: 18px;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   color: var(--accent);
   font-size: 10px;
   font-weight: 700;
@@ -84,12 +105,31 @@
 
 .services-subnav a:not(:last-child)::after {
   content: "";
-  width: 6px;
-  height: 6px;
-  margin-left: 6px;
+  width: 5px;
+  height: 5px;
+  margin-left: 2px;
   border-top: 1px solid var(--accent);
   border-right: 1px solid var(--accent);
   opacity: 0.78;
+  transform: rotate(45deg);
+}
+
+html[lang="en"] .services-subnav {
+  grid-template-columns: repeat(5, max-content);
+  width: 416px;
+  margin-right: 114px;
+  justify-content: space-between;
+}
+
+html[lang="en"] .services-subnav a {
+  width: max-content;
+  justify-content: initial;
+  gap: 4px;
+}
+
+html[lang="en"] .services-subnav a:not(:last-child)::after {
+  position: static;
+  margin-left: 2px;
   transform: rotate(45deg);
 }
 
@@ -744,17 +784,28 @@
   }
 
   .services-page .main-nav {
-    gap: 24px;
+    grid-template-columns: repeat(4, 80px) 78px;
+    gap: 16px;
     font-size: 12px;
   }
 
   .services-subnav {
-    width: min(100%, 700px);
-    gap: 12px;
+    width: 363px;
+    margin-right: 94px;
   }
 
   .services-subnav a {
     font-size: 9px;
+  }
+
+  html[lang="en"] .services-subnav {
+    width: 350px;
+    margin-right: 97px;
+  }
+
+  html[lang="en"] .services-subnav a {
+    font-size: 8px;
+    letter-spacing: 0.06em;
   }
 
   .service-kit-grid,
@@ -808,9 +859,14 @@
   }
 
   .services-page .main-nav {
+    display: flex;
     gap: 30px;
     font-size: 18px;
     justify-content: center;
+  }
+
+  .services-page .main-nav > a {
+    min-height: 0;
   }
 
   .services-nav-stack {

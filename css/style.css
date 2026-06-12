@@ -140,6 +140,32 @@ button, input, textarea, select { font: inherit; }
   width: 92px;
 }
 
+.home-page .main-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 86px) 78px;
+  justify-content: end;
+  align-items: center;
+  gap: 32px;
+}
+
+.home-page .main-nav > a {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.home-page .header-actions {
+  width: 212px;
+}
+
+.home-page .header-actions .btn {
+  width: 100%;
+  white-space: nowrap;
+}
+
 /* Hero */
 .hero {
   min-height: 760px;
@@ -820,6 +846,11 @@ button, input, textarea, select { font: inherit; }
     font-size: 12px;
   }
 
+  .home-page .main-nav {
+    grid-template-columns: repeat(4, 80px) 78px;
+    gap: 16px;
+  }
+
   .hero {
     min-height: 720px;
   }
@@ -936,6 +967,15 @@ button, input, textarea, select { font: inherit; }
     transform: none;
     transition: opacity 0.25s ease;
     font-size: 18px;
+  }
+
+  .home-page .main-nav {
+    display: flex;
+    gap: 30px;
+  }
+
+  .home-page .main-nav > a {
+    min-height: 0;
   }
 
   .main-nav a {
