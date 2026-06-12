@@ -1,0 +1,34 @@
+Residential Apartment | Functional Layout Update
+__________________________________________________
+
+LOCATION:  KYIV | UKRAINE
+TYPE: APARTMENT
+APARTMENT AREA:150,4 м2
+DESIGN AND & VISUALIZATION:  YURIY KOSTYUCHENKO
+TYPE OF WORK: COMMERCIAL
+
+
+This project is a modern apartment designed for family living with a focus on space planning and functional reorganization.
+The main task was to redesign the internal layout to improve functionality, circulation, and everyday comfort.
+The floor plan was reworked to create clear zoning between private and shared areas, optimize the use of space, and adapt the apartment to family needs. Attention was given to spatial logic, ergonomics, and practical usability.
+The result is a well-structured family apartment with a clear and functional layout, ready for further implementation.
+Tools: Autodesk 3ds Max, Corona Renderer (Chaos), Adobe Photoshop, Graphisoft Archicad
+
+
+Житлова квартира | Функціональне оновлення планування
+______________________________________________________
+
+ЛОКАЦІЯ: Київ | Україна
+ТИП: Квартира
+ПЛОЩА КВАРТИРИ: 150,4 м²
+ДИЗАЙН ТА ВІЗУАЛІЗАЦІЯ: Yuriy Kostyuchenko
+ТИП РОБОТИ: Комерційний проєкт
+
+Цей проєкт — сучасна квартира для сімейного проживання з акцентом на просторове планування та функціональну реорганізацію.
+Основним завданням було перепроєктувати внутрішнє планування з метою підвищення функціональності, покращення логіки руху та щоденного комфорту.
+
+План квартири було перероблено для створення чіткого зонування між приватними та спільними просторами, оптимізації використання площі та адаптації житла до потреб родини. Особливу увагу приділено просторовій логіці, ергономіці та практичності використання.
+
+У результаті сформовано добре структуровану сімейну квартиру з чітким і функціональним плануванням, готову до подальшої реалізації.
+
+Інструменти: Autodesk 3ds Max, Corona Renderer (Chaos), Adobe Photoshop, Graphisoft Archicad

@@ -182,9 +182,9 @@ button, input, textarea, select { font: inherit; }
   z-index: 1;
   background: linear-gradient(
     90deg,
-    rgba(17, 19, 18, 0.72) 0%,
-    rgba(17, 19, 18, 0.50) 42%,
-    rgba(17, 19, 18, 0.22) 100%
+    rgba(17, 19, 18, 0.454) 0%,
+    rgba(17, 19, 18, 0.315) 42%,
+    rgba(17, 19, 18, 0.139) 100%
   );
   pointer-events: none;
 }

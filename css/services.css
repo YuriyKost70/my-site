@@ -155,6 +155,12 @@ html[lang="en"] .services-subnav a:not(:last-child)::after {
   background: #111312;
 }
 
+.services-hero-media picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .services-hero-media img {
   width: 100%;
   height: 100%;
