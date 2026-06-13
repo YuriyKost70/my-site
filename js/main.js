@@ -1,8 +1,17 @@
 (() => {
   const siteHeader = document.querySelector('.site-header');
+  const headerInner = siteHeader?.querySelector('.header-inner');
   const menuToggle = document.querySelector('.menu-toggle');
   const mainNav = document.querySelector('.main-nav');
   const servicesSubnav = document.querySelector('.services-subnav');
+  const navLanguageSwitch = mainNav?.querySelector('.language-switch');
+
+  if (headerInner && menuToggle && navLanguageSwitch) {
+    const mobileLanguageSwitch = navLanguageSwitch.cloneNode(true);
+    mobileLanguageSwitch.classList.add('mobile-language-switch');
+    mobileLanguageSwitch.setAttribute('aria-label', navLanguageSwitch.getAttribute('aria-label') || 'Language');
+    headerInner.insertBefore(mobileLanguageSwitch, menuToggle);
+  }
 
   if (siteHeader) {
     const updateHeaderState = () => {

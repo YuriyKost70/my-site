@@ -703,9 +703,9 @@ ${gallery.html}
           <p>${escapeHtml(t.contactText)}</p>
         </div>
 
-        <form class="contact-form">
-          <input type="text" name="name" placeholder="${escapeHtml(t.name)}" />
-          <input type="tel" name="phone" placeholder="${escapeHtml(t.phone)}" />
+        <form class="contact-form" action="#" method="post">
+          <input type="text" name="name" placeholder="${escapeHtml(t.name)}" required />
+          <input type="tel" name="phone" placeholder="${escapeHtml(t.phone)}" required />
           <input type="email" name="email" placeholder="${escapeHtml(t.email)}" />
           <select name="type" aria-label="${escapeHtml(t.objectType)}">
             <option value="">${escapeHtml(t.objectType)}</option>

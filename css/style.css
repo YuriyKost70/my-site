@@ -107,6 +107,7 @@ button, input, textarea, select { font: inherit; }
   background: var(--accent);
   color: #171717;
 }
+.mobile-language-switch { display: none; }
 .header-actions { display: flex; align-items: center; gap: 22px; }
 .header-actions .btn { min-height: 42px; padding: 0 22px; font-size: 12px; }
 .menu-toggle { display: none; background: none; border: 0; width: 42px; height: 42px; cursor: pointer; }
@@ -933,12 +934,20 @@ button, input, textarea, select { font: inherit; }
     gap: 0;
   }
 
-  .logo img {
-    width: 69px;
+  .home-page .header-inner,
+  .services-page .header-inner,
+  .portfolio-page .header-inner,
+  .project-detail-page .header-inner,
+  .contact-page .header-inner {
+    gap: 0 !important;
   }
 
-  .home-page .logo img {
-    width: 74px;
+  .home-page .logo img,
+  .services-page .logo img,
+  .portfolio-page .logo img,
+  .project-detail-page .logo img,
+  .contact-page .logo img {
+    width: 74px !important;
   }
 
   .header-actions {
@@ -949,7 +958,7 @@ button, input, textarea, select { font: inherit; }
     display: block;
     position: relative;
     z-index: 60;
-    margin-left: auto;
+    margin-left: 12px;
     width: 34px;
     height: 34px;
     flex: 0 0 34px;
@@ -996,15 +1005,23 @@ button, input, textarea, select { font: inherit; }
     padding: 8px 0;
   }
 
-  .language-switch {
-    height: 36px;
-    margin-top: 4px;
+  .main-nav > .language-switch {
+    display: none;
   }
 
-  .language-switch button,
-  .language-switch a {
-    min-width: 46px;
-    font-size: 12px;
+  .mobile-language-switch {
+    display: inline-flex;
+    position: relative;
+    z-index: 60;
+    flex: 0 0 auto;
+    height: 30px;
+    margin: 0 0 0 auto;
+  }
+
+  .mobile-language-switch button,
+  .mobile-language-switch a {
+    min-width: 34px;
+    font-size: 10px;
   }
 
   .main-nav.is-open {

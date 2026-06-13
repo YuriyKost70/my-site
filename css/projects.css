@@ -213,7 +213,7 @@
 
   .projects-hero-image {
     object-position: center;
-    filter: brightness(0.28);
+    filter: none;
   }
 
   .projects-hero-content {
@@ -235,5 +235,26 @@
 
   .portfolio-page .projects {
     padding-top: 58px;
+  }
+}
+
+@media (max-width: 820px) {
+  .portfolio-page .project-tabs {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .portfolio-page .project-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .portfolio-page .project-tabs .tab {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
   }
 }
