@@ -1,0 +1,122 @@
+[PROJECT]
+
+ID:
+project-interior-apartment-005
+
+DIRECTION:
+interior
+
+SEGMENT:
+residential
+
+FEATURED:
+no
+
+FEATURED_ORDER:
+5
+
+
+[UA]
+
+HERO_LEFT:
+КВАРТИРА ДЛЯ
+СІМ'Ї
+
+HERO_RIGHT:
+ПЕРЕПРОЄКТУВАННЯ СКЛАДНОГО
+ПЛАНУВАННЯ
+
+ABOUT_LABEL:
+Про проєкт
+
+ABOUT_TITLE:
+Квартира для сім'ї
+
+ABOUT_TEXT:
+Цей проєкт — сучасна квартира для сім'ї з однією дитиною.
+
+Початкове планування було складним і вимагало повного переосмислення просторової логіки та функціонального зонування.
+
+План квартири було перероблено, щоб покращити логіку руху, чітко розмежувати приватні та спільні зони й адаптувати простір до повсякденних потреб родини. Особливу увагу приділено ергономіці, системам зберігання та ефективному використанню наявної площі.
+
+У результаті створено функціональну, добре структуровану квартиру з чіткою просторовою організацією, готову до практичної реалізації.
+
+META:
+Локація | Суми, Україна
+Тип об'єкта | Квартира, ЖК «Еверест»
+Площа | 86,86 м²
+Дизайн та візуалізація | Юрій Костюченко
+Тип робіт | Комерційний проєкт
+
+CARD_LABEL:
+Інтер'єр
+
+CARD_TOPLINE_LEFT:
+Квартира
+
+CARD_TOPLINE_RIGHT:
+Комерційний проєкт
+
+CARD_TITLE:
+Квартира для сім'ї
+
+CARD_DESCRIPTION:
+Повне перепроєктування складного планування квартири для сім'ї з дитиною: чітке зонування, зручна логіка руху та практичні системи зберігання.
+
+CARD_BADGES:
+Квартира
+Планування
+Візуалізація
+
+
+[EN]
+
+HERO_LEFT:
+FAMILY
+APARTMENT
+
+HERO_RIGHT:
+COMPLEX LAYOUT
+REDESIGN
+
+ABOUT_LABEL:
+About the project
+
+ABOUT_TITLE:
+Family apartment
+
+ABOUT_TEXT:
+This project is a modern apartment designed for a family with one child.
+
+The original layout was complex and required a complete rethink of its spatial logic and functional zoning.
+
+The floor plan was redesigned to improve circulation, clearly separate private and shared areas, and adapt the space to the family's everyday needs. Particular attention was given to ergonomics, storage solutions and the efficient use of the available area.
+
+The result is a functional, well-structured apartment with clear spatial organisation, ready for practical implementation.
+
+META:
+Location | Sumy, Ukraine
+Property type | Apartment, Everest residential complex
+Area | 86.86 m²
+Design and visualisation | Yuriy Kostyuchenko
+Project type | Commercial project
+
+CARD_LABEL:
+Interior
+
+CARD_TOPLINE_LEFT:
+Apartment
+
+CARD_TOPLINE_RIGHT:
+Commercial project
+
+CARD_TITLE:
+Family apartment
+
+CARD_DESCRIPTION:
+A complete redesign of a complex apartment layout for a family with one child, with clear zoning, comfortable circulation and practical storage.
+
+CARD_BADGES:
+Apartment
+Space planning
+Visualisation

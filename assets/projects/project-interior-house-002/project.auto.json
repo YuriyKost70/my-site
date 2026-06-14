@@ -1,0 +1,99 @@
+{
+  "schema": "yvk-project-auto-v1",
+  "enabled": true,
+  "languages": ["uk", "en"],
+  "output": {
+    "uk": "project-interior-house-002.html",
+    "en": "project-interior-house-002-en.html"
+  },
+  "languageLinks": {
+    "uk": "project-interior-house-002.html",
+    "en": "project-interior-house-002-en.html"
+  },
+  "paths": {
+    "cover": "cover.png",
+    "planningSets": [
+      {
+        "title": {
+          "uk": "Планування першого поверху",
+          "en": "First-floor planning"
+        },
+        "before": "planning/01-first-floor/plan-before.jpg",
+        "after": "planning/01-first-floor/plan-after.jpg"
+      },
+      {
+        "title": {
+          "uk": "Планування другого поверху",
+          "en": "Second-floor planning"
+        },
+        "before": "planning/02-second-floor/plan-before.jpg",
+        "after": "planning/02-second-floor/plan-after.jpg"
+      }
+    ],
+    "galleryDir": "gallery"
+  },
+  "seo": {
+    "uk": {
+      "title": "Реновація будинку у Філадельфії — YVK Design",
+      "description": "Реновація житлового будинку площею 184,15 м² в американському стилі для підготовки об'єкта до продажу."
+    },
+    "en": {
+      "title": "House Renovation in Philadelphia — YVK Design",
+      "description": "A 184.15 m² American-style house renovation designed to improve functionality, market appeal and resale value."
+    }
+  },
+  "hero": {
+    "left": {
+      "uk": "РЕНОВАЦІЯ\nБУДИНКУ",
+      "en": "HOUSE\nRENOVATION"
+    },
+    "right": {
+      "uk": "АМЕРИКАНСЬКИЙ СТИЛЬ\nДЛЯ ПРОДАЖУ",
+      "en": "AMERICAN STYLE\nFOR RESALE"
+    },
+    "imageAlt": {
+      "uk": "Реновація будинку у Філадельфії — головна візуалізація",
+      "en": "House renovation in Philadelphia — main visualisation"
+    }
+  },
+  "info": {
+    "kicker": {
+      "uk": "Про проєкт",
+      "en": "About the project"
+    },
+    "heading": {
+      "uk": "Реновація будинку для продажу",
+      "en": "House renovation for resale"
+    },
+    "paragraphs": {
+      "uk": [
+        "Реновація житлового будинку в американському стилі з метою підготовки об'єкта до продажу."
+      ],
+      "en": [
+        "An American-style residential house renovation designed to prepare the property for resale."
+      ]
+    },
+    "meta": [
+      {
+        "label": { "uk": "Локація", "en": "Location" },
+        "value": { "uk": "Філадельфія, США", "en": "Philadelphia, USA" }
+      },
+      {
+        "label": { "uk": "Тип об'єкта", "en": "Property type" },
+        "value": { "uk": "Житловий будинок", "en": "Residential house" }
+      },
+      {
+        "label": { "uk": "Площа", "en": "Area" },
+        "value": { "uk": "184,15 м²", "en": "184.15 m²" }
+      },
+      {
+        "label": { "uk": "Дизайн та візуалізація", "en": "Design and visualisation" },
+        "value": { "uk": "Юрій Костюченко", "en": "Yuriy Kostyuchenko" }
+      },
+      {
+        "label": { "uk": "Тип робіт", "en": "Project type" },
+        "value": { "uk": "Комерційний проєкт", "en": "Commercial project" }
+      }
+    ]
+  }
+}

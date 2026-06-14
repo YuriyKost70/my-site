@@ -347,6 +347,22 @@
   color: #171717;
 }
 
+.detail-plan-list {
+  display: grid;
+  gap: 72px;
+}
+
+.detail-plan-title {
+  margin: 0 0 24px;
+  color: var(--accent-dark);
+  font-family: var(--font-main);
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
 .detail-plan-image {
   width: 100%;
   background: var(--page);
@@ -712,6 +728,15 @@
     gap: 18px;
     overflow: visible;
     background: transparent;
+  }
+
+  .detail-plan-list {
+    gap: 48px;
+  }
+
+  .detail-plan-title {
+    margin-bottom: 18px;
+    font-size: 15px;
   }
 
   .detail-plan-before,

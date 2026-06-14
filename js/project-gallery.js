@@ -6,22 +6,22 @@
   const lightboxClose = lightbox?.querySelector('.lightbox-close');
   const lightboxPrev = lightbox?.querySelector('.lightbox-prev');
   const lightboxNext = lightbox?.querySelector('.lightbox-next');
-  const planCompare = document.querySelector('[data-plan-compare]');
-  const planCompareRange = planCompare?.querySelector('.detail-plan-range');
+  const planCompares = [...document.querySelectorAll('[data-plan-compare]')];
 
-  function updatePlanCompare(value) {
-    if (!planCompare) return;
+  planCompares.forEach((planCompare) => {
+    const planCompareRange = planCompare.querySelector('.detail-plan-range');
+    if (!planCompareRange) return;
 
-    const position = Math.min(100, Math.max(0, Number(value) || 0));
-    const positionNumber = Math.max(position / 100, 0.01);
-    planCompare.style.setProperty('--compare-position', `${position}%`);
-    planCompare.style.setProperty('--compare-position-number', positionNumber);
-  }
+    const updatePlanCompare = (value) => {
+      const position = Math.min(100, Math.max(0, Number(value) || 0));
+      const positionNumber = Math.max(position / 100, 0.01);
+      planCompare.style.setProperty('--compare-position', `${position}%`);
+      planCompare.style.setProperty('--compare-position-number', positionNumber);
+    };
 
-  if (planCompareRange) {
     updatePlanCompare(planCompareRange.value);
     planCompareRange.addEventListener('input', (event) => updatePlanCompare(event.target.value));
-  }
+  });
 
   const galleryImages = galleryButtons.map((button) => {
     const img = button.querySelector('img');

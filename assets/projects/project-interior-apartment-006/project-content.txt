@@ -1,0 +1,122 @@
+[PROJECT]
+
+ID:
+project-interior-apartment-006
+
+DIRECTION:
+interior
+
+SEGMENT:
+residential
+
+FEATURED:
+no
+
+FEATURED_ORDER:
+6
+
+
+[UA]
+
+HERO_LEFT:
+КВАРТИРА ДЛЯ
+СІМ'Ї
+
+HERO_RIGHT:
+АМЕРИКАНСЬКА КЛАСИКА
+В СУЧАСНОМУ ІНТЕР'ЄРІ
+
+ABOUT_LABEL:
+Про проєкт
+
+ABOUT_TITLE:
+Квартира в американській класиці
+
+ABOUT_TEXT:
+Цей проєкт представляє сімейну квартиру, виконану в американському класичному стилі.
+
+Основною метою було створити комфортний і позачасовий інтер'єр, що поєднує традиційну естетику із сучасною функціональністю.
+
+Планувальні та інтер'єрні рішення розроблено з урахуванням потреб сімейного проживання: із чітким зонуванням, виваженими пропорціями та практичними сценаріями використання. Особливу увагу приділено симетрії, добору матеріалів і спокійній, елегантній візуальній мові, характерній для американської класики.
+
+У результаті сформовано вишукану та функціональну концепцію квартири, що забезпечує довготривалий комфорт і цілісну стилістичну ідентичність.
+
+META:
+Локація | Київ, Україна
+Тип об'єкта | Квартира
+Площа | 110 м²
+Дизайн та візуалізація | Юрій Костюченко
+Тип робіт | Комерційний проєкт
+
+CARD_LABEL:
+Інтер'єр
+
+CARD_TOPLINE_LEFT:
+Квартира
+
+CARD_TOPLINE_RIGHT:
+Комерційний проєкт
+
+CARD_TITLE:
+Квартира в американській класиці
+
+CARD_DESCRIPTION:
+Позачасовий сімейний інтер'єр із чітким зонуванням, виваженими пропорціями та елегантною мовою американської класики.
+
+CARD_BADGES:
+Квартира
+Американська класика
+Візуалізація
+
+
+[EN]
+
+HERO_LEFT:
+FAMILY
+APARTMENT
+
+HERO_RIGHT:
+AMERICAN CLASSIC
+INTERIOR
+
+ABOUT_LABEL:
+About the project
+
+ABOUT_TITLE:
+American classic apartment
+
+ABOUT_TEXT:
+This project presents a family apartment designed in an American classic style.
+
+The main objective was to create a comfortable and timeless interior that combines traditional aesthetics with modern functionality.
+
+The planning and interior solutions were developed around the needs of family living, with clear zoning, balanced proportions and practical everyday scenarios. Particular attention was given to symmetry, material selection and the calm, elegant visual language associated with American classic interiors.
+
+The result is a refined and functional apartment concept that provides lasting comfort and a cohesive stylistic identity.
+
+META:
+Location | Kyiv, Ukraine
+Property type | Apartment
+Area | 110 m²
+Design and visualisation | Yuriy Kostyuchenko
+Project type | Commercial project
+
+CARD_LABEL:
+Interior
+
+CARD_TOPLINE_LEFT:
+Apartment
+
+CARD_TOPLINE_RIGHT:
+Commercial project
+
+CARD_TITLE:
+American classic apartment
+
+CARD_DESCRIPTION:
+A timeless family interior with clear zoning, balanced proportions and the elegant visual language of American classic design.
+
+CARD_BADGES:
+Apartment
+American classic
+Visualisation

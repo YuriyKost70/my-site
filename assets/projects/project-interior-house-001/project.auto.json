@@ -1,0 +1,99 @@
+{
+  "schema": "yvk-project-auto-v1",
+  "enabled": true,
+  "languages": ["uk", "en"],
+  "output": {
+    "uk": "project-interior-house-001.html",
+    "en": "project-interior-house-001-en.html"
+  },
+  "languageLinks": {
+    "uk": "project-interior-house-001.html",
+    "en": "project-interior-house-001-en.html"
+  },
+  "paths": {
+    "cover": "cover.png",
+    "planningSets": [
+      {
+        "title": {
+          "uk": "Планування першого поверху",
+          "en": "First-floor planning"
+        },
+        "before": "planning/01-first-floor/plan-before.jpg",
+        "after": "planning/01-first-floor/plan-after.jpg"
+      },
+      {
+        "title": {
+          "uk": "Планування другого поверху",
+          "en": "Second-floor planning"
+        },
+        "before": "planning/02-second-floor/plan-before.jpg",
+        "after": "planning/02-second-floor/plan-after.jpg"
+      }
+    ],
+    "galleryDir": "gallery"
+  },
+  "seo": {
+    "uk": {
+      "title": "Інтер'єр двоповерхового будинку в Сумах — YVK Design",
+      "description": "Сучасний інтер'єр двоповерхового будинку площею 333,74 м² із відкритим плануванням першого поверху."
+    },
+    "en": {
+      "title": "Two-Storey House Interior in Sumy — YVK Design",
+      "description": "A modern 333.74 m² two-storey house interior with an open-plan ground floor designed for family living."
+    }
+  },
+  "hero": {
+    "left": {
+      "uk": "ДВОПОВЕРХОВИЙ\nБУДИНОК",
+      "en": "TWO-STOREY\nHOUSE"
+    },
+    "right": {
+      "uk": "ВІДКРИТИЙ ПРОСТІР\nСУЧАСНИЙ ДИЗАЙН",
+      "en": "OPEN-PLAN LIVING\nMODERN DESIGN"
+    },
+    "imageAlt": {
+      "uk": "Інтер'єр двоповерхового будинку — головна візуалізація",
+      "en": "Two-storey house interior — main visualisation"
+    }
+  },
+  "info": {
+    "kicker": {
+      "uk": "Про проєкт",
+      "en": "About the project"
+    },
+    "heading": {
+      "uk": "Двоповерховий житловий будинок",
+      "en": "Two-storey family house"
+    },
+    "paragraphs": {
+      "uk": [
+        "Сучасний двоповерховий житловий будинок із відкритим плануванням першого поверху."
+      ],
+      "en": [
+        "A modern two-storey family house with an open-plan ground floor."
+      ]
+    },
+    "meta": [
+      {
+        "label": { "uk": "Локація", "en": "Location" },
+        "value": { "uk": "Суми, Україна", "en": "Sumy, Ukraine" }
+      },
+      {
+        "label": { "uk": "Тип об'єкта", "en": "Property type" },
+        "value": { "uk": "Житловий будинок", "en": "Residential house" }
+      },
+      {
+        "label": { "uk": "Площа", "en": "Area" },
+        "value": { "uk": "333,74 м²", "en": "333.74 m²" }
+      },
+      {
+        "label": { "uk": "Дизайн та візуалізація", "en": "Design and visualisation" },
+        "value": { "uk": "Юрій Костюченко", "en": "Yuriy Kostyuchenko" }
+      },
+      {
+        "label": { "uk": "Тип робіт", "en": "Project type" },
+        "value": { "uk": "Комерційний проєкт", "en": "Commercial project" }
+      }
+    ]
+  }
+}

@@ -371,8 +371,6 @@ function validateConfig(config, projectDir) {
     assertText(config.output?.uk, 'output.uk');
   }
   assertText(config.paths?.cover, 'paths.cover');
-  assertText(config.paths?.planningBefore, 'paths.planningBefore');
-  assertText(config.paths?.planningAfter, 'paths.planningAfter');
   assertText(config.paths?.galleryDir, 'paths.galleryDir');
   assertText(config.hero?.left?.uk, 'hero.left.uk');
   assertText(config.hero?.right?.uk, 'hero.right.uk');
@@ -427,11 +425,16 @@ function validateConfig(config, projectDir) {
     assertText(item?.value?.uk, `info.meta[${index}].value.uk`);
   });
 
+  const plans = planningSets(config);
+  plans.forEach((plan, index) => {
+    assertText(plan?.before, `paths.planningSets[${index}].before`);
+    assertText(plan?.after, `paths.planningSets[${index}].after`);
+  });
+
   [
     config.paths.cover,
-    config.paths.planningBefore,
-    config.paths.planningAfter,
-    config.paths.galleryDir
+    config.paths.galleryDir,
+    ...plans.flatMap((plan) => [plan.before, plan.after])
   ].forEach((relativePath) => {
     if (!fs.existsSync(path.join(projectDir, relativePath))) {
       throw new Error(`Project path does not exist: ${relativePath}`);
@@ -471,12 +474,16 @@ function lastNumber(name) {
 
 function splitFolderTitle(folderName) {
   const withoutNumber = folderName.replace(/^\s*\d+\s*[-_.]*\s*/, '').trim();
-  const [ukRaw, enRaw = ''] = withoutNumber.split(/\s*__\s*/);
-  const normalize = (text) => text.replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim();
+  const [ukRaw, enRaw = ''] = withoutNumber.split(/\s*_{1,2}\s*/);
+  const normalize = (text) => text.replace(/_+/g, ' ').replace(/\s*-\s*/g, '-').replace(/\s+/g, ' ').trim();
+  const normalizeEnglishFloor = (text) => text
+    .replace(/\b1-st\b/gi, '1st')
+    .replace(/\b2-st\b/gi, '2nd')
+    .replace(/\b3-st\b/gi, '3rd');
 
   return {
     uk: normalize(ukRaw).toLocaleUpperCase('uk-UA'),
-    en: normalize(enRaw).toLocaleUpperCase('en-US')
+    en: normalizeEnglishFloor(normalize(enRaw)).toLocaleUpperCase('en-US')
   };
 }
 
@@ -502,6 +509,17 @@ function imageFilesByNumber(dir) {
 function outputFor(config, lang) {
   if (typeof config.output === 'string') return config.output;
   return config.output?.[lang] || config.output?.uk || `${projectArg}-${lang}.html`;
+}
+
+function planningSets(config) {
+  if (Array.isArray(config.paths?.planningSets) && config.paths.planningSets.length) {
+    return config.paths.planningSets;
+  }
+
+  return [{
+    before: config.paths?.planningBefore,
+    after: config.paths?.planningAfter
+  }];
 }
 
 function buildLanguageSwitch(config, lang) {
@@ -599,8 +617,7 @@ function renderPage(config, projectDir, lang) {
   const projectsHref = lang === 'en' ? 'projects-en.html' : 'projects.html';
   const contactHref = lang === 'en' ? 'contact-en.html' : 'contact.html';
   const cover = relUrl(path.join(projectDir, config.paths.cover));
-  const planBefore = relUrl(path.join(projectDir, config.paths.planningBefore));
-  const planAfter = relUrl(path.join(projectDir, config.paths.planningAfter));
+  const plans = planningSets(config);
   const gallery = buildGallery(projectDir, config.paths.galleryDir, lang);
   const lightboxImage = gallery.firstImage || cover;
 
@@ -673,8 +690,14 @@ ${config.info.meta.map((item) => `          <div>
     </section>
 
     <section class="detail-plan">
-      <div class="container">
-        <div class="detail-plan-compare" data-plan-compare style="--compare-position: 50%;">
+      <div class="container detail-plan-list">
+${plans.map((plan) => {
+  const planBefore = relUrl(path.join(projectDir, plan.before));
+  const planAfter = relUrl(path.join(projectDir, plan.after));
+  const title = localized(plan.title, lang);
+
+  return `        <div class="detail-plan-set">
+${title ? `          <h2 class="detail-plan-title">${escapeHtml(title)}</h2>\n` : ''}          <div class="detail-plan-compare" data-plan-compare style="--compare-position: 50%;">
           <div class="detail-plan-compare-stage">
             <img class="detail-plan-before" loading="lazy" decoding="async" src="${planBefore}" alt="${escapeHtml(t.planBeforeAlt)}" draggable="false" />
             <div class="detail-plan-after-wrap">
@@ -686,6 +709,8 @@ ${config.info.meta.map((item) => `          <div>
             <input class="detail-plan-range" type="range" min="0" max="100" value="50" aria-label="${escapeHtml(t.planRange)}" />
           </div>
         </div>
+        </div>`;
+}).join('\n')}
       </div>
     </section>
 
@@ -761,7 +786,7 @@ function renderProjectCard(config, projectDir, lang) {
   const card = config.card;
   const badges = localizedArray(card.badges, lang);
   const sourceFolder = path.basename(projectDir);
-  const sourceOrder = lastNumber(sourceFolder);
+  const sourceOrder = config.featuredOrder;
 
   return `          <article class="project-card project-card--footer-pinned" data-project-id="${escapeHtml(config.projectId)}" data-project-source="${escapeHtml(sourceFolder)}" data-project-order="${escapeHtml(sourceOrder)}" data-project-direction="${escapeHtml(config.projectDirection)}" data-project-segment="${escapeHtml(config.projectSegment)}" data-featured-order="${escapeHtml(config.featuredOrder)}" data-tags="${escapeHtml(card.tags)}">
             <a class="project-card-link" href="${escapeHtml(output)}">

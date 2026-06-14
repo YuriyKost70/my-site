@@ -1,0 +1,122 @@
+[PROJECT]
+
+ID:
+project-interior-house-001
+
+DIRECTION:
+interior
+
+SEGMENT:
+residential
+
+FEATURED:
+no
+
+FEATURED_ORDER:
+7
+
+
+[UA]
+
+HERO_LEFT:
+ДВОПОВЕРХОВИЙ
+БУДИНОК
+
+HERO_RIGHT:
+ВІДКРИТИЙ ПРОСТІР
+СУЧАСНИЙ ДИЗАЙН
+
+ABOUT_LABEL:
+Про проєкт
+
+ABOUT_TITLE:
+Двоповерховий житловий будинок
+
+ABOUT_TEXT:
+Цей проєкт представляє двоповерховий житловий будинок, виконаний у сучасному стилі з відкритим плануванням першого поверху.
+
+Основний акцент зроблено на створенні просторої та гнучкої житлової зони, що підтримує повсякденне сімейне життя.
+
+Планування першого поверху побудоване за принципом open space з інтеграцією вітальні, їдальні та кухні, де камін виступає центральним архітектурним елементом. Дизайн підкреслює цілісність простору, чітку логіку руху та збалансований зв'язок між функціональними зонами.
+
+У результаті створено сучасний житловий будинок із гнучкою та добре організованою планувальною структурою, що поєднує архітектурну чіткість із комфортною атмосферою для життя.
+
+META:
+Локація | Суми, Україна
+Тип об'єкта | Житловий будинок
+Площа | 333,74 м²
+Дизайн та візуалізація | Юрій Костюченко
+Тип робіт | Комерційний проєкт
+
+CARD_LABEL:
+Інтер'єр
+
+CARD_TOPLINE_LEFT:
+Житловий будинок
+
+CARD_TOPLINE_RIGHT:
+Комерційний проєкт
+
+CARD_TITLE:
+Двоповерховий будинок
+
+CARD_DESCRIPTION:
+Сучасний сімейний інтер'єр із відкритим першим поверхом, чіткою логікою руху та збалансованим зв'язком між функціональними зонами.
+
+CARD_BADGES:
+Будинок
+Open space
+Візуалізація
+
+
+[EN]
+
+HERO_LEFT:
+TWO-STOREY
+HOUSE
+
+HERO_RIGHT:
+OPEN-PLAN LIVING
+MODERN DESIGN
+
+ABOUT_LABEL:
+About the project
+
+ABOUT_TITLE:
+Two-storey family house
+
+ABOUT_TEXT:
+This project presents a two-storey residential house designed in a modern style with an open-plan ground floor.
+
+The main focus was to create a spacious and flexible living area that supports everyday family life.
+
+The ground-floor layout integrates the living, dining and kitchen areas, with the fireplace serving as a central architectural element. The design emphasises spatial continuity, clear circulation and a balanced relationship between the functional zones.
+
+The result is a contemporary family house with a flexible and well-organised layout that combines architectural clarity with a comfortable living atmosphere.
+
+META:
+Location | Sumy, Ukraine
+Property type | Residential house
+Area | 333.74 m²
+Design and visualisation | Yuriy Kostyuchenko
+Project type | Commercial project
+
+CARD_LABEL:
+Interior
+
+CARD_TOPLINE_LEFT:
+Residential house
+
+CARD_TOPLINE_RIGHT:
+Commercial project
+
+CARD_TITLE:
+Two-storey house
+
+CARD_DESCRIPTION:
+A modern family interior with an open-plan ground floor, clear circulation and a balanced relationship between functional zones.
+
+CARD_BADGES:
+House
+Open plan
+Visualisation

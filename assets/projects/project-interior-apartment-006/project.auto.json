@@ -1,0 +1,83 @@
+{
+  "schema": "yvk-project-auto-v1",
+  "enabled": true,
+  "languages": ["uk", "en"],
+  "output": {
+    "uk": "project-interior-apartment-006.html",
+    "en": "project-interior-apartment-006-en.html"
+  },
+  "languageLinks": {
+    "uk": "project-interior-apartment-006.html",
+    "en": "project-interior-apartment-006-en.html"
+  },
+  "paths": {
+    "cover": "cover.jpg",
+    "planningBefore": "planning/plan-before.jpg",
+    "planningAfter": "planning/plan-after.jpg",
+    "galleryDir": "gallery"
+  },
+  "seo": {
+    "uk": {
+      "title": "Квартира в американській класиці у Києві — YVK Design",
+      "description": "Дизайн квартири площею 110 м² у стилі американської класики для комфортного сімейного проживання."
+    },
+    "en": {
+      "title": "American Classic Apartment in Kyiv — YVK Design",
+      "description": "A 110 m² family apartment designed in an American classic style with timeless aesthetics and modern functionality."
+    }
+  },
+  "hero": {
+    "left": {
+      "uk": "КВАРТИРА ДЛЯ\nСІМ'Ї",
+      "en": "FAMILY\nAPARTMENT"
+    },
+    "right": {
+      "uk": "АМЕРИКАНСЬКА КЛАСИКА\nВ СУЧАСНОМУ ІНТЕР'ЄРІ",
+      "en": "AMERICAN CLASSIC\nINTERIOR"
+    },
+    "imageAlt": {
+      "uk": "Квартира в американській класиці — головна візуалізація",
+      "en": "American classic apartment — main visualisation"
+    }
+  },
+  "info": {
+    "kicker": {
+      "uk": "Про проєкт",
+      "en": "About the project"
+    },
+    "heading": {
+      "uk": "Квартира в американській класиці",
+      "en": "American classic apartment"
+    },
+    "paragraphs": {
+      "uk": [
+        "Сімейна квартира, виконана в американському класичному стилі."
+      ],
+      "en": [
+        "A family apartment designed in an American classic style."
+      ]
+    },
+    "meta": [
+      {
+        "label": { "uk": "Локація", "en": "Location" },
+        "value": { "uk": "Київ, Україна", "en": "Kyiv, Ukraine" }
+      },
+      {
+        "label": { "uk": "Тип об'єкта", "en": "Property type" },
+        "value": { "uk": "Квартира", "en": "Apartment" }
+      },
+      {
+        "label": { "uk": "Площа", "en": "Area" },
+        "value": { "uk": "110 м²", "en": "110 m²" }
+      },
+      {
+        "label": { "uk": "Дизайн та візуалізація", "en": "Design and visualisation" },
+        "value": { "uk": "Юрій Костюченко", "en": "Yuriy Kostyuchenko" }
+      },
+      {
+        "label": { "uk": "Тип робіт", "en": "Project type" },
+        "value": { "uk": "Комерційний проєкт", "en": "Commercial project" }
+      }
+    ]
+  }
+}

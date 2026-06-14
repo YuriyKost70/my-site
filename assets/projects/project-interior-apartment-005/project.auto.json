@@ -1,0 +1,83 @@
+{
+  "schema": "yvk-project-auto-v1",
+  "enabled": true,
+  "languages": ["uk", "en"],
+  "output": {
+    "uk": "project-interior-apartment-005.html",
+    "en": "project-interior-apartment-005-en.html"
+  },
+  "languageLinks": {
+    "uk": "project-interior-apartment-005.html",
+    "en": "project-interior-apartment-005-en.html"
+  },
+  "paths": {
+    "cover": "cover.jpg",
+    "planningBefore": "planning/plan-before.jpg",
+    "planningAfter": "planning/plan-after.jpg",
+    "galleryDir": "gallery"
+  },
+  "seo": {
+    "uk": {
+      "title": "Квартира для сім'ї у Сумах — YVK Design",
+      "description": "Перепроєктування складного планування квартири площею 86,86 м² для сім'ї з дитиною."
+    },
+    "en": {
+      "title": "Family Apartment in Sumy — YVK Design",
+      "description": "A complete redesign of a complex 86.86 m² apartment layout for a family with one child."
+    }
+  },
+  "hero": {
+    "left": {
+      "uk": "КВАРТИРА ДЛЯ\nСІМ'Ї",
+      "en": "FAMILY\nAPARTMENT"
+    },
+    "right": {
+      "uk": "ПЕРЕПРОЄКТУВАННЯ СКЛАДНОГО\nПЛАНУВАННЯ",
+      "en": "COMPLEX LAYOUT\nREDESIGN"
+    },
+    "imageAlt": {
+      "uk": "Квартира для сім'ї — головна візуалізація",
+      "en": "Family apartment — main visualisation"
+    }
+  },
+  "info": {
+    "kicker": {
+      "uk": "Про проєкт",
+      "en": "About the project"
+    },
+    "heading": {
+      "uk": "Квартира для сім'ї",
+      "en": "Family apartment"
+    },
+    "paragraphs": {
+      "uk": [
+        "Сучасна квартира для сім'ї з однією дитиною."
+      ],
+      "en": [
+        "A modern apartment designed for a family with one child."
+      ]
+    },
+    "meta": [
+      {
+        "label": { "uk": "Локація", "en": "Location" },
+        "value": { "uk": "Суми, Україна", "en": "Sumy, Ukraine" }
+      },
+      {
+        "label": { "uk": "Тип об'єкта", "en": "Property type" },
+        "value": { "uk": "Квартира, ЖК «Еверест»", "en": "Apartment, Everest residential complex" }
+      },
+      {
+        "label": { "uk": "Площа", "en": "Area" },
+        "value": { "uk": "86,86 м²", "en": "86.86 m²" }
+      },
+      {
+        "label": { "uk": "Дизайн та візуалізація", "en": "Design and visualisation" },
+        "value": { "uk": "Юрій Костюченко", "en": "Yuriy Kostyuchenko" }
+      },
+      {
+        "label": { "uk": "Тип робіт", "en": "Project type" },
+        "value": { "uk": "Комерційний проєкт", "en": "Commercial project" }
+      }
+    ]
+  }
+}

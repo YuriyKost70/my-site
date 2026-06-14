@@ -1,0 +1,122 @@
+[PROJECT]
+
+ID:
+project-interior-house-002
+
+DIRECTION:
+interior
+
+SEGMENT:
+residential
+
+FEATURED:
+no
+
+FEATURED_ORDER:
+8
+
+
+[UA]
+
+HERO_LEFT:
+РЕНОВАЦІЯ
+БУДИНКУ
+
+HERO_RIGHT:
+АМЕРИКАНСЬКИЙ СТИЛЬ
+ДЛЯ ПРОДАЖУ
+
+ABOUT_LABEL:
+Про проєкт
+
+ABOUT_TITLE:
+Реновація будинку для продажу
+
+ABOUT_TEXT:
+Цей проєкт присвячений реновації існуючого житлового будинку з метою підготовки його до подальшого продажу.
+
+Дизайн розроблено в американському стилі з акцентом на зрозумілість, комфорт і привабливість для широкого кола покупців.
+
+Реновація включала оновлення планування, оздоблення та візуального образу інтер'єру з метою підвищення функціональності та сприйманої цінності об'єкта. Особливу увагу приділено просторовому балансу, нейтральній естетиці та практичним рішенням, що відповідають очікуванням ринку.
+
+У результаті створено оновлений житловий будинок із цілісним інтер'єром в американському стилі, оптимізований для презентації на ринку та подальшого продажу.
+
+META:
+Локація | Філадельфія, США
+Тип об'єкта | Житловий будинок
+Площа | 184,15 м²
+Дизайн та візуалізація | Юрій Костюченко
+Тип робіт | Комерційний проєкт
+
+CARD_LABEL:
+Інтер'єр
+
+CARD_TOPLINE_LEFT:
+Житловий будинок
+
+CARD_TOPLINE_RIGHT:
+Комерційний проєкт
+
+CARD_TITLE:
+Реновація будинку
+
+CARD_DESCRIPTION:
+Оновлення планування, оздоблення та візуального образу будинку в американському стилі для підвищення його ринкової привабливості.
+
+CARD_BADGES:
+Будинок
+Реновація
+Візуалізація
+
+
+[EN]
+
+HERO_LEFT:
+HOUSE
+RENOVATION
+
+HERO_RIGHT:
+AMERICAN STYLE
+FOR RESALE
+
+ABOUT_LABEL:
+About the project
+
+ABOUT_TITLE:
+House renovation for resale
+
+ABOUT_TEXT:
+This project focuses on the renovation of an existing residential house with the goal of preparing it for resale.
+
+The design was developed in an American style, emphasising clarity, comfort and broad market appeal.
+
+The renovation included updating the interior layout, finishes and visual character to improve functionality and perceived value. Particular attention was given to spatial balance, neutral aesthetics and practical solutions aligned with buyer expectations.
+
+The result is a refreshed residential property with a cohesive American-style interior, optimised for market presentation and resale.
+
+META:
+Location | Philadelphia, USA
+Property type | Residential house
+Area | 184.15 m²
+Design and visualisation | Yuriy Kostyuchenko
+Project type | Commercial project
+
+CARD_LABEL:
+Interior
+
+CARD_TOPLINE_LEFT:
+Residential house
+
+CARD_TOPLINE_RIGHT:
+Commercial project
+
+CARD_TITLE:
+House renovation
+
+CARD_DESCRIPTION:
+An American-style update of the layout, finishes and visual character designed to improve the property's functionality and market appeal.
+
+CARD_BADGES:
+House
+Renovation
+Visualisation
