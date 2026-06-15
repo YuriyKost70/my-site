@@ -15,14 +15,23 @@ const languageFields = new Set([
   'TITLE',
   'SUBTITLE',
   'LOCATION',
+  'LOCATION_LABEL',
   'OBJECT_TYPE',
+  'OBJECT_TYPE_LABEL',
   'AREA',
+  'AREA_LABEL',
   'AUTHOR',
+  'AUTHOR_LABEL',
   'PROJECT_TYPE',
+  'PROJECT_TYPE_LABEL',
   'DESCRIPTION',
   'HERO_LEFT',
   'HERO_RIGHT',
+  'ABOUT_LABEL',
   'ABOUT_TITLE',
+  'CARD_LABEL',
+  'CARD_TOPLINE_LEFT',
+  'CARD_TOPLINE_RIGHT',
   'CARD_TITLE',
   'CARD_DESCRIPTION',
   'BADGES',
@@ -230,6 +239,13 @@ function normalizeLanguage(source, language, project) {
   const area = text(source, 'AREA');
   const author = text(source, 'AUTHOR') || languageDefaults.author;
   const projectType = text(source, 'PROJECT_TYPE') || languageDefaults.projectType;
+  const metaLabels = {
+    location: text(source, 'LOCATION_LABEL') || languageDefaults.meta.location,
+    objectType: text(source, 'OBJECT_TYPE_LABEL') || languageDefaults.meta.objectType,
+    area: text(source, 'AREA_LABEL') || languageDefaults.meta.area,
+    author: text(source, 'AUTHOR_LABEL') || languageDefaults.meta.author,
+    projectType: text(source, 'PROJECT_TYPE_LABEL') || languageDefaults.meta.projectType
+  };
 
   required(title, `${language}.TITLE`);
   required(subtitle, `${language}.SUBTITLE`);
@@ -259,19 +275,19 @@ function normalizeLanguage(source, language, project) {
   return {
     heroLeft: splitHero(heroLeftSource, locale),
     heroRight: splitHero(heroRightSource, locale),
-    aboutLabel: languageDefaults.aboutLabel,
+    aboutLabel: text(source, 'ABOUT_LABEL') || languageDefaults.aboutLabel,
     aboutTitle: text(source, 'ABOUT_TITLE') || title,
     descriptionParagraphs,
     meta: [
-      `${languageDefaults.meta.location} | ${location}`,
-      `${languageDefaults.meta.objectType} | ${objectType}`,
-      `${languageDefaults.meta.area} | ${area}`,
-      `${languageDefaults.meta.author} | ${author}`,
-      `${languageDefaults.meta.projectType} | ${projectType}`
+      `${metaLabels.location} | ${location}`,
+      `${metaLabels.objectType} | ${objectType}`,
+      `${metaLabels.area} | ${area}`,
+      `${metaLabels.author} | ${author}`,
+      `${metaLabels.projectType} | ${projectType}`
     ],
-    cardLabel: directionLabels[project.direction][language],
-    cardToplineLeft: objectType,
-    cardToplineRight: projectType,
+    cardLabel: text(source, 'CARD_LABEL') || directionLabels[project.direction][language],
+    cardToplineLeft: text(source, 'CARD_TOPLINE_LEFT') || objectType,
+    cardToplineRight: text(source, 'CARD_TOPLINE_RIGHT') || projectType,
     cardTitle: text(source, 'CARD_TITLE') || title,
     cardDescription,
     badges: explicitBadges.length ? explicitBadges : defaultBadges,

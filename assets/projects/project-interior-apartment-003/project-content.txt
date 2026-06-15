@@ -1,13 +1,21 @@
+# Generated from project-description.txt. Edit the source file, not this file.
+
 [PROJECT]
 
 ID:
 project-interior-apartment-003
+
+STATUS:
+published
 
 DIRECTION:
 interior
 
 SEGMENT:
 residential
+
+STYLE:
+modern
 
 FEATURED:
 yes
@@ -68,6 +76,15 @@ CARD_BADGES:
 Планування
 Візуалізація
 
+SEO_TITLE:
+Студійна квартира — YVK Design
+
+SEO_DESCRIPTION:
+Просторове планування та дизайн інтер’єру студійної квартири у Києві.
+
+IMAGE_ALT:
+Студійна квартира — головна візуалізація
+
 
 [EN]
 
@@ -120,3 +137,12 @@ CARD_BADGES:
 Apartment
 Space planning
 Visualisation
+
+SEO_TITLE:
+Studio Apartment — YVK Design
+
+SEO_DESCRIPTION:
+Space planning and interior design for a studio apartment in Kyiv.
+
+IMAGE_ALT:
+Studio apartment — main visualisation

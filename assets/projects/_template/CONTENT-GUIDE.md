@@ -81,6 +81,9 @@ DESCRIPTION:
 ```
 
 Пустая строка внутри `DESCRIPTION` начинает новый абзац.
+Поля `LOCATION_LABEL`, `OBJECT_TYPE_LABEL`, `AREA_LABEL`, `AUTHOR_LABEL` и
+`PROJECT_TYPE_LABEL` обычно можно оставить пустыми: тогда используются
+стандартные локализованные подписи.
 
 ## Английская версия
 
@@ -95,7 +98,15 @@ HERO_LEFT:
 
 HERO_RIGHT:
 
+ABOUT_LABEL:
+
 ABOUT_TITLE:
+
+CARD_LABEL:
+
+CARD_TOPLINE_LEFT:
+
+CARD_TOPLINE_RIGHT:
 
 CARD_TITLE:
 

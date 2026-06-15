@@ -1,0 +1,203 @@
+[PROJECT]
+
+ID:
+
+STATUS:
+published
+
+DIRECTION:
+interior
+
+SEGMENT:
+residential
+
+STYLE:
+modern
+
+FEATURED:
+yes
+
+ORDER:
+4
+
+
+[UA]
+
+TITLE:
+Житлова квартира
+
+SUBTITLE:
+ФУНКЦІОНАЛЬНЕ ОНОВЛЕННЯ ПЛАНУВАННЯ
+
+LOCATION:
+Київ, Україна
+
+LOCATION_LABEL:
+Локація
+
+OBJECT_TYPE:
+Квартира
+
+OBJECT_TYPE_LABEL:
+Тип об’єкта
+
+AREA:
+150,4 м²
+
+AREA_LABEL:
+Площа
+
+AUTHOR:
+Юрій Костюченко
+
+AUTHOR_LABEL:
+Дизайн та візуалізація
+
+PROJECT_TYPE:
+Комерційний проєкт
+
+PROJECT_TYPE_LABEL:
+Тип робіт
+
+DESCRIPTION:
+Цей проєкт — сучасна квартира для сімейного проживання з акцентом на просторове планування та функціональну реорганізацію.
+
+Основним завданням було перепроєктувати внутрішнє планування з метою підвищення функціональності, покращення логіки руху та щоденного комфорту.
+
+План квартири було перероблено для створення чіткого зонування між приватними та спільними просторами, оптимізації використання площі та адаптації житла до потреб родини. Особливу увагу приділено просторовій логіці, ергономіці та практичності використання.
+
+У результаті сформовано добре структуровану сімейну квартиру з чітким і функціональним плануванням, готову до подальшої реалізації.
+
+HERO_LEFT:
+ЖИТЛОВА
+КВАРТИРА
+
+HERO_RIGHT:
+ФУНКЦІОНАЛЬНЕ ОНОВЛЕННЯ
+ПЛАНУВАННЯ
+
+ABOUT_LABEL:
+Про проєкт
+
+ABOUT_TITLE:
+Житлова квартира
+
+CARD_LABEL:
+Інтер’єр
+
+CARD_TOPLINE_LEFT:
+Квартира
+
+CARD_TOPLINE_RIGHT:
+Комерційний проєкт
+
+CARD_TITLE:
+Житлова квартира
+
+CARD_DESCRIPTION:
+Функціональне оновлення планування сімейної квартири з чітким зонуванням, зручною логікою руху та практичними рішеннями.
+
+BADGES:
+Квартира
+Планування
+Візуалізація
+
+SEO_TITLE:
+Житлова квартира — YVK Design
+
+SEO_DESCRIPTION:
+Функціональне оновлення планування житлової квартири у Києві.
+
+IMAGE_ALT:
+Житлова квартира — головна візуалізація
+
+
+[EN]
+
+TITLE:
+Residential apartment
+
+SUBTITLE:
+FUNCTIONAL LAYOUT UPDATE
+
+LOCATION:
+Kyiv, Ukraine
+
+LOCATION_LABEL:
+Location
+
+OBJECT_TYPE:
+Apartment
+
+OBJECT_TYPE_LABEL:
+Property type
+
+AREA:
+150.4 m²
+
+AREA_LABEL:
+Area
+
+AUTHOR:
+Yuriy Kostyuchenko
+
+AUTHOR_LABEL:
+Design and visualisation
+
+PROJECT_TYPE:
+Commercial project
+
+PROJECT_TYPE_LABEL:
+Project type
+
+DESCRIPTION:
+This project is a modern apartment designed for family living with a focus on space planning and functional reorganisation.
+
+The main task was to redesign the internal layout to improve functionality, circulation and everyday comfort.
+
+The floor plan was reworked to create clear zoning between private and shared areas, optimise the use of space and adapt the apartment to family needs. Attention was given to spatial logic, ergonomics and practical usability.
+
+The result is a well-structured family apartment with a clear and functional layout, ready for further implementation.
+
+HERO_LEFT:
+RESIDENTIAL
+APARTMENT
+
+HERO_RIGHT:
+FUNCTIONAL LAYOUT
+UPDATE
+
+ABOUT_LABEL:
+About the project
+
+ABOUT_TITLE:
+Residential apartment
+
+CARD_LABEL:
+Interior
+
+CARD_TOPLINE_LEFT:
+Apartment
+
+CARD_TOPLINE_RIGHT:
+Commercial project
+
+CARD_TITLE:
+Residential apartment
+
+CARD_DESCRIPTION:
+A functional layout update for a family apartment with clear zoning, comfortable circulation and practical solutions.
+
+BADGES:
+Apartment
+Space planning
+Visualisation
+
+SEO_TITLE:
+Residential Apartment — YVK Design
+
+SEO_DESCRIPTION:
+A functional layout update for a residential apartment in Kyiv.
+
+IMAGE_ALT:
+Residential apartment — main visualisation

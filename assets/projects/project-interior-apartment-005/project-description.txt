@@ -1,0 +1,203 @@
+[PROJECT]
+
+ID:
+
+STATUS:
+published
+
+DIRECTION:
+interior
+
+SEGMENT:
+residential
+
+STYLE:
+modern
+
+FEATURED:
+no
+
+ORDER:
+5
+
+
+[UA]
+
+TITLE:
+Квартира для сім'ї
+
+SUBTITLE:
+ПЕРЕПРОЄКТУВАННЯ СКЛАДНОГО ПЛАНУВАННЯ
+
+LOCATION:
+Суми, Україна
+
+LOCATION_LABEL:
+Локація
+
+OBJECT_TYPE:
+Квартира, ЖК «Еверест»
+
+OBJECT_TYPE_LABEL:
+Тип об'єкта
+
+AREA:
+86,86 м²
+
+AREA_LABEL:
+Площа
+
+AUTHOR:
+Юрій Костюченко
+
+AUTHOR_LABEL:
+Дизайн та візуалізація
+
+PROJECT_TYPE:
+Комерційний проєкт
+
+PROJECT_TYPE_LABEL:
+Тип робіт
+
+DESCRIPTION:
+Цей проєкт — сучасна квартира для сім'ї з однією дитиною.
+
+Початкове планування було складним і вимагало повного переосмислення просторової логіки та функціонального зонування.
+
+План квартири було перероблено, щоб покращити логіку руху, чітко розмежувати приватні та спільні зони й адаптувати простір до повсякденних потреб родини. Особливу увагу приділено ергономіці, системам зберігання та ефективному використанню наявної площі.
+
+У результаті створено функціональну, добре структуровану квартиру з чіткою просторовою організацією, готову до практичної реалізації.
+
+HERO_LEFT:
+КВАРТИРА ДЛЯ
+СІМ'Ї
+
+HERO_RIGHT:
+ПЕРЕПРОЄКТУВАННЯ СКЛАДНОГО
+ПЛАНУВАННЯ
+
+ABOUT_LABEL:
+Про проєкт
+
+ABOUT_TITLE:
+Квартира для сім'ї
+
+CARD_LABEL:
+Інтер'єр
+
+CARD_TOPLINE_LEFT:
+Квартира
+
+CARD_TOPLINE_RIGHT:
+Комерційний проєкт
+
+CARD_TITLE:
+Квартира для сім'ї
+
+CARD_DESCRIPTION:
+Повне перепроєктування складного планування квартири для сім'ї з дитиною: чітке зонування, зручна логіка руху та практичні системи зберігання.
+
+BADGES:
+Квартира
+Планування
+Візуалізація
+
+SEO_TITLE:
+Квартира для сім'ї у Сумах — YVK Design
+
+SEO_DESCRIPTION:
+Перепроєктування складного планування квартири площею 86,86 м² для сім'ї з дитиною.
+
+IMAGE_ALT:
+Квартира для сім'ї — головна візуалізація
+
+
+[EN]
+
+TITLE:
+Family apartment
+
+SUBTITLE:
+COMPLEX LAYOUT REDESIGN
+
+LOCATION:
+Sumy, Ukraine
+
+LOCATION_LABEL:
+Location
+
+OBJECT_TYPE:
+Apartment, Everest residential complex
+
+OBJECT_TYPE_LABEL:
+Property type
+
+AREA:
+86.86 m²
+
+AREA_LABEL:
+Area
+
+AUTHOR:
+Yuriy Kostyuchenko
+
+AUTHOR_LABEL:
+Design and visualisation
+
+PROJECT_TYPE:
+Commercial project
+
+PROJECT_TYPE_LABEL:
+Project type
+
+DESCRIPTION:
+This project is a modern apartment designed for a family with one child.
+
+The original layout was complex and required a complete rethink of its spatial logic and functional zoning.
+
+The floor plan was redesigned to improve circulation, clearly separate private and shared areas, and adapt the space to the family's everyday needs. Particular attention was given to ergonomics, storage solutions and the efficient use of the available area.
+
+The result is a functional, well-structured apartment with clear spatial organisation, ready for practical implementation.
+
+HERO_LEFT:
+FAMILY
+APARTMENT
+
+HERO_RIGHT:
+COMPLEX LAYOUT
+REDESIGN
+
+ABOUT_LABEL:
+About the project
+
+ABOUT_TITLE:
+Family apartment
+
+CARD_LABEL:
+Interior
+
+CARD_TOPLINE_LEFT:
+Apartment
+
+CARD_TOPLINE_RIGHT:
+Commercial project
+
+CARD_TITLE:
+Family apartment
+
+CARD_DESCRIPTION:
+A complete redesign of a complex apartment layout for a family with one child, with clear zoning, comfortable circulation and practical storage.
+
+BADGES:
+Apartment
+Space planning
+Visualisation
+
+SEO_TITLE:
+Family Apartment in Sumy — YVK Design
+
+SEO_DESCRIPTION:
+A complete redesign of a complex 86.86 m² apartment layout for a family with one child.
+
+IMAGE_ALT:
+Family apartment — main visualisation

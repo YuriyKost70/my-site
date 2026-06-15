@@ -1,13 +1,21 @@
+# Generated from project-description.txt. Edit the source file, not this file.
+
 [PROJECT]
 
 ID:
 project-interior-apartment-006
+
+STATUS:
+published
 
 DIRECTION:
 interior
 
 SEGMENT:
 residential
+
+STYLE:
+classic
 
 FEATURED:
 no
@@ -68,6 +76,15 @@ CARD_BADGES:
 Американська класика
 Візуалізація
 
+SEO_TITLE:
+Квартира в американській класиці у Києві — YVK Design
+
+SEO_DESCRIPTION:
+Дизайн квартири площею 110 м² у стилі американської класики для комфортного сімейного проживання.
+
+IMAGE_ALT:
+Квартира в американській класиці — головна візуалізація
+
 
 [EN]
 
@@ -120,3 +137,12 @@ CARD_BADGES:
 Apartment
 American classic
 Visualisation
+
+SEO_TITLE:
+American Classic Apartment in Kyiv — YVK Design
+
+SEO_DESCRIPTION:
+A 110 m² family apartment designed in an American classic style with timeless aesthetics and modern functionality.
+
+IMAGE_ALT:
+American classic apartment — main visualisation

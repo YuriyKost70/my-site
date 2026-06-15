@@ -1,13 +1,21 @@
+# Generated from project-description.txt. Edit the source file, not this file.
+
 [PROJECT]
 
 ID:
 project-interior-apartment-005
+
+STATUS:
+published
 
 DIRECTION:
 interior
 
 SEGMENT:
 residential
+
+STYLE:
+modern
 
 FEATURED:
 no
@@ -68,6 +76,15 @@ CARD_BADGES:
 Планування
 Візуалізація
 
+SEO_TITLE:
+Квартира для сім'ї у Сумах — YVK Design
+
+SEO_DESCRIPTION:
+Перепроєктування складного планування квартири площею 86,86 м² для сім'ї з дитиною.
+
+IMAGE_ALT:
+Квартира для сім'ї — головна візуалізація
+
 
 [EN]
 
@@ -120,3 +137,12 @@ CARD_BADGES:
 Apartment
 Space planning
 Visualisation
+
+SEO_TITLE:
+Family Apartment in Sumy — YVK Design
+
+SEO_DESCRIPTION:
+A complete redesign of a complex 86.86 m² apartment layout for a family with one child.
+
+IMAGE_ALT:
+Family apartment — main visualisation

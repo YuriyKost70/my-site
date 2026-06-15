@@ -1,13 +1,21 @@
+# Generated from project-description.txt. Edit the source file, not this file.
+
 [PROJECT]
 
 ID:
 project-interior-house-002
+
+STATUS:
+published
 
 DIRECTION:
 interior
 
 SEGMENT:
 residential
+
+STYLE:
+classic
 
 FEATURED:
 no
@@ -68,6 +76,15 @@ CARD_BADGES:
 Реновація
 Візуалізація
 
+SEO_TITLE:
+Реновація будинку у Філадельфії — YVK Design
+
+SEO_DESCRIPTION:
+Реновація житлового будинку площею 184,15 м² в американському стилі для підготовки об'єкта до продажу.
+
+IMAGE_ALT:
+Реновація будинку у Філадельфії — головна візуалізація
+
 
 [EN]
 
@@ -120,3 +137,12 @@ CARD_BADGES:
 House
 Renovation
 Visualisation
+
+SEO_TITLE:
+House Renovation in Philadelphia — YVK Design
+
+SEO_DESCRIPTION:
+A 184.15 m² American-style house renovation designed to improve functionality, market appeal and resale value.
+
+IMAGE_ALT:
+House renovation in Philadelphia — main visualisation
