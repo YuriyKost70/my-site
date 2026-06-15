@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { prepareProjectContent } = require('./project-description.cjs');
 
 const root = path.resolve(__dirname, '..');
 const projectsRoot = path.join(root, 'assets', 'projects');
@@ -10,6 +11,7 @@ const projectArg = readArg('--project') || 'project-interior-apartment-001';
 const watchMode = args.includes('--watch');
 const updateProjects = !args.includes('--no-projects');
 const cardsOnly = args.includes('--cards-only');
+const prepareOnly = args.includes('--prepare-only');
 
 const dictionary = {
   uk: {
@@ -123,9 +125,20 @@ const contentFields = new Set([
   'CARD_TOPLINE_RIGHT',
   'CARD_TITLE',
   'CARD_DESCRIPTION',
-  'CARD_BADGES'
+  'CARD_BADGES',
+  'SEO_TITLE',
+  'SEO_DESCRIPTION',
+  'IMAGE_ALT'
 ]);
-const projectFields = new Set(['ID', 'DIRECTION', 'SEGMENT', 'FEATURED', 'FEATURED_ORDER']);
+const projectFields = new Set([
+  'ID',
+  'STATUS',
+  'DIRECTION',
+  'SEGMENT',
+  'STYLE',
+  'FEATURED',
+  'FEATURED_ORDER'
+]);
 const projectDirections = new Set(['interior', 'exterior']);
 const projectSegments = new Set(['residential', 'commercial']);
 
@@ -239,22 +252,28 @@ function applyProjectContent(config, projectDir) {
   if (!content) return config;
 
   config.hero ||= {};
+  config.hero.imageAlt ||= {};
   config.info ||= {};
   config.info.paragraphs ||= {};
   config.card ||= {};
+  config.seo ||= {};
 
   const projectId = contentText(content.project, 'ID');
+  const status = contentText(content.project, 'STATUS').toLowerCase();
   const direction = contentText(content.project, 'DIRECTION').toLowerCase();
   const segment = contentText(content.project, 'SEGMENT').toLowerCase();
+  const style = contentText(content.project, 'STYLE').toLowerCase();
   const featured = contentText(content.project, 'FEATURED').toLowerCase();
   const featuredOrder = contentText(content.project, 'FEATURED_ORDER');
 
   if (projectId) config.projectId = projectId;
+  config.projectStatus = status || config.projectStatus || 'published';
   if (direction) config.projectDirection = direction;
   if (segment) config.projectSegment = segment;
+  if (style) config.projectStyle = style;
   if (featured) config.featured = featured;
   if (featuredOrder) config.featuredOrder = Number(featuredOrder);
-  if (direction && segment) config.card.tags = `${direction} ${segment} auto`;
+  if (direction && segment) config.card.tags = [direction, segment, style, 'auto'].filter(Boolean).join(' ');
 
   for (const language of ['uk', 'en']) {
     const fields = content[language];
@@ -269,6 +288,9 @@ function applyProjectContent(config, projectDir) {
     const cardTitle = contentText(fields, 'CARD_TITLE');
     const cardDescription = contentText(fields, 'CARD_DESCRIPTION');
     const cardBadges = contentLines(fields, 'CARD_BADGES');
+    const seoTitle = contentText(fields, 'SEO_TITLE');
+    const seoDescription = contentText(fields, 'SEO_DESCRIPTION');
+    const imageAlt = contentText(fields, 'IMAGE_ALT');
 
     if (heroLeft) {
       config.hero.left ||= {};
@@ -311,6 +333,12 @@ function applyProjectContent(config, projectDir) {
       config.card.badges ||= {};
       config.card.badges[language] = cardBadges;
     }
+    if (seoTitle || seoDescription) {
+      config.seo[language] ||= {};
+      if (seoTitle) config.seo[language].title = seoTitle;
+      if (seoDescription) config.seo[language].description = seoDescription;
+    }
+    if (imageAlt) config.hero.imageAlt[language] = imageAlt;
   }
 
   const metaByLanguage = {
@@ -386,6 +414,9 @@ function validateConfig(config, projectDir) {
   assertText(config.card?.title?.uk, 'card.title.uk');
   assertText(config.card?.description?.uk, 'card.description.uk');
 
+  if (!['draft', 'published'].includes(config.projectStatus || 'published')) {
+    throw new Error('Invalid project STATUS: use draft or published');
+  }
   if (config.projectId !== path.basename(projectDir)) {
     throw new Error(`Project ID must match the project folder name: expected ${path.basename(projectDir)}`);
   }
@@ -788,7 +819,7 @@ function renderProjectCard(config, projectDir, lang) {
   const sourceFolder = path.basename(projectDir);
   const sourceOrder = config.featuredOrder;
 
-  return `          <article class="project-card project-card--footer-pinned" data-project-id="${escapeHtml(config.projectId)}" data-project-source="${escapeHtml(sourceFolder)}" data-project-order="${escapeHtml(sourceOrder)}" data-project-direction="${escapeHtml(config.projectDirection)}" data-project-segment="${escapeHtml(config.projectSegment)}" data-featured-order="${escapeHtml(config.featuredOrder)}" data-tags="${escapeHtml(card.tags)}">
+  return `          <article class="project-card project-card--footer-pinned" data-project-id="${escapeHtml(config.projectId)}" data-project-source="${escapeHtml(sourceFolder)}" data-project-order="${escapeHtml(sourceOrder)}" data-project-direction="${escapeHtml(config.projectDirection)}" data-project-segment="${escapeHtml(config.projectSegment)}" data-project-style="${escapeHtml(config.projectStyle || '')}" data-featured-order="${escapeHtml(config.featuredOrder)}" data-tags="${escapeHtml(card.tags)}">
             <a class="project-card-link" href="${escapeHtml(output)}">
               <div class="project-image">
                 <img loading="lazy" decoding="async" src="${cover}" alt="${escapeHtml(localized(card.title, lang))}" />
@@ -850,7 +881,7 @@ function updateCardInPage({ config, projectDir, fileName, lang, markerPrefix, fe
     ));
   }
 
-  if (featuredOnly && config.featured !== 'yes') {
+  if (config.projectStatus !== 'published' || (featuredOnly && config.featured !== 'yes')) {
     html = html.replace(projectBlockPattern, '');
     fs.writeFileSync(file, html, 'utf8');
     return;
@@ -936,8 +967,28 @@ function updateProjectCards(config, projectDir) {
 
 function generate() {
   const projectDir = path.join(projectsRoot, projectArg);
+  const preparation = prepareProjectContent(projectDir);
+
+  if (preparation.found) {
+    console.log(`Prepared project-content.txt from project-description.txt${preparation.changed ? '' : ' (no changes)'}`);
+  }
+
+  if (prepareOnly) return;
+
   const configPath = path.join(projectDir, 'project.auto.json');
   const config = applyProjectContent(readJson(configPath), projectDir);
+  config.projectStatus ||= 'published';
+
+  if (!['draft', 'published'].includes(config.projectStatus)) {
+    throw new Error('Invalid project STATUS: use draft or published');
+  }
+
+  if (config.projectStatus === 'draft') {
+    if (updateProjects) updateProjectCards(config, projectDir);
+    console.log('Draft project: pages and cards were not published');
+    return;
+  }
+
   validateConfig(config, projectDir);
   const languages = config.languages?.length ? config.languages : ['uk'];
 

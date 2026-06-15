@@ -1,0 +1,108 @@
+# Це єдиний текстовий файл, який потрібно заповнювати вручну.
+# STATUS: draft не публікує проєкт. Після перевірки змініть на published.
+
+[PROJECT]
+
+ID:
+
+STATUS:
+draft
+
+DIRECTION:
+interior
+
+SEGMENT:
+residential
+
+STYLE:
+
+FEATURED:
+no
+
+ORDER:
+1
+
+
+[UA]
+
+TITLE:
+Назва проєкту
+
+SUBTITLE:
+Коротка ідея проєкту
+
+LOCATION:
+Україна
+
+OBJECT_TYPE:
+Квартира
+
+AREA:
+00,00 м²
+
+AUTHOR:
+Юрій Костюченко
+
+PROJECT_TYPE:
+Комерційний проєкт
+
+DESCRIPTION:
+Перший абзац повного опису проєкту.
+
+Другий абзац повного опису проєкту.
+
+# Необов’язкові поля. Якщо вони порожні, скрипт сформує їх автоматично.
+HERO_LEFT:
+
+HERO_RIGHT:
+
+ABOUT_TITLE:
+
+CARD_TITLE:
+
+CARD_DESCRIPTION:
+
+BADGES:
+
+SEO_TITLE:
+
+SEO_DESCRIPTION:
+
+IMAGE_ALT:
+
+
+[EN]
+
+TITLE:
+
+SUBTITLE:
+
+LOCATION:
+
+OBJECT_TYPE:
+
+AREA:
+
+AUTHOR:
+
+PROJECT_TYPE:
+
+DESCRIPTION:
+
+HERO_LEFT:
+
+HERO_RIGHT:
+
+ABOUT_TITLE:
+
+CARD_TITLE:
+
+CARD_DESCRIPTION:
+
+BADGES:
+
+SEO_TITLE:
+
+SEO_DESCRIPTION:
+
+IMAGE_ALT:

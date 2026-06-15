@@ -1,9 +1,6 @@
-# Generated from project-description.txt. Edit the source file, not this file.
-
 [PROJECT]
 
 ID:
-project-interior-apartment-001
 
 STATUS:
 published
@@ -20,11 +17,41 @@ modern
 FEATURED:
 yes
 
-FEATURED_ORDER:
+ORDER:
 1
 
 
 [UA]
+
+TITLE:
+Сучасна квартира
+
+SUBTITLE:
+Консультація до купівлі та просторове планування
+
+LOCATION:
+Україна
+
+OBJECT_TYPE:
+Квартира
+
+AREA:
+93,18 м²
+
+AUTHOR:
+Юрій Костюченко
+
+PROJECT_TYPE:
+Комерційний проєкт
+
+DESCRIPTION:
+Цей проєкт — сучасна квартира для молодої сім’ї з однією дитиною, що включає консультацію на етапі вибору об’єкта та просторове планування.
+
+Я був залучений на ранній стадії, аналізуючи та відбираючи дві окремі однокімнатні квартири з точки зору їхнього потенціалу для об’єднання в єдиний житловий простір.
+
+До купівлі планування були проаналізовані з позицій просторової логіки, можливостей зонування та подальшої експлуатації. Після придбання план квартири було повністю перероблено, щоб чітко розділити приватні та спільні зони, оптимізувати рух і підвищити загальну функціональність.
+
+У результаті сформовано цілісну, добре структуровану концепцію квартири з раціональним планувальним рішенням — від первинного аналізу до проєкту, готового до реалізації.
 
 HERO_LEFT:
 СУЧАСНА
@@ -34,36 +61,8 @@ HERO_RIGHT:
 КОНСУЛЬТАЦІЯ ДО КУПІВЛІ
 ТА ПРОСТОРОВЕ ПЛАНУВАННЯ
 
-ABOUT_LABEL:
-Про проєкт
-
 ABOUT_TITLE:
 Квартира для молодої сім’ї
-
-ABOUT_TEXT:
-Цей проєкт — сучасна квартира для молодої сім’ї з однією дитиною, що включає консультацію на етапі вибору об’єкта та просторове планування.
-
-Я був залучений на ранній стадії, аналізуючи та відбираючи дві окремі однокімнатні квартири з точки зору їхнього потенціалу для об’єднання в єдиний житловий простір.
-
-До купівлі планування були проаналізовані з позицій просторової логіки, можливостей зонування та подальшої експлуатації. Після придбання план квартири було повністю перероблено, щоб чітко розділити приватні та спільні зони, оптимізувати рух і підвищити загальну функціональність.
-
-У результаті сформовано цілісну, добре структуровану концепцію квартири з раціональним планувальним рішенням — від первинного аналізу до проєкту, готового до реалізації.
-
-META:
-Локація | Україна
-Тип об’єкта | Квартира
-Площа | 93,18 м²
-Дизайн та візуалізація | Юрій Костюченко
-Тип робіт | Комерційний проєкт
-
-CARD_LABEL:
-Інтер’єр
-
-CARD_TOPLINE_LEFT:
-Квартира
-
-CARD_TOPLINE_RIGHT:
-Комерційний проєкт
 
 CARD_TITLE:
 Сучасна квартира
@@ -71,7 +70,7 @@ CARD_TITLE:
 CARD_DESCRIPTION:
 Консультація до купівлі та просторове планування квартири для молодої сім’ї: аналіз об’єкта, об’єднання двох квартир і раціональна планувальна концепція.
 
-CARD_BADGES:
+BADGES:
 Квартира
 Планування
 Візуалізація
@@ -88,21 +87,28 @@ IMAGE_ALT:
 
 [EN]
 
-HERO_LEFT:
-MODERN
-APARTMENT
+TITLE:
+Modern apartment
 
-HERO_RIGHT:
-PRE-PURCHASE CONSULTATION
-AND SPACE PLANNING
+SUBTITLE:
+Pre-purchase consultation and space planning
 
-ABOUT_LABEL:
-About the project
+LOCATION:
+Ukraine
 
-ABOUT_TITLE:
-An apartment for a young family
+OBJECT_TYPE:
+Apartment
 
-ABOUT_TEXT:
+AREA:
+93.18 m²
+
+AUTHOR:
+Yuriy Kostyuchenko
+
+PROJECT_TYPE:
+Commercial project
+
+DESCRIPTION:
 This project is a modern apartment for a young family with one child. The scope included consultation during the property selection stage and comprehensive space planning.
 
 I became involved at an early stage, assessing and comparing two separate one-bedroom apartments to determine their potential for being combined into a single living space.
@@ -111,21 +117,16 @@ Before the purchase, the layouts were analysed in terms of spatial logic, zoning
 
 The result is a cohesive, well-structured apartment concept with an efficient planning solution, developed from the initial assessment through to a design ready for implementation.
 
-META:
-Location | Ukraine
-Property type | Apartment
-Area | 93.18 m²
-Design and visualisation | Yuriy Kostyuchenko
-Project type | Commercial project
+HERO_LEFT:
+MODERN
+APARTMENT
 
-CARD_LABEL:
-Interior
+HERO_RIGHT:
+PRE-PURCHASE CONSULTATION
+AND SPACE PLANNING
 
-CARD_TOPLINE_LEFT:
-Apartment
-
-CARD_TOPLINE_RIGHT:
-Commercial project
+ABOUT_TITLE:
+An apartment for a young family
 
 CARD_TITLE:
 Modern apartment
@@ -133,7 +134,7 @@ Modern apartment
 CARD_DESCRIPTION:
 Pre-purchase consultation and space planning for a young family: property assessment, the combination of two apartments and a functional planning concept.
 
-CARD_BADGES:
+BADGES:
 Apartment
 Space planning
 Visualisation

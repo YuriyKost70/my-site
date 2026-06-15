@@ -1,7 +1,12 @@
+# Generated from project-description.txt. Edit the source file, not this file.
+
 [PROJECT]
 
 ID:
-project-interior-private-apartment-000
+_template
+
+STATUS:
+draft
 
 DIRECTION:
 interior
@@ -9,8 +14,11 @@ interior
 SEGMENT:
 residential
 
+STYLE:
+
+
 FEATURED:
-yes
+no
 
 FEATURED_ORDER:
 1
@@ -19,23 +27,22 @@ FEATURED_ORDER:
 [UA]
 
 HERO_LEFT:
-НАЗВА
-ПРОЄКТУ
+НАЗВА ПРОЄКТУ
 
 HERO_RIGHT:
-КОРОТКИЙ ОПИС
-У ДВА РЯДКИ
+КОРОТКА
+ІДЕЯ ПРОЄКТУ
 
 ABOUT_LABEL:
 Про проєкт
 
 ABOUT_TITLE:
-Заголовок опису проєкту
+Назва проєкту
 
 ABOUT_TEXT:
-Перший абзац опису проєкту.
+Перший абзац повного опису проєкту.
 
-Другий абзац опису проєкту.
+Другий абзац повного опису проєкту.
 
 META:
 Локація | Україна
@@ -51,18 +58,26 @@ CARD_TOPLINE_LEFT:
 Квартира
 
 CARD_TOPLINE_RIGHT:
-Дизайн-проєкт
+Комерційний проєкт
 
 CARD_TITLE:
-Назва картки
+Назва проєкту
 
 CARD_DESCRIPTION:
-Короткий опис для сторінки «Проєкти».
+Перший абзац повного опису проєкту.
 
 CARD_BADGES:
 Квартира
-Планування
 Візуалізація
+
+SEO_TITLE:
+Назва проєкту — YVK Design
+
+SEO_DESCRIPTION:
+Перший абзац повного опису проєкту.
+
+IMAGE_ALT:
+Назва проєкту — головне зображення проєкту
 
 
 [EN]
@@ -90,3 +105,9 @@ CARD_TITLE:
 CARD_DESCRIPTION:
 
 CARD_BADGES:
+
+SEO_TITLE:
+
+SEO_DESCRIPTION:
+
+IMAGE_ALT:
