@@ -1,0 +1,148 @@
+# Generated from project-description.txt. Edit the source file, not this file.
+
+[PROJECT]
+
+ID:
+project-exterior-house-001
+
+STATUS:
+published
+
+DIRECTION:
+exterior
+
+SEGMENT:
+private
+
+STYLE:
+modern
+
+FEATURED:
+no
+
+FEATURED_ORDER:
+10
+
+
+[UA]
+
+HERO_LEFT:
+ПРИВАТНИЙ
+БУДИНОК
+
+HERO_RIGHT:
+ДВІР ТА ПРОСТІР
+ДЛЯ ВІДПОЧИНКУ
+
+ABOUT_LABEL:
+Про проєкт
+
+ABOUT_TITLE:
+Приватний будинок
+
+ABOUT_TEXT:
+Цей проєкт зосереджений на проєктуванні та реалізації дворового простору приватного житлового будинку і зони зовнішнього відпочинку.
+
+Основною метою було створення функціонального та комфортного зовнішнього середовища для повсякденного використання і дозвілля.
+
+Проєкт включав планування та реалізацію басейну, допоміжних споруд і рекреаційних зон із ретельною увагою до логіки руху, зонування та візуальної цілісності. Дворовий простір було сформовано як невід’ємне продовження житлового середовища будинку.
+
+У результаті створено добре структуровану концепцію двору, що поєднує функціональність, комфорт і практичність та повністю реалізована на об’єкті.
+
+META:
+Локація | Суми, Україна
+Тип об’єкта | Житловий будинок та простір для відпочинку
+Площа ділянки | 1242,85 м²
+Дизайн та візуалізація | Юрій Костюченко
+Тип робіт | Дизайн-проєкт
+
+CARD_LABEL:
+Екстер’єр
+
+CARD_TOPLINE_LEFT:
+Будинок
+
+CARD_TOPLINE_RIGHT:
+Приватний проєкт
+
+CARD_TITLE:
+Приватний будинок
+
+CARD_DESCRIPTION:
+Двір, басейн, допоміжні споруди та простір для відпочинку як продовження житлового середовища будинку.
+
+CARD_BADGES:
+Будинок
+Екстер’єр
+Ландшафт
+
+SEO_TITLE:
+Приватний будинок — YVK Design
+
+SEO_DESCRIPTION:
+Двір, басейн і простір для відпочинку приватного будинку в Сумах.
+
+IMAGE_ALT:
+Приватний будинок — головне зображення проєкту
+
+
+[EN]
+
+HERO_LEFT:
+PRIVATE
+HOUSE
+
+HERO_RIGHT:
+COURTYARD AND
+OUTDOOR LIVING
+
+ABOUT_LABEL:
+About the project
+
+ABOUT_TITLE:
+Private House
+
+ABOUT_TEXT:
+This project focuses on the design and implementation of a private house courtyard and outdoor living area.
+
+The main goal was to create a functional and comfortable outdoor environment for everyday use and leisure.
+
+The project included the planning and realization of a swimming pool, auxiliary buildings, and recreational zones, with careful attention to circulation, zoning, and visual coherence. The outdoor space was designed as an integral extension of the residential environment.
+
+The result is a well-structured courtyard concept that combines functionality, comfort, and practical usability, fully realized on site.
+
+META:
+Location | Sumy, Ukraine
+Property type | House and outdoor living area
+Plot area | 1242.85 m²
+Design and visualisation | Yuriy Kostyuchenko
+Project type | Design project
+
+CARD_LABEL:
+Exterior
+
+CARD_TOPLINE_LEFT:
+House and outdoor living area
+
+CARD_TOPLINE_RIGHT:
+Private project
+
+CARD_TITLE:
+Private House
+
+CARD_DESCRIPTION:
+Courtyard, swimming pool, auxiliary buildings and outdoor living areas designed as an extension of the house.
+
+CARD_BADGES:
+House
+Exterior
+Landscape
+
+SEO_TITLE:
+Private House — YVK Design
+
+SEO_DESCRIPTION:
+Courtyard, swimming pool and outdoor living design for a private house in Sumy.
+
+IMAGE_ALT:
+Private House — main project image

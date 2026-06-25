@@ -38,11 +38,11 @@ const dictionary = {
     objectType: 'Тип об’єкта',
     interior: 'Інтер’єр',
     exterior: 'Екстер’єр',
-    residential: 'Житловий об’єкт',
-    commercial: 'Комерційний простір',
+    private: 'Приватний об’єкт',
+    business: 'Простір для бізнесу',
     message: 'Коротко опишіть задачу',
     send: 'Надіслати заявку',
-    footerText: 'YVK Design — дизайн інтер’єрів, екстер’єрів та комерційних просторів.',
+    footerText: 'YVK Design — дизайн інтер’єрів, екстер’єрів та просторів для бізнесу.',
     city: 'м. Суми, Україна',
     close: 'Закрити перегляд',
     prev: 'Попереднє зображення',
@@ -74,11 +74,11 @@ const dictionary = {
     objectType: 'Object type',
     interior: 'Interior',
     exterior: 'Exterior',
-    residential: 'Residential object',
-    commercial: 'Commercial space',
+    private: 'Private project',
+    business: 'Business space',
     message: 'Briefly describe the task',
     send: 'Send request',
-    footerText: 'YVK Design — interior, exterior and commercial space design.',
+    footerText: 'YVK Design — interior, exterior and business space design.',
     city: 'Sumy, Ukraine',
     close: 'Close preview',
     prev: 'Previous image',
@@ -140,7 +140,11 @@ const projectFields = new Set([
   'FEATURED_ORDER'
 ]);
 const projectDirections = new Set(['interior', 'exterior']);
-const projectSegments = new Set(['residential', 'commercial']);
+const projectSegments = new Set(['private', 'business']);
+const segmentAliases = {
+  residential: 'private',
+  commercial: 'business'
+};
 
 function parseProjectContent(filePath) {
   if (!fs.existsSync(filePath)) return null;
@@ -261,7 +265,8 @@ function applyProjectContent(config, projectDir) {
   const projectId = contentText(content.project, 'ID');
   const status = contentText(content.project, 'STATUS').toLowerCase();
   const direction = contentText(content.project, 'DIRECTION').toLowerCase();
-  const segment = contentText(content.project, 'SEGMENT').toLowerCase();
+  const rawSegment = contentText(content.project, 'SEGMENT').toLowerCase();
+  const segment = segmentAliases[rawSegment] || rawSegment;
   const style = contentText(content.project, 'STYLE').toLowerCase();
   const featured = contentText(content.project, 'FEATURED').toLowerCase();
   const featuredOrder = contentText(content.project, 'FEATURED_ORDER');
@@ -456,16 +461,21 @@ function validateConfig(config, projectDir) {
     assertText(item?.value?.uk, `info.meta[${index}].value.uk`);
   });
 
-  const plans = planningSets(config);
+  const planImages = planningImages(config);
+  const plans = planImages.length ? [] : planningSets(config);
   plans.forEach((plan, index) => {
     assertText(plan?.before, `paths.planningSets[${index}].before`);
     assertText(plan?.after, `paths.planningSets[${index}].after`);
+  });
+  planImages.forEach((plan, index) => {
+    assertText(plan?.src, `paths.planningImages[${index}].src`);
   });
 
   [
     config.paths.cover,
     config.paths.galleryDir,
-    ...plans.flatMap((plan) => [plan.before, plan.after])
+    ...plans.flatMap((plan) => [plan.before, plan.after]),
+    ...planImages.map((plan) => plan.src)
   ].forEach((relativePath) => {
     if (!fs.existsSync(path.join(projectDir, relativePath))) {
       throw new Error(`Project path does not exist: ${relativePath}`);
@@ -551,6 +561,49 @@ function planningSets(config) {
     before: config.paths?.planningBefore,
     after: config.paths?.planningAfter
   }];
+}
+
+function planningImages(config) {
+  return Array.isArray(config.paths?.planningImages) ? config.paths.planningImages : [];
+}
+
+function renderPlanning(config, projectDir, lang, t) {
+  const planImages = planningImages(config);
+
+  if (planImages.length) {
+    return planImages.map((plan) => {
+      const planSrc = relUrl(path.join(projectDir, plan.src));
+      const title = localized(plan.title, lang);
+      const alt = localized(plan.alt, lang) || title || t.planAfterAlt;
+
+      return `        <div class="detail-plan-set detail-plan-set--image">
+${title ? `          <h2 class="detail-plan-title">${escapeHtml(title)}</h2>\n` : ''}          <figure class="detail-plan-image">
+            <img loading="lazy" decoding="async" src="${planSrc}" alt="${escapeHtml(alt)}" draggable="false" />
+          </figure>
+        </div>`;
+    }).join('\n');
+  }
+
+  return planningSets(config).map((plan) => {
+    const planBefore = relUrl(path.join(projectDir, plan.before));
+    const planAfter = relUrl(path.join(projectDir, plan.after));
+    const title = localized(plan.title, lang);
+
+    return `        <div class="detail-plan-set">
+${title ? `          <h2 class="detail-plan-title">${escapeHtml(title)}</h2>\n` : ''}          <div class="detail-plan-compare" data-plan-compare style="--compare-position: 50%;">
+          <div class="detail-plan-compare-stage">
+            <img class="detail-plan-before" loading="lazy" decoding="async" src="${planBefore}" alt="${escapeHtml(t.planBeforeAlt)}" draggable="false" />
+            <div class="detail-plan-after-wrap">
+              <img class="detail-plan-after" loading="lazy" decoding="async" src="${planAfter}" alt="${escapeHtml(t.planAfterAlt)}" draggable="false" />
+            </div>
+            <div class="detail-plan-label detail-plan-label-before">${escapeHtml(t.planBefore)}</div>
+            <div class="detail-plan-label detail-plan-label-after">${escapeHtml(t.planAfter)}</div>
+            <div class="detail-plan-divider" aria-hidden="true"></div>
+            <input class="detail-plan-range" type="range" min="0" max="100" value="50" aria-label="${escapeHtml(t.planRange)}" />
+          </div>
+        </div>
+        </div>`;
+  }).join('\n');
 }
 
 function buildLanguageSwitch(config, lang) {
@@ -648,7 +701,7 @@ function renderPage(config, projectDir, lang) {
   const projectsHref = lang === 'en' ? 'projects-en.html' : 'projects.html';
   const contactHref = lang === 'en' ? 'contact-en.html' : 'contact.html';
   const cover = relUrl(path.join(projectDir, config.paths.cover));
-  const plans = planningSets(config);
+  const planningHtml = renderPlanning(config, projectDir, lang, t);
   const gallery = buildGallery(projectDir, config.paths.galleryDir, lang);
   const lightboxImage = gallery.firstImage || cover;
 
@@ -722,26 +775,7 @@ ${config.info.meta.map((item) => `          <div>
 
     <section class="detail-plan">
       <div class="container detail-plan-list">
-${plans.map((plan) => {
-  const planBefore = relUrl(path.join(projectDir, plan.before));
-  const planAfter = relUrl(path.join(projectDir, plan.after));
-  const title = localized(plan.title, lang);
-
-  return `        <div class="detail-plan-set">
-${title ? `          <h2 class="detail-plan-title">${escapeHtml(title)}</h2>\n` : ''}          <div class="detail-plan-compare" data-plan-compare style="--compare-position: 50%;">
-          <div class="detail-plan-compare-stage">
-            <img class="detail-plan-before" loading="lazy" decoding="async" src="${planBefore}" alt="${escapeHtml(t.planBeforeAlt)}" draggable="false" />
-            <div class="detail-plan-after-wrap">
-              <img class="detail-plan-after" loading="lazy" decoding="async" src="${planAfter}" alt="${escapeHtml(t.planAfterAlt)}" draggable="false" />
-            </div>
-            <div class="detail-plan-label detail-plan-label-before">${escapeHtml(t.planBefore)}</div>
-            <div class="detail-plan-label detail-plan-label-after">${escapeHtml(t.planAfter)}</div>
-            <div class="detail-plan-divider" aria-hidden="true"></div>
-            <input class="detail-plan-range" type="range" min="0" max="100" value="50" aria-label="${escapeHtml(t.planRange)}" />
-          </div>
-        </div>
-        </div>`;
-}).join('\n')}
+${planningHtml}
       </div>
     </section>
 
@@ -767,8 +801,8 @@ ${gallery.html}
             <option value="">${escapeHtml(t.objectType)}</option>
             <option value="interior">${escapeHtml(t.interior)}</option>
             <option value="exterior">${escapeHtml(t.exterior)}</option>
-            <option value="residential">${escapeHtml(t.residential)}</option>
-            <option value="commercial">${escapeHtml(t.commercial)}</option>
+            <option value="private">${escapeHtml(t.private)}</option>
+            <option value="business">${escapeHtml(t.business)}</option>
           </select>
           <textarea class="full" name="message" placeholder="${escapeHtml(t.message)}"></textarea>
           <button class="btn btn-primary" type="submit">${escapeHtml(t.send)}</button>
@@ -881,7 +915,7 @@ function updateCardInPage({ config, projectDir, fileName, lang, markerPrefix, fe
     ));
   }
 
-  if (config.projectStatus !== 'published' || (featuredOnly && config.featured !== 'yes')) {
+  if (config.projectStatus !== 'published') {
     html = html.replace(projectBlockPattern, '');
     fs.writeFileSync(file, html, 'utf8');
     return;

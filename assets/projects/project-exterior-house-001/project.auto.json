@@ -1,0 +1,83 @@
+{
+  "schema": "yvk-project-auto-v1",
+  "enabled": true,
+  "languages": ["uk", "en"],
+  "output": {
+    "uk": "project-exterior-house-001.html",
+    "en": "project-exterior-house-001-en.html"
+  },
+  "languageLinks": {
+    "uk": "project-exterior-house-001.html",
+    "en": "project-exterior-house-001-en.html"
+  },
+  "paths": {
+    "cover": "cover.jpg",
+    "planningBefore": "planning/plan-before.jpg",
+    "planningAfter": "planning/plan-after.jpg",
+    "galleryDir": "gallery"
+  },
+  "seo": {
+    "uk": {
+      "title": "Приватний будинок — YVK Design",
+      "description": "Двір, басейн і простір для відпочинку приватного будинку в Сумах."
+    },
+    "en": {
+      "title": "Private House — YVK Design",
+      "description": "Courtyard, swimming pool and outdoor living design for a private house in Sumy."
+    }
+  },
+  "hero": {
+    "left": {
+      "uk": "ПРИВАТНИЙ\nБУДИНОК",
+      "en": "PRIVATE\nHOUSE"
+    },
+    "right": {
+      "uk": "ДВІР ТА ПРОСТІР\nДЛЯ ВІДПОЧИНКУ",
+      "en": "COURTYARD AND\nOUTDOOR LIVING"
+    },
+    "imageAlt": {
+      "uk": "Приватний будинок — головне зображення проєкту",
+      "en": "Private House — main project image"
+    }
+  },
+  "info": {
+    "kicker": {
+      "uk": "Про проєкт",
+      "en": "About the project"
+    },
+    "heading": {
+      "uk": "Приватний будинок",
+      "en": "Private House"
+    },
+    "paragraphs": {
+      "uk": [
+        "Цей проєкт зосереджений на проєктуванні та реалізації дворового простору приватного житлового будинку і зони зовнішнього відпочинку."
+      ],
+      "en": [
+        "This project focuses on the design and implementation of a private house courtyard and outdoor living area."
+      ]
+    },
+    "meta": [
+      {
+        "label": { "uk": "Локація", "en": "Location" },
+        "value": { "uk": "Суми, Україна", "en": "Sumy, Ukraine" }
+      },
+      {
+        "label": { "uk": "Тип об’єкта", "en": "Property type" },
+        "value": { "uk": "Житловий будинок та простір для відпочинку", "en": "House and outdoor living area" }
+      },
+      {
+        "label": { "uk": "Площа ділянки", "en": "Plot area" },
+        "value": { "uk": "1242,85 м²", "en": "1242.85 m²" }
+      },
+      {
+        "label": { "uk": "Дизайн та візуалізація", "en": "Design and visualisation" },
+        "value": { "uk": "Юрій Костюченко", "en": "Yuriy Kostyuchenko" }
+      },
+      {
+        "label": { "uk": "Тип робіт", "en": "Project type" },
+        "value": { "uk": "Дизайн-проєкт", "en": "Design project" }
+      }
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "schema": "yvk-project-auto-v1",
+  "enabled": true,
+  "languages": ["uk", "en"],
+  "output": {
+    "uk": "project-interior-house-003.html",
+    "en": "project-interior-house-003-en.html"
+  },
+  "languageLinks": {
+    "uk": "project-interior-house-003.html",
+    "en": "project-interior-house-003-en.html"
+  },
+  "paths": {
+    "cover": "cover.jpg",
+    "planningBefore": "planning/plan-before.jpg",
+    "planningAfter": "planning/plan-after.jpg",
+    "galleryDir": "gallery"
+  },
+  "seo": {
+    "uk": {
+      "title": "Невеликий будинок — YVK Design",
+      "description": "Архітектура та дизайн інтер’єру невеликого житлового будинку в Сумах."
+    },
+    "en": {
+      "title": "Small House — YVK Design",
+      "description": "Architecture and interior design for a small residential house in Sumy."
+    }
+  },
+  "hero": {
+    "left": {
+      "uk": "НЕВЕЛИКИЙ\nБУДИНОК",
+      "en": "SMALL\nHOUSE"
+    },
+    "right": {
+      "uk": "АРХІТЕКТУРА ТА\nДИЗАЙН ІНТЕР’ЄРУ",
+      "en": "ARCHITECTURE AND\nINTERIOR DESIGN"
+    },
+    "imageAlt": {
+      "uk": "Невеликий будинок — головне зображення проєкту",
+      "en": "Small House — main project image"
+    }
+  },
+  "info": {
+    "kicker": {
+      "uk": "Про проєкт",
+      "en": "About the project"
+    },
+    "heading": {
+      "uk": "Невеликий будинок",
+      "en": "Small House"
+    },
+    "paragraphs": {
+      "uk": [
+        "Цей проєкт охоплює архітектурне проєктування та розробку інтер’єру невеликого житлового будинку.",
+        "Основним завданням було створити цілісну концепцію, що поєднує архітектурну структуру будівлі з її внутрішнім плануванням і житловими просторами.",
+        "Архітектурне рішення розроблялося паралельно з інтер’єрним плануванням, щоб забезпечити функціональну узгодженість, чітку просторову логіку та збалансований зв’язок між зовнішнім і внутрішнім середовищем.",
+        "У результаті створено компактний житловий будинок з єдиною архітектурно-інтер’єрною концепцією, сформований як цілісне та гармонійне середовище для життя."
+      ],
+      "en": [
+        "This project covers the architectural design and interior development of a small residential house.",
+        "The task was to create a cohesive concept that integrates the building’s architectural structure with its interior layout and living spaces.",
+        "The architectural solution was developed alongside interior planning to ensure functional consistency, clear spatial logic, and a balanced relationship between exterior and interior.",
+        "The result is a compact residential house with a unified architectural and interior concept, designed as a complete and coherent living environment."
+      ]
+    },
+    "meta": [
+      {
+        "label": { "uk": "Локація", "en": "Location" },
+        "value": { "uk": "Суми, Україна", "en": "Sumy, Ukraine" }
+      },
+      {
+        "label": { "uk": "Тип об’єкта", "en": "Property type" },
+        "value": { "uk": "Житловий будинок", "en": "Residential house" }
+      },
+      {
+        "label": { "uk": "Площа будинку", "en": "House area" },
+        "value": { "uk": "144,83 м²", "en": "144.83 m²" }
+      },
+      {
+        "label": { "uk": "Дизайн та візуалізація", "en": "Design and visualisation" },
+        "value": { "uk": "Юрій Костюченко", "en": "Yuriy Kostyuchenko" }
+      },
+      {
+        "label": { "uk": "Тип робіт", "en": "Project type" },
+        "value": { "uk": "Дизайн-проєкт", "en": "Design project" }
+      }
+    ]
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "schema": "yvk-project-auto-v1",
+  "enabled": true,
+  "languages": ["uk", "en"],
+  "output": {
+    "uk": "project-exterior-house-002.html",
+    "en": "project-exterior-house-002-en.html"
+  },
+  "languageLinks": {
+    "uk": "project-exterior-house-002.html",
+    "en": "project-exterior-house-002-en.html"
+  },
+  "paths": {
+    "cover": "cover.jpg",
+    "planningImages": [
+      {
+        "title": {
+          "uk": "Цокольний поверх",
+          "en": "Basement level"
+        },
+        "src": "planning/00.Планировочное решение цокольный этаж.png",
+        "alt": {
+          "uk": "Планувальне рішення цокольного поверху",
+          "en": "Basement level planning solution"
+        }
+      },
+      {
+        "title": {
+          "uk": "Перший поверх",
+          "en": "First floor"
+        },
+        "src": "planning/00.Планировочное решение 1-й этаж.png",
+        "alt": {
+          "uk": "Планувальне рішення першого поверху",
+          "en": "First floor planning solution"
+        }
+      }
+    ],
+    "galleryDir": "gallery"
+  },
+  "seo": {
+    "uk": {
+      "title": "Дерев’яний будинок біля озера — YVK Design",
+      "description": "Заміський SPA-будинок біля приватного озера з сауною, басейном і зонами відпочинку."
+    },
+    "en": {
+      "title": "Lakeside Wooden House — YVK Design",
+      "description": "Wooden lakeside spa retreat with saunas, swimming pool and relaxation areas in a natural landscape."
+    }
+  },
+  "hero": {
+    "left": {
+      "uk": "ДЕРЕВ’ЯНИЙ\nБУДИНОК",
+      "en": "LAKESIDE WOODEN\nHOUSE"
+    },
+    "right": {
+      "uk": "РЕТРИТ У\nЛАНДШАФТНОМУ КОНТЕКСТІ",
+      "en": "RETREAT AND\nLANDSCAPE CONTEXT"
+    },
+    "imageAlt": {
+      "uk": "Дерев’яний будинок біля озера — головне зображення проєкту",
+      "en": "Lakeside Wooden House — main project image"
+    }
+  },
+  "info": {
+    "kicker": {
+      "uk": "Про проєкт",
+      "en": "About the project"
+    },
+    "heading": {
+      "uk": "Дерев’яний будинок біля озера",
+      "en": "Lakeside Wooden House"
+    },
+    "paragraphs": {
+      "uk": [
+        "Цей проєкт представляє дерев’яний заміський будинок, спроєктований як усамітнений простір для відпочинку на березі приватного озера."
+      ],
+      "en": [
+        "This project presents a wooden countryside house designed as a secluded leisure retreat located on the shore of a private lake."
+      ]
+    },
+    "meta": [
+      {
+        "label": { "uk": "Локація", "en": "Location" },
+        "value": { "uk": "Суми, Україна", "en": "Sumy, Ukraine" }
+      },
+      {
+        "label": { "uk": "Тип об’єкта", "en": "Property type" },
+        "value": { "uk": "Дерев’яний заміський SPA-будинок біля озера", "en": "Wooden lake spa retreat" }
+      },
+      {
+        "label": { "uk": "Площа ділянки", "en": "Plot area" },
+        "value": { "uk": "40 000 м²", "en": "40,000 m²" }
+      },
+      {
+        "label": { "uk": "Дизайн та візуалізація", "en": "Design and visualisation" },
+        "value": { "uk": "Юрій Костюченко", "en": "Yuriy Kostyuchenko" }
+      },
+      {
+        "label": { "uk": "Тип робіт", "en": "Project type" },
+        "value": { "uk": "Дизайн-проєкт", "en": "Design project" }
+      }
+    ]
+  }
+}

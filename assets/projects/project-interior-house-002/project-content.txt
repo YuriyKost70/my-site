@@ -12,7 +12,7 @@ DIRECTION:
 interior
 
 SEGMENT:
-residential
+private
 
 STYLE:
 classic
@@ -54,7 +54,7 @@ META:
 Тип об'єкта | Житловий будинок
 Площа | 184,15 м²
 Дизайн та візуалізація | Юрій Костюченко
-Тип робіт | Комерційний проєкт
+Тип робіт | Дизайн-проєкт
 
 CARD_LABEL:
 Інтер'єр
@@ -63,7 +63,7 @@ CARD_TOPLINE_LEFT:
 Житловий будинок
 
 CARD_TOPLINE_RIGHT:
-Комерційний проєкт
+Приватний проєкт
 
 CARD_TITLE:
 Реновація будинку
@@ -116,7 +116,7 @@ Location | Philadelphia, USA
 Property type | Residential house
 Area | 184.15 m²
 Design and visualisation | Yuriy Kostyuchenko
-Project type | Commercial project
+Project type | Design project
 
 CARD_LABEL:
 Interior
@@ -125,7 +125,7 @@ CARD_TOPLINE_LEFT:
 Residential house
 
 CARD_TOPLINE_RIGHT:
-Commercial project
+Private project
 
 CARD_TITLE:
 House renovation

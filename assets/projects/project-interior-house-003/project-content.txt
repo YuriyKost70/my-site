@@ -1,0 +1,148 @@
+# Generated from project-description.txt. Edit the source file, not this file.
+
+[PROJECT]
+
+ID:
+project-interior-house-003
+
+STATUS:
+published
+
+DIRECTION:
+interior
+
+SEGMENT:
+private
+
+STYLE:
+modern
+
+FEATURED:
+no
+
+FEATURED_ORDER:
+9
+
+
+[UA]
+
+HERO_LEFT:
+НЕВЕЛИКИЙ
+БУДИНОК
+
+HERO_RIGHT:
+АРХІТЕКТУРА ТА
+ДИЗАЙН ІНТЕР’ЄРУ
+
+ABOUT_LABEL:
+Про проєкт
+
+ABOUT_TITLE:
+Невеликий будинок
+
+ABOUT_TEXT:
+Цей проєкт охоплює архітектурне проєктування та розробку інтер’єру невеликого житлового будинку.
+
+Основним завданням було створити цілісну концепцію, що поєднує архітектурну структуру будівлі з її внутрішнім плануванням і житловими просторами.
+
+Архітектурне рішення розроблялося паралельно з інтер’єрним плануванням, щоб забезпечити функціональну узгодженість, чітку просторову логіку та збалансований зв’язок між зовнішнім і внутрішнім середовищем. Особливу увагу приділено пропорціям, логіці руху та зручності повсякденного використання.
+
+У результаті створено компактний житловий будинок з єдиною архітектурно-інтер’єрною концепцією, сформований як цілісне та гармонійне середовище для життя.
+
+META:
+Локація | Суми, Україна
+Тип об’єкта | Житловий будинок
+Площа будинку | 144,83 м²
+Дизайн та візуалізація | Юрій Костюченко
+Тип робіт | Дизайн-проєкт
+
+CARD_LABEL:
+Інтер’єр
+
+CARD_TOPLINE_LEFT:
+Будинок
+
+CARD_TOPLINE_RIGHT:
+Приватний проєкт
+
+CARD_TITLE:
+Невеликий будинок
+
+CARD_DESCRIPTION:
+Архітектурне проєктування та інтер’єр невеликого житлового будинку з цілісною просторовою логікою.
+
+CARD_BADGES:
+Будинок
+Архітектура
+Інтер’єр
+
+SEO_TITLE:
+Невеликий будинок — YVK Design
+
+SEO_DESCRIPTION:
+Архітектура та дизайн інтер’єру невеликого житлового будинку в Сумах.
+
+IMAGE_ALT:
+Невеликий будинок — головне зображення проєкту
+
+
+[EN]
+
+HERO_LEFT:
+SMALL
+HOUSE
+
+HERO_RIGHT:
+ARCHITECTURE AND
+INTERIOR DESIGN
+
+ABOUT_LABEL:
+About the project
+
+ABOUT_TITLE:
+Small House
+
+ABOUT_TEXT:
+This project covers the architectural design and interior development of a small residential house.
+
+The task was to create a cohesive concept that integrates the building’s architectural structure with its interior layout and living spaces.
+
+The architectural solution was developed alongside interior planning to ensure functional consistency, clear spatial logic, and a balanced relationship between exterior and interior. Particular attention was given to proportions, circulation, and everyday usability.
+
+The result is a compact residential house with a unified architectural and interior concept, designed as a complete and coherent living environment.
+
+META:
+Location | Sumy, Ukraine
+Property type | Residential house
+House area | 144.83 m²
+Design and visualisation | Yuriy Kostyuchenko
+Project type | Design project
+
+CARD_LABEL:
+Interior
+
+CARD_TOPLINE_LEFT:
+Residential house
+
+CARD_TOPLINE_RIGHT:
+Private project
+
+CARD_TITLE:
+Small House
+
+CARD_DESCRIPTION:
+Architectural design and interior development for a small residential house with a cohesive spatial logic.
+
+CARD_BADGES:
+House
+Architecture
+Interior
+
+SEO_TITLE:
+Small House — YVK Design
+
+SEO_DESCRIPTION:
+Architecture and interior design for a small residential house in Sumy.
+
+IMAGE_ALT:
+Small House — main project image

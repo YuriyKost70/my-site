@@ -9,7 +9,7 @@ DIRECTION:
 interior
 
 SEGMENT:
-residential
+private
 
 STYLE:
 modern
@@ -42,7 +42,7 @@ AUTHOR:
 Юрій Костюченко
 
 PROJECT_TYPE:
-Комерційний проєкт
+Дизайн-проєкт
 
 DESCRIPTION:
 Цей проєкт — сучасна квартира для молодої сім’ї з однією дитиною, що включає консультацію на етапі вибору об’єкта та просторове планування.
@@ -106,7 +106,7 @@ AUTHOR:
 Yuriy Kostyuchenko
 
 PROJECT_TYPE:
-Commercial project
+Design project
 
 DESCRIPTION:
 This project is a modern apartment for a young family with one child. The scope included consultation during the property selection stage and comprehensive space planning.

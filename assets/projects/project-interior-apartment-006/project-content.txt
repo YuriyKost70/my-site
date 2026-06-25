@@ -12,7 +12,7 @@ DIRECTION:
 interior
 
 SEGMENT:
-residential
+private
 
 STYLE:
 classic
@@ -54,7 +54,7 @@ META:
 Тип об'єкта | Квартира
 Площа | 110 м²
 Дизайн та візуалізація | Юрій Костюченко
-Тип робіт | Комерційний проєкт
+Тип робіт | Дизайн-проєкт
 
 CARD_LABEL:
 Інтер'єр
@@ -63,7 +63,7 @@ CARD_TOPLINE_LEFT:
 Квартира
 
 CARD_TOPLINE_RIGHT:
-Комерційний проєкт
+Приватний проєкт
 
 CARD_TITLE:
 Квартира в американській класиці
@@ -116,7 +116,7 @@ Location | Kyiv, Ukraine
 Property type | Apartment
 Area | 110 m²
 Design and visualisation | Yuriy Kostyuchenko
-Project type | Commercial project
+Project type | Design project
 
 CARD_LABEL:
 Interior
@@ -125,7 +125,7 @@ CARD_TOPLINE_LEFT:
 Apartment
 
 CARD_TOPLINE_RIGHT:
-Commercial project
+Private project
 
 CARD_TITLE:
 American classic apartment

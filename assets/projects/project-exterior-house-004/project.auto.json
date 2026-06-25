@@ -1,0 +1,97 @@
+{
+  "schema": "yvk-project-auto-v1",
+  "enabled": true,
+  "languages": ["uk", "en"],
+  "output": {
+    "uk": "project-exterior-house-004.html",
+    "en": "project-exterior-house-004-en.html"
+  },
+  "languageLinks": {
+    "uk": "project-exterior-house-004.html",
+    "en": "project-exterior-house-004-en.html"
+  },
+  "paths": {
+    "cover": "cover.jpg",
+    "planningBefore": "planning/plan-before.jpg",
+    "planningAfter": "planning/plan-after.jpg",
+    "galleryDir": "gallery"
+  },
+  "seo": {
+    "uk": {
+      "title": "Компактний будинок — YVK Design",
+      "description": "Компактний двір житлового будинку з гриль-зоною, басейном, зонами відпочинку та ефективною просторовою організацією."
+    },
+    "en": {
+      "title": "Compact House — YVK Design",
+      "description": "Compact residential courtyard with a grill area, swimming pool, leisure zones and efficient outdoor space planning."
+    }
+  },
+  "hero": {
+    "left": {
+      "uk": "КОМПАКТНИЙ\nБУДИНОК",
+      "en": "COMPACT\nHOUSE"
+    },
+    "right": {
+      "uk": "ДВІР ТА ЗОНИ\nВІДПОЧИНКУ",
+      "en": "COURTYARD AND\nOUTDOOR ZONES"
+    },
+    "imageAlt": {
+      "uk": "Компактний будинок — головне зображення проєкту",
+      "en": "Compact House — main project image"
+    }
+  },
+  "info": {
+    "kicker": {
+      "uk": "Про проєкт",
+      "en": "About the project"
+    },
+    "heading": {
+      "uk": "Компактний будинок",
+      "en": "Compact House"
+    },
+    "paragraphs": {
+      "uk": [
+        "Цей проєкт зосереджений на організації двору невеликого житлового будинку в умовах дуже обмеженої доступної площі.",
+        "Завданням було розмістити кілька функціональних зон на компактній території, зберігаючи чіткість, комфорт і зручність користування.",
+        "Проєкт включає гриль-зону, зону відпочинку, басейн, а також додаткові допоміжні споруди. Ретельне просторове планування дозволило визначити функціональні зони, оптимізувати логіку руху та забезпечити ефективне використання кожного квадратного метра.",
+        "У результаті сформовано компактну, але повністю функціональну концепцію двору, що поєднує різні сценарії використання в межах обмеженої площі та забезпечує комфортне повсякденне користування."
+      ],
+      "en": [
+        "This project focuses on the organization of a courtyard for a small residential house under conditions of very limited available space.",
+        "The task was to accommodate multiple outdoor functions within a compact area while maintaining clarity, comfort and usability.",
+        "The design includes a grill area, a leisure zone, a swimming pool and additional auxiliary structures. Careful space planning defines the functional zones, optimizes circulation and ensures efficient use of every square meter.",
+        "The result is a compact yet fully functional courtyard concept that integrates diverse outdoor activities within a limited footprint and supports comfortable everyday use."
+      ]
+    },
+    "meta": [
+      {
+        "label": { "uk": "Локація", "en": "Location" },
+        "value": { "uk": "Суми, Україна", "en": "Sumy, Ukraine" }
+      },
+      {
+        "label": { "uk": "Тип об’єкта", "en": "Property type" },
+        "value": { "uk": "Житловий будинок та простір для відпочинку", "en": "House and outdoor living area" }
+      },
+      {
+        "label": { "uk": "Площа ділянки", "en": "Plot area" },
+        "value": { "uk": "498,36 м²", "en": "498.36 m²" }
+      },
+      {
+        "label": { "uk": "Площа забудови", "en": "Building footprint" },
+        "value": { "uk": "174,79 м²", "en": "174.79 m²" }
+      },
+      {
+        "label": { "uk": "Загальна рекреаційна площа", "en": "Total recreational area" },
+        "value": { "uk": "112,62 м²", "en": "112.62 m²" }
+      },
+      {
+        "label": { "uk": "Дизайн та візуалізація", "en": "Design and visualisation" },
+        "value": { "uk": "Юрій Костюченко", "en": "Yuriy Kostyuchenko" }
+      },
+      {
+        "label": { "uk": "Тип робіт", "en": "Project type" },
+        "value": { "uk": "Дизайн-проєкт", "en": "Design project" }
+      }
+    ]
+  }
+}

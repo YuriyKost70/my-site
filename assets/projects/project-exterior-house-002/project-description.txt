@@ -1,0 +1,195 @@
+# Це єдиний текстовий файл, який потрібно заповнювати вручну.
+# STATUS: draft не публікує проєкт. Після перевірки змініть на published.
+
+[PROJECT]
+
+ID:
+project-exterior-house-002
+
+STATUS:
+published
+
+DIRECTION:
+exterior
+
+SEGMENT:
+private
+
+STYLE:
+modern
+
+FEATURED:
+no
+
+ORDER:
+11
+
+
+[UA]
+
+TITLE:
+Дерев’яний будинок біля озера
+
+SUBTITLE:
+Ретрит у ландшафтному контексті
+
+LOCATION:
+Суми, Україна
+
+LOCATION_LABEL:
+
+OBJECT_TYPE:
+Дерев’яний заміський SPA-будинок біля озера
+
+OBJECT_TYPE_LABEL:
+
+AREA:
+40 000 м²
+
+AREA_LABEL:
+Площа ділянки
+
+AUTHOR:
+Юрій Костюченко
+
+AUTHOR_LABEL:
+
+PROJECT_TYPE:
+Дизайн-проєкт
+
+PROJECT_TYPE_LABEL:
+
+DESCRIPTION:
+Цей проєкт представляє дерев’яний заміський будинок, спроєктований як усамітнений простір для відпочинку на березі приватного озера.
+
+Концепцію було розроблено з метою створення спокійного та комфортного середовища, інтегрованого в обширний природний ландшафт.
+
+Будинок розташований на великій приватній території, що включає лісові масиви та водойму. Особливу увагу приділено гармонії між архітектурою та ландшафтом, візуальній відкритості до природи та формуванню розслабленої атмосфери, придатної для вікенд-перебування та сезонного використання.
+
+Проєкт передбачає повноцінну рекреаційну та оздоровчу програму, що включає дві сауни з різними температурними режимами, басейн і спеціально організовані зони відпочинку. Просторова організація підтримує короткочасне перебування, рекреацію та соціальну взаємодію в природному середовищі.
+
+Мансардний рівень частково використовується як спальня для тимчасового розміщення гостей, тоді як цокольний поверх призначений для паркування транспорту, зберігання човнів та виконання допоміжних функцій. Архітектурні й інтер’єрні рішення акцентують використання натуральних матеріалів, функціональну чіткість і тісний зв’язок з навколишнім середовищем.
+
+У результаті створено усамітнений ретрит біля озера, що поєднує продуману архітектуру, природні матеріали та глибокий зв’язок із ландшафтом у цілісну й вишукану концепцію.
+
+# Необов’язкові поля. Якщо вони порожні, скрипт сформує їх автоматично.
+HERO_LEFT:
+ДЕРЕВ’ЯНИЙ
+БУДИНОК
+
+HERO_RIGHT:
+РЕТРИТ У
+ЛАНДШАФТНОМУ КОНТЕКСТІ
+
+ABOUT_LABEL:
+
+ABOUT_TITLE:
+Дерев’яний будинок біля озера
+
+CARD_LABEL:
+Екстер’єр
+
+CARD_TOPLINE_LEFT:
+Будинок
+
+CARD_TOPLINE_RIGHT:
+Приватний проєкт
+
+CARD_TITLE:
+Дерев’яний будинок біля озера
+
+CARD_DESCRIPTION:
+Заміський SPA-будинок на березі приватного озера з сауною, басейном і зонами відпочинку в природному ландшафті.
+
+BADGES:
+Будинок
+Екстер’єр
+Ландшафт
+
+SEO_TITLE:
+Дерев’яний будинок біля озера — YVK Design
+
+SEO_DESCRIPTION:
+Заміський SPA-будинок біля приватного озера з сауною, басейном і зонами відпочинку.
+
+IMAGE_ALT:
+Дерев’яний будинок біля озера — головне зображення проєкту
+
+
+[EN]
+
+TITLE:
+Lakeside Wooden House
+
+SUBTITLE:
+Retreat and landscape context
+
+LOCATION:
+Sumy, Ukraine
+
+LOCATION_LABEL:
+
+OBJECT_TYPE:
+Wooden lake spa retreat
+
+OBJECT_TYPE_LABEL:
+
+AREA:
+40,000 m²
+
+AREA_LABEL:
+Plot area
+
+AUTHOR:
+Yuriy Kostyuchenko
+
+AUTHOR_LABEL:
+
+PROJECT_TYPE:
+Design project
+
+PROJECT_TYPE_LABEL:
+
+DESCRIPTION:
+This project presents a wooden countryside house designed as a secluded leisure retreat located on the shore of a private lake.
+
+The concept was developed to create a calm and comfortable living environment integrated into an expansive natural landscape.
+
+The house is situated on a large private property that includes forested areas and a water body. Particular attention was given to the harmony between architecture and landscape, visual openness to nature, and a relaxed atmosphere suitable for weekend stays and seasonal use rather than permanent residence.
+
+The design incorporates a comprehensive leisure and wellness program, including two saunas with different temperature regimes, a swimming pool, and dedicated relaxation areas. The spatial organization supports short-term stays, recreation, and social interaction within a natural setting.
+
+The attic level partially serves as a sleeping area for temporary accommodation of guests, while the basement level is designed for vehicle parking, boat storage, and auxiliary functions. Architectural and interior solutions emphasize natural materials, functional clarity, and a strong connection to the surrounding environment.
+
+The result is a secluded lakeside retreat that combines thoughtful architecture, natural materials, and a close relationship with the landscape into a cohesive and refined concept.
+
+HERO_LEFT:
+LAKESIDE WOODEN
+HOUSE
+
+HERO_RIGHT:
+RETREAT AND
+LANDSCAPE CONTEXT
+
+ABOUT_TITLE:
+Lakeside Wooden House
+
+CARD_TITLE:
+Lakeside Wooden House
+
+CARD_DESCRIPTION:
+A countryside spa retreat by a private lake with saunas, a swimming pool and relaxation areas in a natural landscape.
+
+BADGES:
+House
+Exterior
+Landscape
+
+SEO_TITLE:
+Lakeside Wooden House — YVK Design
+
+SEO_DESCRIPTION:
+Wooden lakeside spa retreat with saunas, swimming pool and relaxation areas in a natural landscape.
+
+IMAGE_ALT:
+Lakeside Wooden House — main project image

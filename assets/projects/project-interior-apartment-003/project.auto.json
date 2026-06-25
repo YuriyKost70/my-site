@@ -76,7 +76,7 @@
       },
       {
         "label": { "uk": "Тип робіт", "en": "Project type" },
-        "value": { "uk": "Комерційний проєкт", "en": "Commercial project" }
+        "value": { "uk": "Дизайн-проєкт", "en": "Design project" }
       }
     ]
   }

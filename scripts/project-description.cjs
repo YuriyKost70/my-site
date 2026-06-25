@@ -51,11 +51,21 @@ const styleLabels = {
   mixed: { uk: 'Змішаний', en: 'Mixed' }
 };
 
+const segmentLabels = {
+  private: { uk: 'Приватний проєкт', en: 'Private project' },
+  business: { uk: 'Проєкт для бізнесу', en: 'Business project' }
+};
+
+const segmentAliases = {
+  residential: 'private',
+  commercial: 'business'
+};
+
 const defaults = {
   uk: {
     aboutLabel: 'Про проєкт',
     author: 'Юрій Костюченко',
-    projectType: 'Комерційний проєкт',
+    projectType: 'Дизайн-проєкт',
     visualization: 'Візуалізація',
     meta: {
       location: 'Локація',
@@ -68,7 +78,7 @@ const defaults = {
   en: {
     aboutLabel: 'About the project',
     author: 'Yuriy Kostyuchenko',
-    projectType: 'Commercial project',
+    projectType: 'Design project',
     visualization: 'Visualisation',
     meta: {
       location: 'Location',
@@ -287,7 +297,7 @@ function normalizeLanguage(source, language, project) {
     ],
     cardLabel: text(source, 'CARD_LABEL') || directionLabels[project.direction][language],
     cardToplineLeft: text(source, 'CARD_TOPLINE_LEFT') || objectType,
-    cardToplineRight: text(source, 'CARD_TOPLINE_RIGHT') || projectType,
+    cardToplineRight: text(source, 'CARD_TOPLINE_RIGHT') || segmentLabels[project.segment][language],
     cardTitle: text(source, 'CARD_TITLE') || title,
     cardDescription,
     badges: explicitBadges.length ? explicitBadges : defaultBadges,
@@ -298,11 +308,14 @@ function normalizeLanguage(source, language, project) {
 }
 
 function normalizeSource(parsed, folderName) {
+  const rawSegment = text(parsed.project, 'SEGMENT').toLowerCase();
+  const normalizedSegment = segmentAliases[rawSegment] || rawSegment;
+
   const project = {
     id: text(parsed.project, 'ID') || folderName,
     status: (text(parsed.project, 'STATUS') || 'draft').toLowerCase(),
     direction: text(parsed.project, 'DIRECTION').toLowerCase(),
-    segment: text(parsed.project, 'SEGMENT').toLowerCase(),
+    segment: normalizedSegment,
     style: text(parsed.project, 'STYLE').toLowerCase(),
     featured: (text(parsed.project, 'FEATURED') || 'no').toLowerCase(),
     order: Number(text(parsed.project, 'ORDER'))
@@ -317,8 +330,8 @@ function normalizeSource(parsed, folderName) {
   if (!Object.hasOwn(directionLabels, project.direction)) {
     throw new Error('PROJECT.DIRECTION must be interior or exterior');
   }
-  if (!['residential', 'commercial'].includes(project.segment)) {
-    throw new Error('PROJECT.SEGMENT must be residential or commercial');
+  if (!['private', 'business'].includes(project.segment)) {
+    throw new Error('PROJECT.SEGMENT must be private or business');
   }
   if (project.style && !Object.hasOwn(styleLabels, project.style)) {
     throw new Error('PROJECT.STYLE must be modern, classic, mixed or empty');

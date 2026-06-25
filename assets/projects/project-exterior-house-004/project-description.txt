@@ -1,0 +1,186 @@
+# Це єдиний текстовий файл, який потрібно заповнювати вручну.
+# STATUS: draft не публікує проєкт. Після перевірки змініть на published.
+
+[PROJECT]
+
+ID:
+project-exterior-house-004
+
+STATUS:
+published
+
+DIRECTION:
+exterior
+
+SEGMENT:
+private
+
+STYLE:
+modern
+
+FEATURED:
+no
+
+ORDER:
+13
+
+
+[UA]
+
+TITLE:
+Компактний будинок
+
+SUBTITLE:
+Планування двору та зон відпочинку
+
+LOCATION:
+Суми, Україна
+
+LOCATION_LABEL:
+
+OBJECT_TYPE:
+Житловий будинок та простір для відпочинку
+
+OBJECT_TYPE_LABEL:
+
+AREA:
+498,36 м²
+
+AREA_LABEL:
+Площа ділянки
+
+AUTHOR:
+Юрій Костюченко
+
+AUTHOR_LABEL:
+
+PROJECT_TYPE:
+Дизайн-проєкт
+
+PROJECT_TYPE_LABEL:
+
+DESCRIPTION:
+Цей проєкт зосереджений на організації двору невеликого житлового будинку в умовах дуже обмеженої доступної площі.
+
+Завданням було розмістити кілька функціональних зон на компактній території, зберігаючи чіткість, комфорт і зручність користування.
+
+Проєкт включає гриль-зону, зону відпочинку, басейн, а також додаткові допоміжні споруди. Ретельне просторове планування дозволило визначити функціональні зони, оптимізувати логіку руху та забезпечити ефективне використання кожного квадратного метра.
+
+У результаті сформовано компактну, але повністю функціональну концепцію двору, що поєднує різні сценарії використання в межах обмеженої площі та забезпечує комфортне повсякденне користування.
+
+HERO_LEFT:
+КОМПАКТНИЙ
+БУДИНОК
+
+HERO_RIGHT:
+ДВІР ТА ЗОНИ
+ВІДПОЧИНКУ
+
+ABOUT_LABEL:
+
+ABOUT_TITLE:
+Компактний будинок
+
+CARD_LABEL:
+Екстер’єр
+
+CARD_TOPLINE_LEFT:
+Будинок
+
+CARD_TOPLINE_RIGHT:
+Приватний проєкт
+
+CARD_TITLE:
+Компактний будинок
+
+CARD_DESCRIPTION:
+Компактне планування двору з гриль-зоною, басейном, місцями відпочинку та продуманою логікою руху на обмеженій території.
+
+BADGES:
+Будинок
+Екстер’єр
+Двір
+
+SEO_TITLE:
+Компактний будинок — YVK Design
+
+SEO_DESCRIPTION:
+Компактний двір житлового будинку з гриль-зоною, басейном, зонами відпочинку та ефективною просторовою організацією.
+
+IMAGE_ALT:
+Компактний будинок — головне зображення проєкту
+
+
+[EN]
+
+TITLE:
+Compact House
+
+SUBTITLE:
+Courtyard planning and outdoor zones
+
+LOCATION:
+Sumy, Ukraine
+
+LOCATION_LABEL:
+
+OBJECT_TYPE:
+House and outdoor living area
+
+OBJECT_TYPE_LABEL:
+
+AREA:
+498.36 m²
+
+AREA_LABEL:
+Plot area
+
+AUTHOR:
+Yuriy Kostyuchenko
+
+AUTHOR_LABEL:
+
+PROJECT_TYPE:
+Design project
+
+PROJECT_TYPE_LABEL:
+
+DESCRIPTION:
+This project focuses on the organization of a courtyard for a small residential house under conditions of very limited available space.
+
+The task was to accommodate multiple outdoor functions within a compact area while maintaining clarity, comfort and usability.
+
+The design includes a grill area, a leisure zone, a swimming pool and additional auxiliary structures. Careful space planning defines the functional zones, optimizes circulation and ensures efficient use of every square meter.
+
+The result is a compact yet fully functional courtyard concept that integrates diverse outdoor activities within a limited footprint and supports comfortable everyday use.
+
+HERO_LEFT:
+COMPACT
+HOUSE
+
+HERO_RIGHT:
+COURTYARD AND
+OUTDOOR ZONES
+
+ABOUT_TITLE:
+Compact House
+
+CARD_TITLE:
+Compact House
+
+CARD_DESCRIPTION:
+Compact courtyard planning with a grill area, swimming pool, leisure zones and clear circulation within a limited footprint.
+
+BADGES:
+House
+Exterior
+Courtyard
+
+SEO_TITLE:
+Compact House — YVK Design
+
+SEO_DESCRIPTION:
+Compact residential courtyard with a grill area, swimming pool, leisure zones and efficient outdoor space planning.
+
+IMAGE_ALT:
+Compact House — main project image

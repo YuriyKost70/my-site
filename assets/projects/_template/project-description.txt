@@ -12,7 +12,7 @@ DIRECTION:
 interior
 
 SEGMENT:
-residential
+private
 
 STYLE:
 
@@ -52,7 +52,7 @@ AUTHOR:
 AUTHOR_LABEL:
 
 PROJECT_TYPE:
-Комерційний проєкт
+Дизайн-проєкт
 
 PROJECT_TYPE_LABEL:
 
@@ -76,7 +76,7 @@ CARD_TOPLINE_LEFT:
 
 CARD_TOPLINE_RIGHT:
 
-CARD_TITLE:
+Приватний проєкт
 
 CARD_DESCRIPTION:
 

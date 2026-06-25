@@ -1,0 +1,187 @@
+# Це єдиний текстовий файл, який потрібно заповнювати вручну.
+# STATUS: draft не публікує проєкт. Після перевірки змініть на published.
+
+[PROJECT]
+
+ID:
+project-exterior-house-003
+
+STATUS:
+published
+
+DIRECTION:
+exterior
+
+SEGMENT:
+private
+
+STYLE:
+modern
+
+FEATURED:
+no
+
+ORDER:
+12
+
+
+[UA]
+
+TITLE:
+Сучасний будинок
+
+SUBTITLE:
+Двір та гриль-зона
+
+LOCATION:
+Суми, Україна
+
+LOCATION_LABEL:
+
+OBJECT_TYPE:
+Житловий будинок, гриль-будинок та двір
+
+OBJECT_TYPE_LABEL:
+
+AREA:
+-
+
+AREA_LABEL:
+Площа
+
+AUTHOR:
+Юрій Костюченко
+
+AUTHOR_LABEL:
+
+PROJECT_TYPE:
+Дизайн-проєкт
+
+PROJECT_TYPE_LABEL:
+
+DESCRIPTION:
+Цей проєкт присвячений проєктуванню двору невеликого сучасного житлового будинку, включаючи окремо розташовану гриль-зону та навколишній зовнішній простір.
+
+Метою було створити компактне, але функціональне середовище для повсякденного використання та соціальної активності.
+
+Планування виконано з чітким визначенням функціональних зон, зручною логікою руху та інтеграцією гриль-зони як самостійного, але цілісно пов’язаного елемента загальної композиції двору. Особливу увагу приділено пропорціям, зручності експлуатації та візуальному балансу.
+
+У результаті сформовано добре організований зовнішній простір, який доповнює архітектуру будинку та забезпечує комфортне перебування на відкритому повітрі.
+
+# Необов’язкові поля. Якщо вони порожні, скрипт сформує їх автоматично.
+HERO_LEFT:
+СУЧАСНИЙ
+БУДИНОК
+
+HERO_RIGHT:
+ДВІР ТА
+ГРИЛЬ-ЗОНА
+
+ABOUT_LABEL:
+
+ABOUT_TITLE:
+Сучасний будинок
+
+CARD_LABEL:
+Екстер’єр
+
+CARD_TOPLINE_LEFT:
+Будинок
+
+CARD_TOPLINE_RIGHT:
+Приватний проєкт
+
+CARD_TITLE:
+Сучасний будинок
+
+CARD_DESCRIPTION:
+Двір невеликого сучасного будинку з окремою гриль-зоною, продуманою логікою руху та комфортним зовнішнім простором.
+
+BADGES:
+Будинок
+Екстер’єр
+Гриль-зона
+
+SEO_TITLE:
+Сучасний будинок — YVK Design
+
+SEO_DESCRIPTION:
+Двір сучасного житлового будинку з окремою гриль-зоною та продуманим зовнішнім простором.
+
+IMAGE_ALT:
+Сучасний будинок — головне зображення проєкту
+
+
+[EN]
+
+TITLE:
+Modern House
+
+SUBTITLE:
+Courtyard and grill area design
+
+LOCATION:
+Sumy, Ukraine
+
+LOCATION_LABEL:
+
+OBJECT_TYPE:
+House, grill house and yard
+
+OBJECT_TYPE_LABEL:
+
+AREA:
+-
+
+AREA_LABEL:
+Area
+
+AUTHOR:
+Yuriy Kostyuchenko
+
+AUTHOR_LABEL:
+
+PROJECT_TYPE:
+Design project
+
+PROJECT_TYPE_LABEL:
+
+DESCRIPTION:
+This project focuses on the design of a courtyard for a small modern residential house, including a detached grill area and the surrounding outdoor environment.
+
+The goal was to create a compact yet functional outdoor space suitable for everyday use and social activities.
+
+The layout was planned to clearly define functional zones, ensure comfortable circulation, and integrate the grill area as an independent but cohesive element of the overall courtyard design. Attention was given to proportions, usability, and visual balance.
+
+The result is a well-organized outdoor space that complements the architecture of the house and supports comfortable outdoor living.
+
+HERO_LEFT:
+MODERN
+HOUSE
+
+HERO_RIGHT:
+COURTYARD AND
+GRILL AREA
+
+ABOUT_TITLE:
+Modern House
+
+CARD_TITLE:
+Modern House
+
+CARD_DESCRIPTION:
+A compact modern house courtyard with a detached grill area, clear circulation and a comfortable outdoor environment.
+
+BADGES:
+House
+Exterior
+Grill area
+
+SEO_TITLE:
+Modern House — YVK Design
+
+SEO_DESCRIPTION:
+Modern residential house courtyard with a detached grill area and a well-planned outdoor environment.
+
+IMAGE_ALT:
+Modern House — main project image

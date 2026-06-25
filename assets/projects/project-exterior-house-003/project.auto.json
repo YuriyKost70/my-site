@@ -1,0 +1,83 @@
+{
+  "schema": "yvk-project-auto-v1",
+  "enabled": true,
+  "languages": ["uk", "en"],
+  "output": {
+    "uk": "project-exterior-house-003.html",
+    "en": "project-exterior-house-003-en.html"
+  },
+  "languageLinks": {
+    "uk": "project-exterior-house-003.html",
+    "en": "project-exterior-house-003-en.html"
+  },
+  "paths": {
+    "cover": "cover.jpg",
+    "planningBefore": "planning/plan-before.jpg",
+    "planningAfter": "planning/plan-after.jpg",
+    "galleryDir": "gallery"
+  },
+  "seo": {
+    "uk": {
+      "title": "Сучасний будинок — YVK Design",
+      "description": "Двір сучасного житлового будинку з окремою гриль-зоною та продуманим зовнішнім простором."
+    },
+    "en": {
+      "title": "Modern House — YVK Design",
+      "description": "Modern residential house courtyard with a detached grill area and a well-planned outdoor environment."
+    }
+  },
+  "hero": {
+    "left": {
+      "uk": "СУЧАСНИЙ\nБУДИНОК",
+      "en": "MODERN\nHOUSE"
+    },
+    "right": {
+      "uk": "ДВІР ТА\nГРИЛЬ-ЗОНА",
+      "en": "COURTYARD AND\nGRILL AREA"
+    },
+    "imageAlt": {
+      "uk": "Сучасний будинок — головне зображення проєкту",
+      "en": "Modern House — main project image"
+    }
+  },
+  "info": {
+    "kicker": {
+      "uk": "Про проєкт",
+      "en": "About the project"
+    },
+    "heading": {
+      "uk": "Сучасний будинок",
+      "en": "Modern House"
+    },
+    "paragraphs": {
+      "uk": [
+        "Цей проєкт присвячений проєктуванню двору невеликого сучасного житлового будинку, включаючи окремо розташовану гриль-зону та навколишній зовнішній простір."
+      ],
+      "en": [
+        "This project focuses on the design of a courtyard for a small modern residential house, including a detached grill area and the surrounding outdoor environment."
+      ]
+    },
+    "meta": [
+      {
+        "label": { "uk": "Локація", "en": "Location" },
+        "value": { "uk": "Суми, Україна", "en": "Sumy, Ukraine" }
+      },
+      {
+        "label": { "uk": "Тип об’єкта", "en": "Property type" },
+        "value": { "uk": "Житловий будинок, гриль-будинок та двір", "en": "House, grill house and yard" }
+      },
+      {
+        "label": { "uk": "Площа", "en": "Area" },
+        "value": { "uk": "-", "en": "-" }
+      },
+      {
+        "label": { "uk": "Дизайн та візуалізація", "en": "Design and visualisation" },
+        "value": { "uk": "Юрій Костюченко", "en": "Yuriy Kostyuchenko" }
+      },
+      {
+        "label": { "uk": "Тип робіт", "en": "Project type" },
+        "value": { "uk": "Дизайн-проєкт", "en": "Design project" }
+      }
+    ]
+  }
+}

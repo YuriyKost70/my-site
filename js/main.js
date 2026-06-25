@@ -135,13 +135,52 @@
     const cards = [...grid.querySelectorAll('.project-card')];
     const configuredLimit = Number.parseInt(grid.dataset.visibleLimit || '', 10);
     const visibleLimit = Number.isFinite(configuredLimit) ? configuredLimit : Number.POSITIVE_INFINITY;
+    const allFilterSlots = [
+      { direction: 'interior', segment: 'private' },
+      { direction: 'interior', segment: 'business' },
+      { direction: 'exterior', segment: 'private' },
+      { direction: 'exterior', segment: 'business' }
+    ];
+    const segmentAliases = {
+      residential: 'private',
+      commercial: 'business'
+    };
+    const normalizeSegment = (segment) => segmentAliases[segment] || segment;
+
+    const cardMatchesSlot = (card, slot) => (
+      card.dataset.projectDirection === slot.direction &&
+      normalizeSegment(card.dataset.projectSegment) === slot.segment
+    );
+
+    const selectAllFilterCards = () => {
+      const selected = [];
+      const fallbackSlot = { direction: 'interior', segment: 'private' };
+
+      const pickCard = (slot) => cards.find((item) => !selected.includes(item) && cardMatchesSlot(item, slot));
+
+      allFilterSlots.forEach((slot) => {
+        if (selected.length >= visibleLimit) return;
+
+        const card = pickCard(slot) || pickCard(fallbackSlot);
+        if (card) selected.push(card);
+      });
+
+      cards.forEach((card) => {
+        if (selected.length >= visibleLimit) return;
+        if (!selected.includes(card)) selected.push(card);
+      });
+
+      return new Set(selected.slice(0, visibleLimit));
+    };
 
     const applyProjectFilter = (filter) => {
       let visibleCount = 0;
+      const allFilterCards = filter === 'all' ? selectAllFilterCards() : null;
 
       cards.forEach((card) => {
-        const tags = (card.dataset.tags || '').split(/\s+/);
-        const matchesFilter = filter === 'all' || tags.includes(filter);
+        const tags = (card.dataset.tags || '').split(/\s+/).map((tag) => segmentAliases[tag] || tag);
+        const normalizedFilter = segmentAliases[filter] || filter;
+        const matchesFilter = filter === 'all' ? allFilterCards.has(card) : tags.includes(normalizedFilter);
         const visible = matchesFilter && visibleCount < visibleLimit;
 
         card.classList.toggle('is-hidden', !visible);

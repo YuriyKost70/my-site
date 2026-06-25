@@ -9,7 +9,7 @@ DIRECTION:
 interior
 
 SEGMENT:
-residential
+private
 
 STYLE:
 modern
@@ -54,7 +54,7 @@ AUTHOR_LABEL:
 Дизайн та візуалізація
 
 PROJECT_TYPE:
-Комерційний проєкт
+Дизайн-проєкт
 
 PROJECT_TYPE_LABEL:
 Тип робіт
@@ -89,7 +89,7 @@ CARD_TOPLINE_LEFT:
 Житловий будинок
 
 CARD_TOPLINE_RIGHT:
-Комерційний проєкт
+Приватний проєкт
 
 CARD_TITLE:
 Двоповерховий будинок
@@ -145,7 +145,7 @@ AUTHOR_LABEL:
 Design and visualisation
 
 PROJECT_TYPE:
-Commercial project
+Design project
 
 PROJECT_TYPE_LABEL:
 Project type
@@ -180,7 +180,7 @@ CARD_TOPLINE_LEFT:
 Residential house
 
 CARD_TOPLINE_RIGHT:
-Commercial project
+Private project
 
 CARD_TITLE:
 Two-storey house
