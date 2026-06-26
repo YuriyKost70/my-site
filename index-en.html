@@ -692,7 +692,8 @@
         </div>
       </div>
 
-      <form class="contact-form" action="#" method="post">
+      <form class="contact-form" action="/api/contact" method="post" data-contact-form data-success-message="Thank you, your enquiry has been sent. We will contact you shortly." data-error-message="The enquiry could not be sent. Please write to us directly: info@yvkdesign.com.ua">
+        <input class="form-hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <input type="text" name="name" placeholder="Name" required />
         <input type="tel" name="phone" placeholder="Phone" required />
         <input class="full" type="email" name="email" placeholder="Email" />
@@ -708,6 +709,7 @@
         <textarea class="full" name="message" placeholder="Briefly describe your project"></textarea>
 
         <button class="btn btn-primary" type="submit">Send enquiry</button>
+        <div class="form-status" role="status" aria-live="polite"></div>
       </form>
     </div>
   </section>

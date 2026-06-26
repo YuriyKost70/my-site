@@ -692,7 +692,8 @@
         </div>
       </div>
 
-      <form class="contact-form" action="#" method="post">
+      <form class="contact-form" action="/api/contact" method="post" data-contact-form data-success-message="Дякуємо, заявку надіслано. Ми зв’яжемося з вами найближчим часом." data-error-message="Не вдалося надіслати заявку. Напишіть нам напряму: info@yvkdesign.com.ua">
+        <input class="form-hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <input type="text" name="name" placeholder="Ім’я" required />
         <input type="tel" name="phone" placeholder="Телефон" required />
         <input class="full" type="email" name="email" placeholder="Email" />
@@ -708,6 +709,7 @@
         <textarea class="full" name="message" placeholder="Коротко опишіть задачу"></textarea>
 
         <button class="btn btn-primary" type="submit">Надіслати заявку</button>
+        <div class="form-status" role="status" aria-live="polite"></div>
       </form>
     </div>
   </section>

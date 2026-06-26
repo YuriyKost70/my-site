@@ -76,6 +76,51 @@
   updateScrollTopButton();
   window.addEventListener('scroll', updateScrollTopButton, { passive: true });
 
+  document.querySelectorAll('[data-contact-form]').forEach((form) => {
+    const status = form.querySelector('.form-status');
+    const submitButton = form.querySelector('button[type="submit"]');
+    const successMessage = form.dataset.successMessage || 'Message sent.';
+    const errorMessage = form.dataset.errorMessage || 'Message could not be sent.';
+
+    const setStatus = (message, type) => {
+      if (!status) return;
+
+      status.textContent = message;
+      status.classList.remove('is-success', 'is-error');
+      if (type) status.classList.add(`is-${type}`);
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      setStatus('', '');
+      if (submitButton) submitButton.disabled = true;
+
+      try {
+        const formData = new FormData(form);
+        formData.set('language', document.documentElement.lang || '');
+        formData.set('page', window.location.href);
+
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            Accept: 'application/json'
+          }
+        });
+
+        if (!response.ok) throw new Error('Request failed');
+
+        form.reset();
+        setStatus(successMessage, 'success');
+      } catch (error) {
+        setStatus(errorMessage, 'error');
+      } finally {
+        if (submitButton) submitButton.disabled = false;
+      }
+    });
+  });
+
   const heroSlides = document.querySelectorAll('.hero-slide');
   const heroDots = document.querySelectorAll('.hero-dot');
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

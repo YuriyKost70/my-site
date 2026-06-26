@@ -733,6 +733,36 @@ button, input, textarea, select { font: inherit; }
   border: none;
 }
 
+.form-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.form-status {
+  grid-column: 1 / -1;
+  min-height: 22px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.form-status.is-success {
+  color: var(--accent-dark);
+}
+
+.form-status.is-error {
+  color: #b56b5f;
+}
+
+.contact-form button[disabled] {
+  cursor: wait;
+  opacity: 0.72;
+}
+
 /* Footer */
 .footer {
   padding: 8px 0;
