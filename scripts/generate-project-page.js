@@ -821,7 +821,7 @@ ${gallery.html}
       </div>
       <div class="footer-contacts">
         <a href="tel:+380675404756">+38 (067) 540 47 56</a>
-        <a href="mailto:info@yvkdesign.com">info@yvkdesign.com</a>
+        <a href="mailto:info@yvkdesign.com.ua">info@yvkdesign.com.ua</a>
         <span>${escapeHtml(t.city)}</span>
       </div>
     </div>
