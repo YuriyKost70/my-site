@@ -56,73 +56,93 @@ function buildMessage(fields) {
 }
 
 export async function onRequest({ request, env }) {
-  if (request.method !== 'POST') {
-    return json({ ok: false, error: 'Method not allowed.' }, 405);
-  }
+  try {
+    if (request.method !== 'POST') {
+      return json({ ok: false, error: 'Method not allowed.' }, 405);
+    }
 
-  const formData = await request.formData();
-  const honeypot = normalize(formData.get('company'));
+    const formData = await request.formData();
+    const honeypot = normalize(formData.get('company'));
 
-  if (honeypot) {
-    return json({ ok: true });
-  }
+    if (honeypot) {
+      return json({ ok: true });
+    }
 
-  const fields = {
-    name: normalize(formData.get('name')),
-    phone: normalize(formData.get('phone')),
-    email: normalize(formData.get('email')),
-    projectType: normalize(formData.get('project-type')),
-    message: normalize(formData.get('message')),
-    language: normalize(formData.get('language')),
-    page: normalize(formData.get('page'))
-  };
-
-  if (!fields.name || !fields.phone) {
-    return json({ ok: false, error: 'Name and phone are required.' }, 400);
-  }
-
-  if (!env.BREVO_API_KEY) {
-    return json({ ok: false, error: 'Email service is not configured.' }, 500);
-  }
-
-  const { text, html } = buildMessage(fields);
-  const subject = `New enquiry from ${fields.name}`;
-  const payload = {
-    sender: {
-      name: SITE_NAME,
-      email: SITE_EMAIL
-    },
-    to: [
-      {
-        email: SITE_EMAIL,
-        name: SITE_NAME
-      }
-    ],
-    subject,
-    textContent: text,
-    htmlContent: html
-  };
-
-  if (fields.email) {
-    payload.replyTo = {
-      email: fields.email,
-      name: fields.name
+    const fields = {
+      name: normalize(formData.get('name')),
+      phone: normalize(formData.get('phone')),
+      email: normalize(formData.get('email')),
+      projectType: normalize(formData.get('project-type')),
+      message: normalize(formData.get('message')),
+      language: normalize(formData.get('language')),
+      page: normalize(formData.get('page'))
     };
+
+    if (!fields.name || !fields.phone) {
+      return json({ ok: false, error: 'Name and phone are required.' }, 400);
+    }
+
+    if (!env.BREVO_API_KEY) {
+      return json({ ok: false, error: 'Email service is not configured.' }, 500);
+    }
+
+    const { text, html } = buildMessage(fields);
+    const subject = `New enquiry from ${fields.name}`;
+    const payload = {
+      sender: {
+        name: SITE_NAME,
+        email: SITE_EMAIL
+      },
+      to: [
+        {
+          email: SITE_EMAIL,
+          name: SITE_NAME
+        }
+      ],
+      subject,
+      textContent: text,
+      htmlContent: html
+    };
+
+    if (fields.email) {
+      payload.replyTo = {
+        email: fields.email,
+        name: fields.name
+      };
+    }
+
+    const response = await fetch(BREVO_ENDPOINT, {
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'api-key': env.BREVO_API_KEY,
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+      const detail = (await response.text()).slice(0, 600);
+      return json(
+        {
+          ok: false,
+          error: 'Email service rejected the request.',
+          status: response.status,
+          detail
+        },
+        502
+      );
+    }
+
+    return json({ ok: true });
+  } catch (error) {
+    return json(
+      {
+        ok: false,
+        error: 'Contact function failed.',
+        detail: error instanceof Error ? error.message : String(error)
+      },
+      500
+    );
   }
-
-  const response = await fetch(BREVO_ENDPOINT, {
-    method: 'POST',
-    headers: {
-      accept: 'application/json',
-      'api-key': env.BREVO_API_KEY,
-      'content-type': 'application/json'
-    },
-    body: JSON.stringify(payload)
-  });
-
-  if (!response.ok) {
-    return json({ ok: false, error: 'Email service rejected the request.' }, 502);
-  }
-
-  return json({ ok: true });
 }
