@@ -1,4 +1,4 @@
-const BREVO_ENDPOINT = 'https://api.brevo.com/v3/smtp/email';
+const RESEND_ENDPOINT = 'https://api.resend.com/emails';
 const SITE_EMAIL = 'info@yvkdesign.com.ua';
 const SITE_NAME = 'YVK Design';
 
@@ -82,40 +82,28 @@ export async function onRequest({ request, env }) {
       return json({ ok: false, error: 'Name and phone are required.' }, 400);
     }
 
-    if (!env.BREVO_API_KEY) {
+    if (!env.RESEND_API_KEY) {
       return json({ ok: false, error: 'Email service is not configured.' }, 500);
     }
 
     const { text, html } = buildMessage(fields);
     const subject = `New enquiry from ${fields.name}`;
     const payload = {
-      sender: {
-        name: SITE_NAME,
-        email: SITE_EMAIL
-      },
-      to: [
-        {
-          email: SITE_EMAIL,
-          name: SITE_NAME
-        }
-      ],
+      from: `${SITE_NAME} <${SITE_EMAIL}>`,
+      to: [SITE_EMAIL],
       subject,
-      textContent: text,
-      htmlContent: html
+      text,
+      html
     };
 
     if (fields.email) {
-      payload.replyTo = {
-        email: fields.email,
-        name: fields.name
-      };
+      payload.reply_to = fields.email;
     }
 
-    const response = await fetch(BREVO_ENDPOINT, {
+    const response = await fetch(RESEND_ENDPOINT, {
       method: 'POST',
       headers: {
-        accept: 'application/json',
-        'api-key': env.BREVO_API_KEY,
+        authorization: `Bearer ${env.RESEND_API_KEY}`,
         'content-type': 'application/json'
       },
       body: JSON.stringify(payload)
