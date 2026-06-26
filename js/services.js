@@ -73,6 +73,8 @@
   function openPreview(index) {
     if (!preview || !slides.length) return;
 
+    if (!slides[index]?.dataset.previewSrc) return;
+
     updatePreview(index);
     preview.classList.add('is-open');
     preview.setAttribute('aria-hidden', 'false');
