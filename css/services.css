@@ -527,7 +527,7 @@ html[lang="en"] .services-subnav a:not(:last-child)::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #2c2c2a;
+  background: #2c2c2a !important;
   cursor: default;
 }
 
@@ -536,7 +536,7 @@ html[lang="en"] .services-subnav a:not(:last-child)::after {
 }
 
 .project-example-slide.is-placeholder span {
-  position: static;
+  position: static !important;
   color: rgba(236, 228, 211, 0.72);
   font-size: 15px;
   font-weight: 500;
