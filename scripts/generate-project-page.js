@@ -5,6 +5,7 @@ const { prepareProjectContent } = require('./project-description.cjs');
 const root = path.resolve(__dirname, '..');
 const projectsRoot = path.join(root, 'assets', 'projects');
 const imageExt = /\.(jpe?g|png|webp)$/i;
+const siteUrl = 'https://yvkdesign.com.ua';
 
 const args = process.argv.slice(2);
 const projectArg = readArg('--project') || 'project-interior-apartment-001';
@@ -552,6 +553,40 @@ function outputFor(config, lang) {
   return config.output?.[lang] || config.output?.uk || `${projectArg}-${lang}.html`;
 }
 
+function cleanUrlForOutput(output) {
+  const normalized = String(output || '').replaceAll('\\', '/');
+  if (normalized === 'index.html') return '/';
+  return `/${normalized.replace(/\.html$/, '')}`;
+}
+
+function absoluteUrlForOutput(output) {
+  return `${siteUrl}${cleanUrlForOutput(output)}`;
+}
+
+function buildSeoLinks(config, lang) {
+  const languages = config.languages?.length ? config.languages : ['uk'];
+  const currentOutput = outputFor(config, lang);
+  const ukOutput = outputFor(config, 'uk');
+  const enOutput = outputFor(config, 'en');
+  const lines = [
+    `  <link rel="canonical" href="${escapeHtml(absoluteUrlForOutput(currentOutput))}" />`
+  ];
+
+  if (languages.includes('uk')) {
+    lines.push(`  <link rel="alternate" hreflang="uk" href="${escapeHtml(absoluteUrlForOutput(ukOutput))}" />`);
+  }
+
+  if (languages.includes('en')) {
+    lines.push(`  <link rel="alternate" hreflang="en" href="${escapeHtml(absoluteUrlForOutput(enOutput))}" />`);
+  }
+
+  if (languages.includes('uk')) {
+    lines.push(`  <link rel="alternate" hreflang="x-default" href="${escapeHtml(absoluteUrlForOutput(ukOutput))}" />`);
+  }
+
+  return lines.join('\n');
+}
+
 function planningSets(config) {
   if (Array.isArray(config.paths?.planningSets) && config.paths.planningSets.length) {
     return config.paths.planningSets;
@@ -712,6 +747,7 @@ function renderPage(config, projectDir, lang) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${escapeHtml(localized(config.seo, lang).title || localized(config.seo, 'uk').title)}</title>
   <meta name="description" content="${escapeHtml(localized(config.seo, lang).description || localized(config.seo, 'uk').description)}" />
+${buildSeoLinks(config, lang)}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
