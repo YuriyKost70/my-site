@@ -110,13 +110,11 @@ export async function onRequest({ request, env }) {
     });
 
     if (!response.ok) {
-      const detail = (await response.text()).slice(0, 600);
+      await response.text();
       return json(
         {
           ok: false,
-          error: 'Email service rejected the request.',
-          status: response.status,
-          detail
+          error: 'Email service rejected the request.'
         },
         502
       );
@@ -127,8 +125,7 @@ export async function onRequest({ request, env }) {
     return json(
       {
         ok: false,
-        error: 'Contact function failed.',
-        detail: error instanceof Error ? error.message : String(error)
+        error: 'Contact function failed.'
       },
       500
     );
