@@ -733,7 +733,9 @@ button, input, textarea, select { font: inherit; }
   border: none;
 }
 
-.form-hp {
+.form-hp,
+.contact-form .form-hp {
+  display: none !important;
   position: absolute;
   left: -9999px;
   width: 1px;
