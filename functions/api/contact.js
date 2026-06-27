@@ -72,14 +72,14 @@ export async function onRequest({ request, env }) {
       name: normalize(formData.get('name')),
       phone: normalize(formData.get('phone')),
       email: normalize(formData.get('email')),
-      projectType: normalize(formData.get('project-type')),
+      projectType: normalize(formData.get('project-type') || formData.get('type')),
       message: normalize(formData.get('message')),
       language: normalize(formData.get('language')),
       page: normalize(formData.get('page'))
     };
 
-    if (!fields.name || !fields.phone) {
-      return json({ ok: false, error: 'Name and phone are required.' }, 400);
+    if (!fields.name || !fields.email || !fields.projectType || !fields.message) {
+      return json({ ok: false, error: 'Required fields are missing.' }, 400);
     }
 
     if (!env.RESEND_API_KEY) {

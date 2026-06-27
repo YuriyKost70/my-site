@@ -132,10 +132,10 @@
         <form class="contact-form contact-page-form" action="/api/contact" method="post" data-contact-form data-success-message="Thank you, your enquiry has been sent. We will contact you shortly." data-error-message="The enquiry could not be sent. Please write to us directly: info@yvkdesign.com.ua">
           <input class="form-hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" hidden />
           <input type="text" name="name" placeholder="Name" required />
-          <input type="tel" name="phone" placeholder="Phone" required />
-          <input class="full" type="email" name="email" placeholder="Email" />
+          <input type="tel" name="phone" placeholder="Phone" />
+          <input class="full" type="email" name="email" placeholder="Email" required />
 
-          <select class="full" name="project-type">
+          <select class="full" name="project-type" required>
             <option value="">Property type</option>
             <option>Apartment</option>
             <option>House</option>
@@ -143,7 +143,7 @@
             <option>Exterior</option>
           </select>
 
-          <textarea class="full" name="message" placeholder="Briefly describe your project"></textarea>
+          <textarea class="full" name="message" placeholder="Briefly describe your project" required></textarea>
           <button class="btn btn-primary" type="submit">Send enquiry</button>
           <div class="form-status" role="status" aria-live="polite"></div>
         </form>

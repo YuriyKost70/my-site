@@ -132,10 +132,10 @@
         <form class="contact-form contact-page-form" action="/api/contact" method="post" data-contact-form data-success-message="Дякуємо, заявку надіслано. Ми зв’яжемося з вами найближчим часом." data-error-message="Не вдалося надіслати заявку. Напишіть нам напряму: info@yvkdesign.com.ua">
           <input class="form-hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" hidden />
           <input type="text" name="name" placeholder="Ім’я" required />
-          <input type="tel" name="phone" placeholder="Телефон" required />
-          <input class="full" type="email" name="email" placeholder="Email" />
+          <input type="tel" name="phone" placeholder="Телефон" />
+          <input class="full" type="email" name="email" placeholder="Email" required />
 
-          <select class="full" name="project-type">
+          <select class="full" name="project-type" required>
             <option value="">Тип об’єкта</option>
             <option>Квартира</option>
             <option>Будинок</option>
@@ -143,7 +143,7 @@
             <option>Екстер’єр</option>
           </select>
 
-          <textarea class="full" name="message" placeholder="Коротко опишіть задачу"></textarea>
+          <textarea class="full" name="message" placeholder="Коротко опишіть задачу" required></textarea>
           <button class="btn btn-primary" type="submit">Надіслати заявку</button>
           <div class="form-status" role="status" aria-live="polite"></div>
         </form>

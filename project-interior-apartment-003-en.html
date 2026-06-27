@@ -249,19 +249,21 @@
           <p>Describe the space you want to create, and we will discuss the right format of work.</p>
         </div>
 
-        <form class="contact-form" action="#" method="post">
+        <form class="contact-form" action="/api/contact" method="post" data-contact-form data-success-message="Thank you, your enquiry has been sent. We will contact you shortly." data-error-message="The enquiry could not be sent. Please write to us directly: info@yvkdesign.com.ua">
+          <input class="form-hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" hidden />
           <input type="text" name="name" placeholder="Your name" required />
-          <input type="tel" name="phone" placeholder="Phone" required />
-          <input type="email" name="email" placeholder="Email" />
-          <select name="type" aria-label="Object type">
+          <input type="tel" name="phone" placeholder="Phone" />
+          <input type="email" name="email" placeholder="Email" required />
+          <select name="project-type" aria-label="Object type" required>
             <option value="">Object type</option>
             <option value="interior">Interior</option>
             <option value="exterior">Exterior</option>
             <option value="private">Private project</option>
             <option value="business">Business space</option>
           </select>
-          <textarea class="full" name="message" placeholder="Briefly describe the task"></textarea>
+          <textarea class="full" name="message" placeholder="Briefly describe the task" required></textarea>
           <button class="btn btn-primary" type="submit">Send request</button>
+          <div class="form-status" role="status" aria-live="polite"></div>
         </form>
       </div>
     </section>

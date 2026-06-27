@@ -829,19 +829,21 @@ ${gallery.html}
           <p>${escapeHtml(t.contactText)}</p>
         </div>
 
-        <form class="contact-form" action="#" method="post">
+        <form class="contact-form" action="/api/contact" method="post" data-contact-form data-success-message="${escapeHtml(lang === 'en' ? 'Thank you, your enquiry has been sent. We will contact you shortly.' : 'Дякуємо, заявку надіслано. Ми зв’яжемося з вами найближчим часом.')}" data-error-message="${escapeHtml(lang === 'en' ? 'The enquiry could not be sent. Please write to us directly: info@yvkdesign.com.ua' : 'Не вдалося надіслати заявку. Напишіть нам напряму: info@yvkdesign.com.ua')}">
+          <input class="form-hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" hidden />
           <input type="text" name="name" placeholder="${escapeHtml(t.name)}" required />
-          <input type="tel" name="phone" placeholder="${escapeHtml(t.phone)}" required />
-          <input type="email" name="email" placeholder="${escapeHtml(t.email)}" />
-          <select name="type" aria-label="${escapeHtml(t.objectType)}">
+          <input type="tel" name="phone" placeholder="${escapeHtml(t.phone)}" />
+          <input type="email" name="email" placeholder="${escapeHtml(t.email)}" required />
+          <select name="project-type" aria-label="${escapeHtml(t.objectType)}" required>
             <option value="">${escapeHtml(t.objectType)}</option>
             <option value="interior">${escapeHtml(t.interior)}</option>
             <option value="exterior">${escapeHtml(t.exterior)}</option>
             <option value="private">${escapeHtml(t.private)}</option>
             <option value="business">${escapeHtml(t.business)}</option>
           </select>
-          <textarea class="full" name="message" placeholder="${escapeHtml(t.message)}"></textarea>
+          <textarea class="full" name="message" placeholder="${escapeHtml(t.message)}" required></textarea>
           <button class="btn btn-primary" type="submit">${escapeHtml(t.send)}</button>
+          <div class="form-status" role="status" aria-live="polite"></div>
         </form>
       </div>
     </section>

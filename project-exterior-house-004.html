@@ -233,19 +233,21 @@
           <p>Опишіть простір, який ви хочете створити, і ми обговоримо формат роботи.</p>
         </div>
 
-        <form class="contact-form" action="#" method="post">
+        <form class="contact-form" action="/api/contact" method="post" data-contact-form data-success-message="Дякуємо, заявку надіслано. Ми зв’яжемося з вами найближчим часом." data-error-message="Не вдалося надіслати заявку. Напишіть нам напряму: info@yvkdesign.com.ua">
+          <input class="form-hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" hidden />
           <input type="text" name="name" placeholder="Ваше ім’я" required />
-          <input type="tel" name="phone" placeholder="Телефон" required />
-          <input type="email" name="email" placeholder="Email" />
-          <select name="type" aria-label="Тип об’єкта">
+          <input type="tel" name="phone" placeholder="Телефон" />
+          <input type="email" name="email" placeholder="Email" required />
+          <select name="project-type" aria-label="Тип об’єкта" required>
             <option value="">Тип об’єкта</option>
             <option value="interior">Інтер’єр</option>
             <option value="exterior">Екстер’єр</option>
             <option value="private">Приватний об’єкт</option>
             <option value="business">Простір для бізнесу</option>
           </select>
-          <textarea class="full" name="message" placeholder="Коротко опишіть задачу"></textarea>
+          <textarea class="full" name="message" placeholder="Коротко опишіть задачу" required></textarea>
           <button class="btn btn-primary" type="submit">Надіслати заявку</button>
+          <div class="form-status" role="status" aria-live="polite"></div>
         </form>
       </div>
     </section>
