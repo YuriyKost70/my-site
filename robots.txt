@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://yvkdesign.com.ua/sitemap.xml
+Disallow: /
