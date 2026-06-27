@@ -129,17 +129,24 @@
       }
     };
 
-    form.querySelectorAll('input, select, textarea').forEach((field) => {
+    const fields = form.querySelectorAll('input, select, textarea');
+
+    fields.forEach((field) => {
+      updateFieldValidity(field);
       field.addEventListener('invalid', () => updateFieldValidity(field));
       field.addEventListener('input', () => updateFieldValidity(field));
       field.addEventListener('change', () => updateFieldValidity(field));
+    });
+
+    submitButton?.addEventListener('click', () => {
+      fields.forEach((field) => updateFieldValidity(field));
     });
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
 
       setStatus('', '');
-      form.querySelectorAll('input, select, textarea').forEach((field) => updateFieldValidity(field));
+      fields.forEach((field) => updateFieldValidity(field));
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
@@ -163,6 +170,7 @@
         if (!response.ok) throw new Error('Request failed');
 
         form.reset();
+        fields.forEach((field) => updateFieldValidity(field));
         setStatus(successMessage, 'success');
       } catch (error) {
         setStatus(errorMessage, 'error');
