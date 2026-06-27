@@ -875,7 +875,7 @@ ${gallery.html}
     <button class="lightbox-arrow lightbox-next" type="button" aria-label="${escapeHtml(t.next)}">›</button>
   </div>
 
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js?v=20260627-validation" defer></script>
   <script src="js/project-gallery.js" defer></script>
 </body>
 </html>
