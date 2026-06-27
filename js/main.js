@@ -81,6 +81,24 @@
     const submitButton = form.querySelector('button[type="submit"]');
     const successMessage = form.dataset.successMessage || 'Message sent.';
     const errorMessage = form.dataset.errorMessage || 'Message could not be sent.';
+    const isEnglish = document.documentElement.lang === 'en';
+    const validationMessages = isEnglish
+      ? {
+          name: 'Please enter your name.',
+          emailRequired: 'Please enter your email.',
+          emailInvalid: 'Please enter a valid email address.',
+          projectType: 'Please select a project type.',
+          message: 'Please briefly describe your project.',
+          fallback: 'Please fill in this field.'
+        }
+      : {
+          name: 'Вкажіть ім’я.',
+          emailRequired: 'Вкажіть email.',
+          emailInvalid: 'Введіть коректну email-адресу.',
+          projectType: 'Оберіть тип об’єкта.',
+          message: 'Коротко опишіть задачу.',
+          fallback: 'Заповніть це поле.'
+        };
 
     const setStatus = (message, type) => {
       if (!status) return;
@@ -90,10 +108,43 @@
       if (type) status.classList.add(`is-${type}`);
     };
 
+    const getRequiredMessage = (field) => {
+      if (field.name === 'name') return validationMessages.name;
+      if (field.name === 'email') return validationMessages.emailRequired;
+      if (field.name === 'project-type' || field.name === 'type') return validationMessages.projectType;
+      if (field.name === 'message') return validationMessages.message;
+      return validationMessages.fallback;
+    };
+
+    const updateFieldValidity = (field) => {
+      field.setCustomValidity('');
+
+      if (field.required && !String(field.value || '').trim()) {
+        field.setCustomValidity(getRequiredMessage(field));
+        return;
+      }
+
+      if (field.validity.typeMismatch) {
+        field.setCustomValidity(validationMessages.emailInvalid);
+      }
+    };
+
+    form.querySelectorAll('input, select, textarea').forEach((field) => {
+      field.addEventListener('invalid', () => updateFieldValidity(field));
+      field.addEventListener('input', () => updateFieldValidity(field));
+      field.addEventListener('change', () => updateFieldValidity(field));
+    });
+
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
 
       setStatus('', '');
+      form.querySelectorAll('input, select, textarea').forEach((field) => updateFieldValidity(field));
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
       if (submitButton) submitButton.disabled = true;
 
       try {
