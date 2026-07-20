@@ -563,6 +563,37 @@ function absoluteUrlForOutput(output) {
   return `${siteUrl}${cleanUrlForOutput(output)}`;
 }
 
+function absoluteUrlForAsset(assetPath) {
+  const normalized = String(assetPath || '').replaceAll('\\', '/').replace(/^\/+/, '');
+  return normalized ? `${siteUrl}/${normalized}` : siteUrl;
+}
+
+function ogLocale(lang) {
+  return lang === 'en' ? 'en_US' : 'uk_UA';
+}
+
+function buildSocialMeta(config, lang, title, description, imagePath) {
+  const output = outputFor(config, lang);
+  const imageAlt = localized(config.hero?.imageAlt, lang) || localized(config.hero?.imageAlt, 'uk') || title;
+  const imageUrl = absoluteUrlForAsset(imagePath);
+
+  return [
+    `  <meta property="og:type" content="website" />`,
+    `  <meta property="og:site_name" content="YVK Design" />`,
+    `  <meta property="og:locale" content="${escapeHtml(ogLocale(lang))}" />`,
+    `  <meta property="og:url" content="${escapeHtml(absoluteUrlForOutput(output))}" />`,
+    `  <meta property="og:title" content="${escapeHtml(title)}" />`,
+    `  <meta property="og:description" content="${escapeHtml(description)}" />`,
+    `  <meta property="og:image" content="${escapeHtml(imageUrl)}" />`,
+    `  <meta property="og:image:alt" content="${escapeHtml(imageAlt)}" />`,
+    `  <meta name="twitter:card" content="summary_large_image" />`,
+    `  <meta name="twitter:title" content="${escapeHtml(title)}" />`,
+    `  <meta name="twitter:description" content="${escapeHtml(description)}" />`,
+    `  <meta name="twitter:image" content="${escapeHtml(imageUrl)}" />`,
+    `  <meta name="twitter:image:alt" content="${escapeHtml(imageAlt)}" />`
+  ].join('\n');
+}
+
 function buildSeoLinks(config, lang) {
   const languages = config.languages?.length ? config.languages : ['uk'];
   const currentOutput = outputFor(config, lang);
@@ -739,14 +770,19 @@ function renderPage(config, projectDir, lang) {
   const planningHtml = renderPlanning(config, projectDir, lang, t);
   const gallery = buildGallery(projectDir, config.paths.galleryDir, lang);
   const lightboxImage = gallery.firstImage || cover;
+  const seo = localized(config.seo, lang);
+  const fallbackSeo = localized(config.seo, 'uk');
+  const seoTitle = seo.title || fallbackSeo.title || 'YVK Design';
+  const seoDescription = seo.description || fallbackSeo.description || '';
 
   return `<!DOCTYPE html>
 <html lang="${escapeHtml(t.htmlLang)}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>${escapeHtml(localized(config.seo, lang).title || localized(config.seo, 'uk').title)}</title>
-  <meta name="description" content="${escapeHtml(localized(config.seo, lang).description || localized(config.seo, 'uk').description)}" />
+  <title>${escapeHtml(seoTitle)}</title>
+  <meta name="description" content="${escapeHtml(seoDescription)}" />
+${buildSocialMeta(config, lang, seoTitle, seoDescription, cover)}
 ${buildSeoLinks(config, lang)}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
